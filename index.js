@@ -12,12 +12,12 @@ server.listen(port, hostname, () => {
 });
 
 function query(collection) {
-    var MongoClient = require('mongodb').MongoClient;
-    var url = process.env.DATABASE_URL;
+    let MongoClient = require('mongodb').MongoClient;
+    let url = process.env.DATABASE_URL;
     
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
-        var dbo = db.db("carowanisdb");
+        let dbo = db.db("carowanisdb");
         dbo.collection(collection).find({}).toArray(function(err, result) {
           if (err) throw err;
           console.log(result);
