@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AlexisGJ/McGillDesignProject/issues"
   },
-  "homepage": "https://github.com/AlexisGJ/McGillDesignProject#readme"
+  "homepage": "https://github.com/AlexisGJ/McGillDesignProject#readme",
+  "dependencies": {
+    "http": "0.0.0"
+  }
 }
