@@ -3,6 +3,7 @@ import { withRouter } from 'next/router'
 
 class Post extends React.Component {
 
+
     render() {
         {console.log(this.props)}
         return(

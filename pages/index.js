@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import Table from '../components/table'
 
 const Post = props => (
     <li>
@@ -10,30 +11,45 @@ const Post = props => (
     </li>
 )
 
-export default () => (
-    <div>
-        <h2>My blog</h2>
-        <ul>
-        <li>
-            <Post slug="post/yet-another-post" title="Yet another post" />
-            <Post slug="post/second-post" title="Second post" />
-            <Post slug="post/hello-world" title="Hello, world!" />
-        </li>
-        </ul>
-        <Button variant="contained" color="primary">
-            Hello World
-        </Button>
-        <Grid container spacing={24}>
-            <Grid item xs>
-                <div>
-                    Table 1
-                </div>
-            </Grid>
-            <Grid item xs>
-                <div>
-                    Table 2
-                </div>
-            </Grid>
-        </Grid>
-    </div>
-)
+class Index extends React.Component {
+
+    state = {allo: "1"}
+
+    changeAllo = () => {
+        this.setState({allo: "829374"});
+    }
+
+    render() {
+        return(
+            <div>
+                <h2>My blog</h2>
+                <ul>
+                <li>
+                    <Post slug="post/yet-another-post" title="Yet another post" />
+                    <Post slug="post/second-post" title="Second post" />
+                    <Post slug="post/hello-world" title="Hello, world!" />
+                </li>
+                </ul>
+                <Button variant="contained" color="primary">
+                    Hello World
+                </Button>
+                <Grid container spacing={24}>
+                    <Grid item xs>
+                        <div>
+                            {this.state.allo}
+                        </div>
+                    </Grid>
+                    <Grid item xs>
+                        <div>
+                            Table 2
+                        </div>
+                    </Grid>
+                </Grid>
+                <button onClick={this.changeAllo}>Change allo</button>
+                <Table tableNumber="69"/>
+            </div>
+        );
+    }
+}
+
+export default Index;
