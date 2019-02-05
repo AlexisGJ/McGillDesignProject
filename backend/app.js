@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 
 // initialize the express app
 const child = require('./routes/child.route'); // Imports routes for the child 
+const reading = require('./routes/reading.route'); // Imports routes for the reading
 const app = express();
 
 // Set up mongoose connection
@@ -18,6 +19,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/api/child', child);
+app.use('/api/reading', reading);
 
 let port = 1234;
 
