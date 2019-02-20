@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import Table from '../components/table'
+
+import TableComponent from '../components/TableComponent'
+import ModalComponent from '../components/ModalComponent'
 
 const Post = props => (
     <li>
@@ -46,8 +48,11 @@ class Index extends React.Component {
                     </Grid>
                 </Grid>
                 <button onClick={this.changeAllo}>Change allo</button>
-                <Table tableNumber="69"/>
+                <TableComponent tableNumber="69"/>
+
+                <ModalComponent />
             </div>
+
         );
     }
 }
