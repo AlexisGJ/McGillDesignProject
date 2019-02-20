@@ -114,6 +114,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recharts */ "recharts");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(recharts__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var d3_scale__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! d3-scale */ "d3-scale");
+/* harmony import */ var d3_scale__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(d3_scale__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/components/ModalComponent.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -135,6 +139,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -165,6 +171,68 @@ var styles = function styles(theme) {
     }
   };
 };
+
+var data = [{
+  name: 'Page A',
+  uv: 1000,
+  pv: 2400,
+  amt: 2400,
+  uvError: [75, 20]
+}, {
+  name: 'Page B',
+  uv: 300,
+  pv: 4567,
+  amt: 2400,
+  uvError: [90, 40]
+}, {
+  name: 'Page C',
+  uv: 280,
+  pv: 1398,
+  amt: 2400,
+  uvError: 40
+}, {
+  name: 'Page D',
+  uv: 200,
+  pv: 9800,
+  amt: 2400,
+  uvError: 20
+}, {
+  name: 'Page E',
+  uv: 278,
+  pv: null,
+  amt: 2400,
+  uvError: 28
+}, {
+  name: 'Page F',
+  uv: 189,
+  pv: 4800,
+  amt: 2400,
+  uvError: [90, 20]
+}, {
+  name: 'Page G',
+  uv: 189,
+  pv: 4800,
+  amt: 2400,
+  uvError: [28, 40]
+}, {
+  name: 'Page H',
+  uv: 189,
+  pv: 4800,
+  amt: 2400,
+  uvError: 28
+}, {
+  name: 'Page I',
+  uv: 189,
+  pv: 4800,
+  amt: 2400,
+  uvError: 28
+}, {
+  name: 'Page J',
+  uv: 189,
+  pv: 4800,
+  amt: 2400,
+  uvError: [15, 60]
+}];
 
 var SimpleModal =
 /*#__PURE__*/
@@ -211,14 +279,16 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 66
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5___default.a, {
         onClick: this.handleOpen,
+        variant: "contained",
+        color: "primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 67
         },
         __self: this
       }, "Open Modal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -228,7 +298,7 @@ function (_React$Component) {
         onClose: this.handleClose,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 68
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -236,13 +306,13 @@ function (_React$Component) {
         className: classes.paper,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 74
         },
         __self: this
       }, this.state.sensorData ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 76
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -250,7 +320,7 @@ function (_React$Component) {
         id: "modal-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 77
         },
         __self: this
       }, this.state.sensorData.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -258,13 +328,86 @@ function (_React$Component) {
         id: "simple-modal-description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 80
         },
         __self: this
-      }, "This is the sensor type: ", this.state.sensorData.sensor)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "This is the sensor type: ", this.state.sensorData.sensor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["LineChart"], {
+        width: 400,
+        height: 400,
+        data: data,
+        margin: {
+          top: 5,
+          right: 20,
+          left: 10,
+          bottom: 5
+        },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 84
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["XAxis"], {
+        dataKey: "name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 90
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["Tooltip"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["CartesianGrid"], {
+        stroke: "#f5f5f5",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["ReferenceLine"], {
+        y: 300,
+        label: "Min",
+        stroke: "red",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 93
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["ReferenceLine"], {
+        y: 600,
+        label: "Max",
+        stroke: "red",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+        type: "monotone",
+        dataKey: "uv",
+        stroke: "#ff7300",
+        yAxisId: 0,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 95
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+        type: "monotone",
+        dataKey: "pv",
+        stroke: "#387908",
+        yAxisId: 1,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
+        },
+        __self: this
+      }))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
         },
         __self: this
       }, "There was an error."))));
@@ -591,25 +734,25 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 27
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 28
         },
         __self: this
       }, "My blog"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 29
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 30
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Post, {
@@ -617,7 +760,7 @@ function (_React$Component) {
         title: "Yet another post",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 31
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Post, {
@@ -625,7 +768,7 @@ function (_React$Component) {
         title: "Second post",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 32
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Post, {
@@ -633,7 +776,7 @@ function (_React$Component) {
         title: "Hello, world!",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 33
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -641,7 +784,7 @@ function (_React$Component) {
         color: "primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 36
         },
         __self: this
       }, "Hello World"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -649,7 +792,7 @@ function (_React$Component) {
         spacing: 24,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 39
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -657,13 +800,13 @@ function (_React$Component) {
         xs: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 40
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 41
         },
         __self: this
       }, this.state.allo)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -671,33 +814,33 @@ function (_React$Component) {
         xs: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 45
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 46
         },
         __self: this
       }, "Table 2"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.changeAllo,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 51
         },
         __self: this
       }, "Change allo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
         tableNumber: "69",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 52
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 54
         },
         __self: this
       }));
@@ -844,6 +987,17 @@ module.exports = require("@material-ui/core/styles");
 
 /***/ }),
 
+/***/ "d3-scale":
+/*!***************************!*\
+  !*** external "d3-scale" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("d3-scale");
+
+/***/ }),
+
 /***/ "next/link":
 /*!****************************!*\
   !*** external "next/link" ***!
@@ -874,6 +1028,17 @@ module.exports = require("prop-types");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "recharts":
+/*!***************************!*\
+  !*** external "recharts" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("recharts");
 
 /***/ })
 

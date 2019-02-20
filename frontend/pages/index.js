@@ -12,6 +12,7 @@ const Post = props => (
         </Link>
     </li>
 )
+  
 
 class Index extends React.Component {
 
