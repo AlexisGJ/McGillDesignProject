@@ -93,6 +93,122 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/AppbarComponent.js":
+/*!***************************************!*\
+  !*** ./components/AppbarComponent.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/AppBar */ "@material-ui/core/AppBar");
+/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Toolbar */ "@material-ui/core/Toolbar");
+/* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/IconButton */ "@material-ui/core/IconButton");
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Icon */ "@material-ui/core/Icon");
+/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/icons/Menu */ "@material-ui/icons/Menu");
+/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_9__);
+var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/components/AppbarComponent.js";
+
+
+
+
+
+
+
+
+
+
+var styles = {
+  root: {
+    flexGrow: 1
+  },
+  grow: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20
+  }
+};
+
+function ButtonAppBar(props) {
+  var classes = props.classes;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: classes.root,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    position: "static",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    className: classes.menuButton,
+    color: "inherit",
+    "aria-label": "Menu",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_9___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    variant: "h6",
+    color: "inherit",
+    className: classes.grow,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }, "News"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    color: "inherit",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: this
+  }, "D\xE9connexion"))));
+}
+
+ButtonAppBar.propTypes = {
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(styles)(ButtonAppBar));
+
+/***/ }),
+
 /***/ "./components/ModalComponent.js":
 /*!**************************************!*\
   !*** ./components/ModalComponent.js ***!
@@ -114,10 +230,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recharts */ "recharts");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(recharts__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var d3_scale__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! d3-scale */ "d3-scale");
-/* harmony import */ var d3_scale__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(d3_scale__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Fab */ "@material-ui/core/Fab");
+/* harmony import */ var _material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/Add */ "@material-ui/icons/Add");
+/* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! recharts */ "recharts");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(recharts__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var d3_scale__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! d3-scale */ "d3-scale");
+/* harmony import */ var d3_scale__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(d3_scale__WEBPACK_IMPORTED_MODULE_9__);
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/components/ModalComponent.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -130,15 +250,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -240,65 +360,35 @@ function (_React$Component) {
   _inherits(SimpleModal, _React$Component);
 
   function SimpleModal() {
-    var _getPrototypeOf2;
-
-    var _this;
-
     _classCallCheck(this, SimpleModal);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(SimpleModal)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      open: false,
-      sensorData: _this.props.sensorData
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleOpen", function () {
-      _this.setState({
-        open: true
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClose", function () {
-      _this.setState({
-        open: false
-      });
-    });
-
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(SimpleModal).apply(this, arguments));
   }
 
   _createClass(SimpleModal, [{
     key: "render",
+    // handleOpen = () => {
+    //   this.setState({ open: true });
+    // };
+    // handleClose = () => {
+    //   this.setState({ open: false });
+    // };
     value: function render() {
       var classes = this.props.classes;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 64
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_5___default.a, {
-        onClick: this.handleOpen,
-        variant: "contained",
-        color: "primary",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        },
-        __self: this
-      }, "Open Modal"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4___default.a, {
         "aria-labelledby": "simple-modal-title",
         "aria-describedby": "simple-modal-description",
-        open: this.state.open,
-        onClose: this.handleClose,
+        open: this.props.open,
+        onClose: this.props.handleClose,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 65
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -306,13 +396,13 @@ function (_React$Component) {
         className: classes.paper,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 71
         },
         __self: this
-      }, this.state.sensorData ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.sensorData ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 73
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -320,18 +410,18 @@ function (_React$Component) {
         id: "modal-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 74
         },
         __self: this
-      }, this.state.sensorData.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      }, this.props.sensorData.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
         variant: "subtitle1",
         id: "simple-modal-description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 77
         },
         __self: this
-      }, "This is the sensor type: ", this.state.sensorData.sensor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["LineChart"], {
+      }, "This is the sensor type: ", this.props.sensorData.sensor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["LineChart"], {
         width: 400,
         height: 400,
         data: data,
@@ -343,71 +433,71 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 81
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["XAxis"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["XAxis"], {
         dataKey: "name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 87
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["Tooltip"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["Tooltip"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 88
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["CartesianGrid"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["CartesianGrid"], {
         stroke: "#f5f5f5",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 89
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["ReferenceLine"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["ReferenceLine"], {
         y: 300,
         label: "Min",
         stroke: "red",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 90
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["ReferenceLine"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["ReferenceLine"], {
         y: 600,
         label: "Max",
         stroke: "red",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 91
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["Line"], {
         type: "monotone",
         dataKey: "uv",
         stroke: "#ff7300",
         yAxisId: 0,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 92
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_6__["Line"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["Line"], {
         type: "monotone",
         dataKey: "pv",
         stroke: "#387908",
         yAxisId: 1,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 93
         },
         __self: this
       }))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 97
         },
         __self: this
       }, "There was an error."))));
@@ -423,6 +513,191 @@ SimpleModal.propTypes = {
 
 var SimpleModalWrapped = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(styles)(SimpleModal);
 /* harmony default export */ __webpack_exports__["default"] = (SimpleModalWrapped);
+
+/***/ }),
+
+/***/ "./components/SnackbarComponent.js":
+/*!*****************************************!*\
+  !*** ./components/SnackbarComponent.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Snackbar */ "@material-ui/core/Snackbar");
+/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/IconButton */ "@material-ui/core/IconButton");
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/Close */ "@material-ui/icons/Close");
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6__);
+var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/components/SnackbarComponent.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+var styles = function styles(theme) {
+  return {
+    close: {
+      padding: theme.spacing.unit / 2
+    }
+  };
+};
+
+var SimpleSnackbar =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SimpleSnackbar, _React$Component);
+
+  function SimpleSnackbar() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, SimpleSnackbar);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(SimpleSnackbar)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      open: false
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function () {
+      _this.setState({
+        open: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClose", function (event, reason) {
+      if (reason === 'clickaway') {
+        return;
+      }
+
+      _this.setState({
+        open: false
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(SimpleSnackbar, [{
+    key: "render",
+    value: function render() {
+      var classes = this.props.classes;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        onClick: this.handleClick,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        },
+        __self: this
+      }, "Open simple snackbar"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        anchorOrigin: {
+          vertical: 'bottom',
+          horizontal: 'left'
+        },
+        open: this.state.open,
+        autoHideDuration: 6000,
+        onClose: this.handleClose,
+        ContentProps: {
+          'aria-describedby': 'message-id'
+        },
+        message: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+          id: "message-id",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          },
+          __self: this
+        }, "Note archived"),
+        action: [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+          key: "undo",
+          color: "secondary",
+          size: "small",
+          onClick: this.handleClose,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50
+          },
+          __self: this
+        }, "UNDO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          key: "close",
+          "aria-label": "Close",
+          color: "inherit",
+          className: classes.close,
+          onClick: this.handleClose,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6___default.a, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 60
+          },
+          __self: this
+        }))],
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }));
+    }
+  }]);
+
+  return SimpleSnackbar;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+SimpleSnackbar.propTypes = {
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(styles)(SimpleSnackbar));
 
 /***/ }),
 
@@ -456,6 +731,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ModalComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/ModalComponent */ "./components/ModalComponent.js");
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/components/TableComponent.js";
 
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -473,8 +769,13 @@ var styles = function styles(theme) {
       marginTop: theme.spacing.unit * 3,
       overflowX: 'auto'
     },
-    table: {
-      minWidth: 700
+    table: {// minWidth: 700,
+    },
+    tableRow: {
+      cursor: 'pointer',
+      '&:hover': {
+        backgroundColor: theme.palette.grey[200]
+      }
     }
   };
 };
@@ -495,133 +796,199 @@ function createData(name, sensor, sgv, battery, lastTime) {
 
 var rows = [createData('Ege Ozer', 'Dexcom G5', 2.4, 24, '2019-01-29 11:30:12'), createData('Rami Djema', 'FreeStyle Libre', 4.4, 51, '2019-01-29 14:58:12'), createData('Alexis Giguere', 'Dexcom G5', 5.2, 12, '2019-01-29 09:03:12'), createData('Ahmad Prof', 'Dexcom G5', 3.0, 87, '2019-01-29 17:45:12')];
 
-function SimpleTable(props) {
-  var classes = props.classes;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8___default.a, {
-    className: classes.root,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    className: classes.table,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: this
-  }, "Nom"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    align: "right",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46
-    },
-    __self: this
-  }, "Type de capteur"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    align: "right",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: this
-  }, "Valeur de glucose"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    align: "right",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: this
-  }, "% batterie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    align: "right",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: this
-  }, "Mesur\xE9 le"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52
-    },
-    __self: this
-  }, rows.map(function (row) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
-      key: row.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 54
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      component: "th",
-      scope: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 55
-      },
-      __self: this
-    }, row.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      align: "right",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: this
-    }, row.sensor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      align: "right",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 59
-      },
-      __self: this
-    }, row.sgv), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      align: "right",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 60
-      },
-      __self: this
-    }, row.battery), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-      align: "right",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 61
-      },
-      __self: this
-    }, row.lastTime), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      sensorData: row,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 62
-      },
-      __self: this
-    }));
-  }))));
-}
+var SimpleTable =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SimpleTable, _React$Component);
+
+  function SimpleTable() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, SimpleTable);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(SimpleTable)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      open: false,
+      row: {
+        name: "hey",
+        sensor: "Hey"
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function (row) {
+      _this.setState({
+        open: true,
+        row: row
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleOpen", function () {
+      _this.setState({
+        open: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClose", function () {
+      _this.setState({
+        open: false
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(SimpleTable, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _this$props = this.props,
+          classes = _this$props.classes,
+          tableNumber = _this$props.tableNumber;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        className: classes.root,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        },
+        __self: this
+      }, "Table number: ", tableNumber, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        className: classes.table,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69
+        },
+        __self: this
+      }, "Nom"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        align: "right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        },
+        __self: this
+      }, "Type de capteur"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        align: "right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
+        },
+        __self: this
+      }, "Valeur de glucose"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        align: "right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72
+        },
+        __self: this
+      }, "% batterie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        align: "right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      }, "Mesur\xE9 le"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        },
+        __self: this
+      }, rows.map(function (row) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
+          key: row.id,
+          className: classes.tableRow,
+          onClick: function onClick() {
+            return _this2.handleClick(row);
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 78
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          component: "th",
+          scope: "row",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79
+          },
+          __self: this
+        }, row.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          align: "right",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82
+          },
+          __self: this
+        }, row.sensor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          align: "right",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83
+          },
+          __self: this
+        }, row.sgv), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          align: "right",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84
+          },
+          __self: this
+        }, row.battery), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          align: "right",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 85
+          },
+          __self: this
+        }, row.lastTime));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        open: this.state.open,
+        handleOpen: this.handleOpen,
+        handleClose: this.handleClose,
+        sensorData: this.state.row,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91
+        },
+        __self: this
+      }));
+    }
+  }]);
+
+  return SimpleTable;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 SimpleTable.propTypes = {
   classes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
 };
-/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(styles)(SimpleTable));
+var SimpleTableWrapped = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(styles)(SimpleTable);
+/* harmony default export */ __webpack_exports__["default"] = (SimpleTableWrapped);
 
 /***/ }),
 
@@ -643,7 +1010,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _components_TableComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/TableComponent */ "./components/TableComponent.js");
-/* harmony import */ var _components_ModalComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/ModalComponent */ "./components/ModalComponent.js");
+/* harmony import */ var _components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/SnackbarComponent */ "./components/SnackbarComponent.js");
+/* harmony import */ var _components_AppbarComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/AppbarComponent */ "./components/AppbarComponent.js");
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/pages/index.js";
 
 
@@ -673,11 +1041,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Post = function Post(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 11
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -685,13 +1054,13 @@ var Post = function Post(props) {
     href: "/post?title=".concat(props.title),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 13
     },
     __self: this
   }, props.title)));
@@ -715,15 +1084,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Index)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      allo: "1"
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "changeAllo", function () {
-      _this.setState({
-        allo: "829374"
-      });
-    });
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
 
     return _this;
   }
@@ -734,113 +1095,69 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 25
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 26
         },
         __self: this
-      }, "My blog"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Post, {
-        slug: "post/yet-another-post",
-        title: "Yet another post",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Post, {
-        slug: "post/second-post",
-        title: "Second post",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Post, {
-        slug: "post/hello-world",
-        title: "Hello, world!",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default.a, {
-        variant: "contained",
-        color: "primary",
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        container: true,
+        spacing: 8,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 36
         },
         __self: this
-      }, "Hello World"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        container: true,
-        spacing: 24,
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        item: true,
+        xs: 6,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        tableNumber: "1",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 39
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
         item: true,
-        xs: true,
+        xs: 6,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 42
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 43
         },
         __self: this
-      }, this.state.allo)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        item: true,
-        xs: true,
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        tableNumber: "2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 44
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, "Table 2"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.changeAllo,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51
-        },
-        __self: this
-      }, "Change allo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        tableNumber: "69",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 49
         },
         __self: this
       }));
@@ -866,6 +1183,17 @@ module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
 
 /***/ }),
 
+/***/ "@material-ui/core/AppBar":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/AppBar" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/AppBar");
+
+/***/ }),
+
 /***/ "@material-ui/core/Button":
 /*!*******************************************!*\
   !*** external "@material-ui/core/Button" ***!
@@ -877,6 +1205,17 @@ module.exports = require("@material-ui/core/Button");
 
 /***/ }),
 
+/***/ "@material-ui/core/Fab":
+/*!****************************************!*\
+  !*** external "@material-ui/core/Fab" ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Fab");
+
+/***/ }),
+
 /***/ "@material-ui/core/Grid":
 /*!*****************************************!*\
   !*** external "@material-ui/core/Grid" ***!
@@ -885,6 +1224,28 @@ module.exports = require("@material-ui/core/Button");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Grid");
+
+/***/ }),
+
+/***/ "@material-ui/core/Icon":
+/*!*****************************************!*\
+  !*** external "@material-ui/core/Icon" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Icon");
+
+/***/ }),
+
+/***/ "@material-ui/core/IconButton":
+/*!***********************************************!*\
+  !*** external "@material-ui/core/IconButton" ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/IconButton");
 
 /***/ }),
 
@@ -907,6 +1268,17 @@ module.exports = require("@material-ui/core/Modal");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Paper");
+
+/***/ }),
+
+/***/ "@material-ui/core/Snackbar":
+/*!*********************************************!*\
+  !*** external "@material-ui/core/Snackbar" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Snackbar");
 
 /***/ }),
 
@@ -965,6 +1337,17 @@ module.exports = require("@material-ui/core/TableRow");
 
 /***/ }),
 
+/***/ "@material-ui/core/Toolbar":
+/*!********************************************!*\
+  !*** external "@material-ui/core/Toolbar" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Toolbar");
+
+/***/ }),
+
 /***/ "@material-ui/core/Typography":
 /*!***********************************************!*\
   !*** external "@material-ui/core/Typography" ***!
@@ -984,6 +1367,39 @@ module.exports = require("@material-ui/core/Typography");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/styles");
+
+/***/ }),
+
+/***/ "@material-ui/icons/Add":
+/*!*****************************************!*\
+  !*** external "@material-ui/icons/Add" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/Add");
+
+/***/ }),
+
+/***/ "@material-ui/icons/Close":
+/*!*******************************************!*\
+  !*** external "@material-ui/icons/Close" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/Close");
+
+/***/ }),
+
+/***/ "@material-ui/icons/Menu":
+/*!******************************************!*\
+  !*** external "@material-ui/icons/Menu" ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/Menu");
 
 /***/ }),
 

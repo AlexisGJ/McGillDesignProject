@@ -4,6 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, ReferenceLine,
   ReferenceDot, Tooltip, CartesianGrid, Legend, Brush, ErrorBar, AreaChart, Area,
@@ -46,39 +48,34 @@ const data = [
 ];
 
 class SimpleModal extends React.Component {
-  state = {
-    open: false,
-    sensorData: this.props.sensorData
-  };
 
-  handleOpen = () => {
-    this.setState({ open: true });
-  };
+  // handleOpen = () => {
+  //   this.setState({ open: true });
+  // };
 
-  handleClose = () => {
-    this.setState({ open: false });
-  };
+  // handleClose = () => {
+  //   this.setState({ open: false });
+  // };
 
   render() {
     const { classes } = this.props;
 
     return (
       <div>
-        <Button onClick={this.handleOpen} variant="contained" color="primary">Open Modal</Button>
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
-          open={this.state.open}
-          onClose={this.handleClose}
+          open={this.props.open}
+          onClose={this.props.handleClose}
         >
           <div style={getModalStyle()} className={classes.paper}>
-            {this.state.sensorData ? (
+            {this.props.sensorData ? (
               <div>
                 <Typography variant="h6" id="modal-title">
-                  {this.state.sensorData.name}
+                  {this.props.sensorData.name}
                 </Typography>
                 <Typography variant="subtitle1" id="simple-modal-description">
-                  This is the sensor type: {this.state.sensorData.sensor}
+                  This is the sensor type: {this.props.sensorData.sensor}
                 </Typography>
 
                 <LineChart

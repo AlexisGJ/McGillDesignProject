@@ -3,7 +3,9 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 
 import TableComponent from '../components/TableComponent'
-import ModalComponent from '../components/ModalComponent'
+import SnackbarComponent from '../components/SnackbarComponent';
+import AppbarComponent from '../components/AppbarComponent';
+
 
 const Post = props => (
     <li>
@@ -16,42 +18,36 @@ const Post = props => (
 
 class Index extends React.Component {
 
-    state = {allo: "1"}
-
-    changeAllo = () => {
-        this.setState({allo: "829374"});
-    }
+    state = {}
 
     render() {
         return(
             <div>
-                <h2>My blog</h2>
+                <AppbarComponent />
+                {/* <h2>My blog</h2>
                 <ul>
                 <li>
                     <Post slug="post/yet-another-post" title="Yet another post" />
                     <Post slug="post/second-post" title="Second post" />
                     <Post slug="post/hello-world" title="Hello, world!" />
                 </li>
-                </ul>
-                <Button variant="contained" color="primary">
-                    Hello World
-                </Button>
-                <Grid container spacing={24}>
-                    <Grid item xs>
+                </ul> */}
+                
+                <Grid container spacing={8}>
+                    <Grid item xs={6}>
                         <div>
-                            {this.state.allo}
+                            <TableComponent tableNumber="1"/>
                         </div>
                     </Grid>
-                    <Grid item xs>
+                    <Grid item xs={6}>
                         <div>
-                            Table 2
+                            <TableComponent tableNumber="2"/>
                         </div>
                     </Grid>
                 </Grid>
-                <button onClick={this.changeAllo}>Change allo</button>
-                <TableComponent tableNumber="69"/>
+                
+                <SnackbarComponent />
 
-                <ModalComponent />
             </div>
 
         );

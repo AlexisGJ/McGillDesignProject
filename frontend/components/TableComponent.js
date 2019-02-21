@@ -17,8 +17,15 @@ const styles = theme => ({
     overflowX: 'auto',
   },
   table: {
-    minWidth: 700,
+    // minWidth: 700,
   },
+  tableRow: {
+    cursor: 'pointer',
+    '&:hover': {
+      backgroundColor: theme.palette.grey[200],
+    },
+  },
+  
 });
 
 let id = 0;
@@ -34,42 +41,63 @@ const rows = [
   createData('Ahmad Prof', 'Dexcom G5', 3.0, 87, '2019-01-29 17:45:12'),
 ];
 
-function SimpleTable(props) {
-  const { classes } = props;
+class SimpleTable extends React.Component {
 
-  return (
-    <Paper className={classes.root}>
-      <Table className={classes.table}>
-        <TableHead>
-          <TableRow>
-            <TableCell>Nom</TableCell>
-            <TableCell align="right">Type de capteur</TableCell>
-            <TableCell align="right">Valeur de glucose</TableCell>
-            <TableCell align="right">% batterie</TableCell>
-            <TableCell align="right">Mesuré le</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.sensor}</TableCell>
-              <TableCell align="right">{row.sgv}</TableCell>
-              <TableCell align="right">{row.battery}</TableCell>
-              <TableCell align="right">{row.lastTime}</TableCell>
-              <ModalComponent sensorData={row}/>
+  state = {open: false, row: {name: "hey", sensor: "Hey"}}
+
+  handleClick = (row) => {
+    this.setState({open: true, row: row});
+  }
+
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
+  render() {
+    const { classes, tableNumber } = this.props;
+
+    return (
+      <Paper className={classes.root}>
+        Table number: {tableNumber}
+        <Table className={classes.table}>
+          <TableHead>
+            <TableRow>
+              <TableCell>Nom</TableCell>
+              <TableCell align="right">Type de capteur</TableCell>
+              <TableCell align="right">Valeur de glucose</TableCell>
+              <TableCell align="right">% batterie</TableCell>
+              <TableCell align="right">Mesuré le</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </Paper>
-  );
+          </TableHead>
+          <TableBody>
+            {rows.map(row => (
+              <TableRow key={row.id} className={classes.tableRow} onClick={() => this.handleClick(row)}>
+                <TableCell component="th" scope="row">
+                  {row.name}
+                </TableCell>
+                <TableCell align="right">{row.sensor}</TableCell>
+                <TableCell align="right">{row.sgv}</TableCell>
+                <TableCell align="right">{row.battery}</TableCell>
+                <TableCell align="right">{row.lastTime}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+
+        <ModalComponent open={this.state.open} handleOpen={this.handleOpen} handleClose={this.handleClose} sensorData={this.state.row}/>
+      </Paper>
+    );
+  }
 }
 
 SimpleTable.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleTable);
+const SimpleTableWrapped = withStyles(styles)(SimpleTable);
+
+export default SimpleTableWrapped;
