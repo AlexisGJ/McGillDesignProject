@@ -58,48 +58,48 @@ class SimpleModal extends React.Component {
   // };
 
   render() {
-    const { classes } = this.props;
+    const { classes, sensorData } = this.props;
 
-    return (
-      <div>
-        <Modal
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-          open={this.props.open}
-          onClose={this.props.handleClose}
-        >
-          <div style={getModalStyle()} className={classes.paper}>
-            {this.props.sensorData ? (
-              <div>
-                <Typography variant="h6" id="modal-title">
-                  {this.props.sensorData.name}
-                </Typography>
-                <Typography variant="subtitle1" id="simple-modal-description">
-                  This is the sensor type: {this.props.sensorData.sensor}
-                </Typography>
+    if (!sensorData._id) {
+      return null;
+    } else {
+      return (
+        <div>
+          <Modal
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            open={this.props.open}
+            onClose={this.props.handleClose}
+          >
+            <div style={getModalStyle()} className={classes.paper}>
+              <Typography variant="h6" id="modal-title">
+                {sensorData.name}
+              </Typography>
+              <Typography variant="subtitle1" id="simple-modal-description">
+                <p>Sensor device: {sensorData.latestReading.device}</p>
+                <p>Location: {sensorData.location}</p>
+                <p>Direction: {sensorData.latestReading.direction}</p>
+              </Typography>
 
-                <LineChart
-                    width={400}
-                    height={400}
-                    data={data}
-                    margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
-                    >
-                    <XAxis dataKey="name" />
-                    <Tooltip />
-                    <CartesianGrid stroke="#f5f5f5" />
-                    <ReferenceLine y={300} label="Min" stroke="red" />
-                    <ReferenceLine y={600} label="Max" stroke="red" />
-                    <Line type="monotone" dataKey="uv" stroke="#ff7300" yAxisId={0} />
-                    <Line type="monotone" dataKey="pv" stroke="#387908" yAxisId={1} />
-                </LineChart>
-              </div>
-            ) : (
-              <div>There was an error.</div>
-            )}
-          </div>
-        </Modal>
-      </div>
-    );
+              <LineChart
+                  width={400}
+                  height={400}
+                  data={sensorData.readings.reverse()}
+                  margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+                  >
+                  <XAxis dataKey="dateString" />
+                  <Tooltip />
+                  <CartesianGrid stroke="#f5f5f5" />
+                  <ReferenceLine y={sensorData.range_min} label="Min" stroke="red" />
+                  <ReferenceLine y={sensorData.range_max} label="Max" stroke="red" />
+                  <Line type="monotone" dataKey="sgv" stroke="#ff7300" yAxisId={0} />
+              </LineChart>
+            </div>
+          </Modal>
+        </div>
+      );
+    }
+
   }
 }
 

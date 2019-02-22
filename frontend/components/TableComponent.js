@@ -34,16 +34,40 @@ function createData(name, sensor, sgv, battery, lastTime) {
   return { id, name, sensor, sgv, battery, lastTime };
 }
 
-const rows = [
-  createData('Ege Ozer', 'Dexcom G5', 2.4, 24, '2019-01-29 11:30:12'),
-  createData('Rami Djema', 'FreeStyle Libre', 4.4, 51, '2019-01-29 14:58:12'),
-  createData('Alexis Giguere', 'Dexcom G5', 5.2, 12, '2019-01-29 09:03:12'),
-  createData('Ahmad Prof', 'Dexcom G5', 3.0, 87, '2019-01-29 17:45:12'),
-];
+// const rows = [
+//   createData('Ege Ozer', 'Dexcom G5', 2.4, 24, '2019-01-29 11:30:12'),
+//   createData('Rami Djema', 'FreeStyle Libre', 4.4, 51, '2019-01-29 14:58:12'),
+//   createData('Alexis Giguere', 'Dexcom G5', 5.2, 12, '2019-01-29 09:03:12'),
+//   createData('Ahmad Prof', 'Dexcom G5', 3.0, 87, '2019-01-29 17:45:12'),
+// ];
+
+function convertData(data) {
+  for(var i=0; i<data.length; i++) {
+    data[i]['latestReading'] = data[i]['readings'][0];
+  }
+  return data;
+}
 
 class SimpleTable extends React.Component {
 
-  state = {open: false, row: {name: "hey", sensor: "Hey"}}
+  constructor(props) {
+    super(props);
+    this.state = {
+        error: null,
+        isLoaded: false,
+        data: props.data,
+        open: false,
+        row: {name: "", sensor: ""},
+        rows: []
+    };
+  }
+
+  componentDidMount() {
+    this.setState({
+      rows: convertData(this.state.data),
+      isLoaded: true
+    })
+  }
 
   handleClick = (row) => {
     this.setState({open: true, row: row});
@@ -58,39 +82,46 @@ class SimpleTable extends React.Component {
   };
 
   render() {
-    const { classes, tableNumber } = this.props;
+    const { classes } = this.props;
+    const { error, isLoaded, rows } = this.state;
 
-    return (
-      <Paper className={classes.root}>
-        Table number: {tableNumber}
-        <Table className={classes.table}>
-          <TableHead>
-            <TableRow>
-              <TableCell>Nom</TableCell>
-              <TableCell align="right">Type de capteur</TableCell>
-              <TableCell align="right">Valeur de glucose</TableCell>
-              <TableCell align="right">% batterie</TableCell>
-              <TableCell align="right">Mesuré le</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map(row => (
-              <TableRow key={row.id} className={classes.tableRow} onClick={() => this.handleClick(row)}>
-                <TableCell component="th" scope="row">
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.sensor}</TableCell>
-                <TableCell align="right">{row.sgv}</TableCell>
-                <TableCell align="right">{row.battery}</TableCell>
-                <TableCell align="right">{row.lastTime}</TableCell>
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+        return <div>Loading...</div>;
+    } else {
+      return (
+        <Paper className={classes.root}>
+          <Table className={classes.table}>
+            <TableHead>
+              <TableRow>
+                <TableCell>Nom</TableCell>
+                <TableCell align="right">Type de capteur</TableCell>
+                <TableCell align="right">Valeur de glucose</TableCell>
+                <TableCell align="right">% batterie</TableCell>
+                <TableCell align="right">Mesuré le</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHead>
+            <TableBody>
+              {rows.map(row => (
+                <TableRow key={row._id} className={classes.tableRow} onClick={() => this.handleClick(row)}>
+                  <TableCell component="th" scope="row">
+                    {row.name}
+                  </TableCell>
+                  <TableCell align="right">{row.latestReading.device}</TableCell>
+                  <TableCell align="right">{row.latestReading.sgv}</TableCell>
+                  <TableCell align="right">{row.battery}</TableCell>
+                  <TableCell align="right">{row.latestReading.dateString}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+  
+          <ModalComponent open={this.state.open} handleOpen={this.handleOpen} handleClose={this.handleClose} sensorData={this.state.row}/>
+        </Paper>
+      );
+    }
 
-        <ModalComponent open={this.state.open} handleOpen={this.handleOpen} handleClose={this.handleClose} sensorData={this.state.row}/>
-      </Paper>
-    );
   }
 }
 

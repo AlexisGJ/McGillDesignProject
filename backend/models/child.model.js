@@ -7,7 +7,8 @@ let ChildSchema = new Schema({
     active: {type: Boolean, required: true},
     range_min: {type: Number, default: 2.0},
     range_max: {type: Number, default: 5.0},
-    location: {type: String}
+    location: {type: String},
+    sensorType: {type: String}
 });
 
 

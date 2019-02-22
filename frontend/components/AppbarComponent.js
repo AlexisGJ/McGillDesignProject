@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import Link from 'next/link'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
-import MenuIcon from '@material-ui/icons/Menu';
+import HomeIcon from '@material-ui/icons/Home';
+import SettingsIcon from '@material-ui/icons/Settings';
+
 
 const styles = {
   root: {
@@ -28,12 +31,19 @@ function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
+          <Link as={`/`} href={`/`}>
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+              <HomeIcon />
+            </IconButton>
+          </Link>
           <Typography variant="h6" color="inherit" className={classes.grow}>
-            News
+            Station de Supervision | Camp Carowanis
           </Typography>
+          <Link as={`/settings`} href={`/settings`}>
+            <IconButton color="inherit">
+                <SettingsIcon />
+            </IconButton>
+          </Link>
           <Button color="inherit">Déconnexion</Button>
         </Toolbar>
       </AppBar>

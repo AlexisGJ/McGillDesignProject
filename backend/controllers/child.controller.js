@@ -14,7 +14,8 @@ exports.child_create = function (req, res, next) {
             active: req.body.active,
             range_min: req.body.range_min,
             range_max: req.body.range_max,
-            location: req.body.location
+            location: req.body.location,
+            sensorType: req.body.sensorType
         }
     );
 

@@ -15,21 +15,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/styles/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/AppBar */ "./node_modules/@material-ui/core/AppBar/index.js");
-/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Toolbar */ "./node_modules/@material-ui/core/Toolbar/index.js");
-/* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/Typography/index.js");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/Button/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/IconButton/index.js");
-/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Icon */ "./node_modules/@material-ui/core/Icon/index.js");
-/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/icons/Menu */ "./node_modules/@material-ui/icons/Menu.js");
-/* harmony import */ var _material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/AppBar */ "./node_modules/@material-ui/core/AppBar/index.js");
+/* harmony import */ var _material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Toolbar */ "./node_modules/@material-ui/core/Toolbar/index.js");
+/* harmony import */ var _material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/Typography/index.js");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/Button/index.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/IconButton/index.js");
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Icon */ "./node_modules/@material-ui/core/Icon/index.js");
+/* harmony import */ var _material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Icon__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons/Home */ "./node_modules/@material-ui/icons/Home.js");
+/* harmony import */ var _material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons/Settings */ "./node_modules/@material-ui/icons/Settings.js");
+/* harmony import */ var _material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_11__);
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/components/AppbarComponent.js";
+
+
 
 
 
@@ -59,51 +65,80 @@ function ButtonAppBar(props) {
     className: classes.root,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    position: "static",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    className: classes.menuButton,
-    color: "inherit",
-    "aria-label": "Menu",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 31
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Menu__WEBPACK_IMPORTED_MODULE_9___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    position: "static",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
     },
     __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    variant: "h6",
-    color: "inherit",
-    className: classes.grow,
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    as: "/",
+    href: "/",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 34
     },
     __self: this
-  }, "News"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    className: classes.menuButton,
+    color: "inherit",
+    "aria-label": "Menu",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_10___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    variant: "h6",
+    color: "inherit",
+    className: classes.grow,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39
+    },
+    __self: this
+  }, "Station de Supervision | Camp Carowanis"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    as: "/settings",
+    href: "/settings",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8___default.a, {
     color: "inherit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 43
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_11___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: this
+  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    color: "inherit",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
     },
     __self: this
   }, "D\xE9connexion"))));
@@ -279,133 +314,136 @@ function (_React$Component) {
     //   this.setState({ open: false });
     // };
     value: function render() {
-      var classes = this.props.classes;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 64
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4___default.a, {
-        "aria-labelledby": "simple-modal-title",
-        "aria-describedby": "simple-modal-description",
-        open: this.props.open,
-        onClose: this.props.handleClose,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 65
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: getModalStyle(),
-        className: classes.paper,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 71
-        },
-        __self: this
-      }, this.props.sensorData ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        variant: "h6",
-        id: "modal-title",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 74
-        },
-        __self: this
-      }, this.props.sensorData.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        variant: "subtitle1",
-        id: "simple-modal-description",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 77
-        },
-        __self: this
-      }, "This is the sensor type: ", this.props.sensorData.sensor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["LineChart"], {
-        width: 400,
-        height: 400,
-        data: data,
-        margin: {
-          top: 5,
-          right: 20,
-          left: 10,
-          bottom: 5
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 81
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["XAxis"], {
-        dataKey: "name",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 87
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["Tooltip"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 88
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["CartesianGrid"], {
-        stroke: "#f5f5f5",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 89
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["ReferenceLine"], {
-        y: 300,
-        label: "Min",
-        stroke: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 90
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["ReferenceLine"], {
-        y: 600,
-        label: "Max",
-        stroke: "red",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 91
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["Line"], {
-        type: "monotone",
-        dataKey: "uv",
-        stroke: "#ff7300",
-        yAxisId: 0,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 92
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["Line"], {
-        type: "monotone",
-        dataKey: "pv",
-        stroke: "#387908",
-        yAxisId: 1,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 93
-        },
-        __self: this
-      }))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 97
-        },
-        __self: this
-      }, "There was an error."))));
+      var _this$props = this.props,
+          classes = _this$props.classes,
+          sensorData = _this$props.sensorData;
+
+      if (!sensorData._id) {
+        return null;
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4___default.a, {
+          "aria-labelledby": "simple-modal-title",
+          "aria-describedby": "simple-modal-description",
+          open: this.props.open,
+          onClose: this.props.handleClose,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          style: getModalStyle(),
+          className: classes.paper,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
+          variant: "h6",
+          id: "modal-title",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 75
+          },
+          __self: this
+        }, sensorData.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
+          variant: "subtitle1",
+          id: "simple-modal-description",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 78
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 79
+          },
+          __self: this
+        }, "Sensor device: ", sensorData.latestReading.device), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 80
+          },
+          __self: this
+        }, "Location: ", sensorData.location), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 81
+          },
+          __self: this
+        }, "Direction: ", sensorData.latestReading.direction)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["LineChart"], {
+          width: 400,
+          height: 400,
+          data: sensorData.readings.reverse(),
+          margin: {
+            top: 5,
+            right: 20,
+            left: 10,
+            bottom: 5
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["XAxis"], {
+          dataKey: "dateString",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 90
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["Tooltip"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["CartesianGrid"], {
+          stroke: "#f5f5f5",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 92
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["ReferenceLine"], {
+          y: sensorData.range_min,
+          label: "Min",
+          stroke: "red",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 93
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["ReferenceLine"], {
+          y: sensorData.range_max,
+          label: "Max",
+          stroke: "red",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 94
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_8__["Line"], {
+          type: "monotone",
+          dataKey: "sgv",
+          stroke: "#ff7300",
+          yAxisId: 0,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95
+          },
+          __self: this
+        })))));
+      }
     }
   }]);
 
@@ -697,35 +735,33 @@ function createData(name, sensor, sgv, battery, lastTime) {
     battery: battery,
     lastTime: lastTime
   };
-}
+} // const rows = [
+//   createData('Ege Ozer', 'Dexcom G5', 2.4, 24, '2019-01-29 11:30:12'),
+//   createData('Rami Djema', 'FreeStyle Libre', 4.4, 51, '2019-01-29 14:58:12'),
+//   createData('Alexis Giguere', 'Dexcom G5', 5.2, 12, '2019-01-29 09:03:12'),
+//   createData('Ahmad Prof', 'Dexcom G5', 3.0, 87, '2019-01-29 17:45:12'),
+// ];
 
-var rows = [createData('Ege Ozer', 'Dexcom G5', 2.4, 24, '2019-01-29 11:30:12'), createData('Rami Djema', 'FreeStyle Libre', 4.4, 51, '2019-01-29 14:58:12'), createData('Alexis Giguere', 'Dexcom G5', 5.2, 12, '2019-01-29 09:03:12'), createData('Ahmad Prof', 'Dexcom G5', 3.0, 87, '2019-01-29 17:45:12')];
+
+function convertData(data) {
+  for (var i = 0; i < data.length; i++) {
+    data[i]['latestReading'] = data[i]['readings'][0];
+  }
+
+  return data;
+}
 
 var SimpleTable =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(SimpleTable, _React$Component);
 
-  function SimpleTable() {
-    var _getPrototypeOf2;
-
+  function SimpleTable(props) {
     var _this;
 
     _classCallCheck(this, SimpleTable);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(SimpleTable)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      open: false,
-      row: {
-        name: "hey",
-        sensor: "Hey"
-      }
-    });
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SimpleTable).call(this, props));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function (row) {
       _this.setState({
@@ -746,143 +782,183 @@ function (_React$Component) {
       });
     });
 
+    _this.state = {
+      error: null,
+      isLoaded: false,
+      data: props.data,
+      open: false,
+      row: {
+        name: "",
+        sensor: ""
+      },
+      rows: []
+    };
     return _this;
   }
 
   _createClass(SimpleTable, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.setState({
+        rows: convertData(this.state.data),
+        isLoaded: true
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      var _this$props = this.props,
-          classes = _this$props.classes,
-          tableNumber = _this$props.tableNumber;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8___default.a, {
-        className: classes.root,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 64
-        },
-        __self: this
-      }, "Table number: ", tableNumber, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        className: classes.table,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 66
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6___default.a, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 68
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 69
-        },
-        __self: this
-      }, "Nom"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-        align: "right",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70
-        },
-        __self: this
-      }, "Type de capteur"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-        align: "right",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 71
-        },
-        __self: this
-      }, "Valeur de glucose"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-        align: "right",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 72
-        },
-        __self: this
-      }, "% batterie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-        align: "right",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73
-        },
-        __self: this
-      }, "Mesur\xE9 le"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_4___default.a, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 76
-        },
-        __self: this
-      }, rows.map(function (row) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
-          key: row.id,
-          className: classes.tableRow,
-          onClick: function onClick() {
-            return _this2.handleClick(row);
-          },
+      var classes = this.props.classes;
+      var _this$state = this.state,
+          error = _this$state.error,
+          isLoaded = _this$state.isLoaded,
+          rows = _this$state.rows;
+
+      if (error) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 89
+          },
+          __self: this
+        }, "Error: ", error.message);
+      } else if (!isLoaded) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91
+          },
+          __self: this
+        }, "Loading...");
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8___default.a, {
+          className: classes.root,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 94
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_3___default.a, {
+          className: classes.table,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 95
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6___default.a, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 96
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 97
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-          component: "th",
-          scope: "row",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 79
+            lineNumber: 98
           },
           __self: this
-        }, row.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        }, "Nom"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 82
+            lineNumber: 99
           },
           __self: this
-        }, row.sensor), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        }, "Type de capteur"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 83
+            lineNumber: 100
           },
           __self: this
-        }, row.sgv), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        }, "Valeur de glucose"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 84
+            lineNumber: 101
           },
           __self: this
-        }, row.battery), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        }, "% batterie"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 85
+            lineNumber: 102
           },
           __self: this
-        }, row.lastTime));
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        open: this.state.open,
-        handleOpen: this.handleOpen,
-        handleClose: this.handleClose,
-        sensorData: this.state.row,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 91
-        },
-        __self: this
-      }));
+        }, "Mesur\xE9 le"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_4___default.a, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 105
+          },
+          __self: this
+        }, rows.map(function (row) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
+            key: row._id,
+            className: classes.tableRow,
+            onClick: function onClick() {
+              return _this2.handleClick(row);
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 107
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            component: "th",
+            scope: "row",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 108
+            },
+            __self: this
+          }, row.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            align: "right",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 111
+            },
+            __self: this
+          }, row.latestReading.device), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            align: "right",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 112
+            },
+            __self: this
+          }, row.latestReading.sgv), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            align: "right",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 113
+            },
+            __self: this
+          }, row.battery), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            align: "right",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 114
+            },
+            __self: this
+          }, row.latestReading.dateString));
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          open: this.state.open,
+          handleOpen: this.handleOpen,
+          handleClose: this.handleClose,
+          sensorData: this.state.row,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 120
+          },
+          __self: this
+        }));
+      }
     }
   }]);
 
@@ -13085,9 +13161,9 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/@material-ui/icons/Menu.js":
+/***/ "./node_modules/@material-ui/icons/Home.js":
 /*!*************************************************!*\
-  !*** ./node_modules/@material-ui/icons/Menu.js ***!
+  !*** ./node_modules/@material-ui/icons/Home.js ***!
   \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -13107,11 +13183,45 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_mod
 var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
 
 var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
+  d: "M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"
+}), _react.default.createElement("path", {
   fill: "none",
   d: "M0 0h24v24H0z"
+})), 'Home');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Settings.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Settings.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@material-ui/icons/node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
+  transform: "scale(1.2, 1.2)",
+  fill: "none",
+  d: "M0 0h20v20H0V0z"
 }), _react.default.createElement("path", {
-  d: "M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-})), 'Menu');
+  transform: "scale(1.2, 1.2)",
+  d: "M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"
+})), 'Settings');
 
 exports.default = _default;
 
@@ -78007,13 +78117,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/Button/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/Grid/index.js");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_TableComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/TableComponent */ "./components/TableComponent.js");
-/* harmony import */ var _components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/SnackbarComponent */ "./components/SnackbarComponent.js");
-/* harmony import */ var _components_AppbarComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/AppbarComponent */ "./components/AppbarComponent.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/styles/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/Button/index.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/Grid/index.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../static/css/main_custom.css */ "./static/css/main_custom.css");
+/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_TableComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/TableComponent */ "./components/TableComponent.js");
+/* harmony import */ var _components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/SnackbarComponent */ "./components/SnackbarComponent.js");
+/* harmony import */ var _components_AppbarComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/AppbarComponent */ "./components/AppbarComponent.js");
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/pages/index.js";
 
 
@@ -78027,15 +78143,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -78048,7 +78165,7 @@ var Post = function Post(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 15
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -78056,16 +78173,24 @@ var Post = function Post(props) {
     href: "/post?title=".concat(props.title),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 16
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 17
     },
     __self: this
   }, props.title)));
+};
+
+var styles = function styles(theme) {
+  return {
+    root: {
+      padding: 20
+    }
+  };
 };
 
 var Index =
@@ -78073,103 +78198,152 @@ var Index =
 function (_React$Component) {
   _inherits(Index, _React$Component);
 
-  function Index() {
-    var _getPrototypeOf2;
-
+  function Index(props) {
     var _this;
 
     _classCallCheck(this, Index);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Index)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
-
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
+    _this.state = {
+      error: null,
+      isLoaded: false,
+      data: []
+    };
     return _this;
   }
 
   _createClass(Index, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      fetch("http://localhost:1234/api/reading/allActiveChildren").then(function (res) {
+        return res.json();
+      }).then(function (result) {
+        console.log(result);
+
+        _this2.setState({
+          isLoaded: true,
+          data: result
+        });
+      }, // Note: it's important to handle errors here
+      // instead of a catch() block so that we don't swallow
+      // exceptions from actual bugs in components.
+      function (error) {
+        _this2.setState({
+          isLoaded: true,
+          error: error
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 25
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 26
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        container: true,
-        spacing: 8,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        item: true,
-        xs: 6,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        tableNumber: "1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 39
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        item: true,
-        xs: 6,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 42
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 43
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        tableNumber: "2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        },
-        __self: this
-      }));
+      var classes = this.props.classes;
+      var _this$state = this.state,
+          error = _this$state.error,
+          isLoaded = _this$state.isLoaded,
+          data = _this$state.data;
+
+      if (error) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68
+          },
+          __self: this
+        }, "Error: ", error.message);
+      } else if (!isLoaded) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70
+          },
+          __self: this
+        }, "Loading...");
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 73
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 74
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          container: true,
+          spacing: 8,
+          className: classes.root,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 84
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          item: true,
+          xs: 6,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 85
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 86
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          data: data,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 87
+          },
+          __self: this
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          item: true,
+          xs: 6,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 90
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 91
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          data: data,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 92
+          },
+          __self: this
+        })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 97
+          },
+          __self: this
+        }));
+      }
     }
   }]);
 
   return Index;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+Index.propTypes = {
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired
+};
+var IndexWrapped = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["withStyles"])(styles)(Index);
+/* harmony default export */ __webpack_exports__["default"] = (IndexWrapped);
     (function (Component, route) {
       if(!Component) return
       if (false) {}
@@ -78217,5 +78391,5 @@ module.exports = dll_831a3634f66cb1dada0c;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]));;
+},[[3,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=index.js.map

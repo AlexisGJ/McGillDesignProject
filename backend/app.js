@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var cors = require('cors')
 
 // initialize the express app
 const child = require('./routes/child.route'); // Imports routes for the child 
 const reading = require('./routes/reading.route'); // Imports routes for the reading
 const app = express();
+app.use(cors({credentials: true, origin: true})); // Allow CORS cross-origin
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
