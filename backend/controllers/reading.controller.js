@@ -49,7 +49,7 @@ exports.active_children_readings = function (req, res) {
 
         dbo.collection("readings").find({sgv: {$exists: true}}).sort({"dateString": -1}).limit(20).toArray(function(err2, result2) {
           if (err2) throw err2;
-          // console.log(result2);
+          console.log(result2);
           readings = [];
           result2.forEach(function(item) {
             var readingSimplified = {};

@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import moment from 'moment';
 
 import ModalComponent from '../components/ModalComponent'
 
@@ -43,8 +44,18 @@ function createData(name, sensor, sgv, battery, lastTime) {
 
 function convertData(data) {
   for(var i=0; i<data.length; i++) {
+    for (var j=0; j<data[i]['readings'].length; j++) {
+      var now = moment(new Date());
+      var measurementDate = moment(data[i]['readings'][j]['dateString'])
+      var diffMinutes = Math.round(moment.duration(now.diff(measurementDate)).asMinutes());
+
+      data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
+      data[i]['readings'][j]['dateFromNowMinutes'] = -diffMinutes;
+    }
+
     data[i]['latestReading'] = data[i]['readings'][0];
   }
+  
   return data;
 }
 
@@ -110,8 +121,8 @@ class SimpleTable extends React.Component {
                   </TableCell>
                   <TableCell align="right">{row.latestReading.device}</TableCell>
                   <TableCell align="right">{row.latestReading.sgv}</TableCell>
-                  <TableCell align="right">{row.battery}</TableCell>
-                  <TableCell align="right">{row.latestReading.dateString}</TableCell>
+                  <TableCell align="right">{row.latestReading.dateFromNowMinutes}</TableCell>
+                  <TableCell align="right">{row.latestReading.dateFromNow}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

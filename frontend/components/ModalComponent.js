@@ -26,7 +26,8 @@ function getModalStyle() {
 const styles = theme => ({
   paper: {
     position: 'absolute',
-    width: theme.spacing.unit * 50,
+    // width: theme.spacing.unit * 50,
+    width: 600,
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
@@ -82,12 +83,12 @@ class SimpleModal extends React.Component {
               </Typography>
 
               <LineChart
-                  width={400}
+                  width={600}
                   height={400}
                   data={sensorData.readings.reverse()}
                   margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
                   >
-                  <XAxis dataKey="dateString" />
+                  <XAxis dataKey="dateFromNowMinutes" />
                   <Tooltip />
                   <CartesianGrid stroke="#f5f5f5" />
                   <ReferenceLine y={sensorData.range_min} label="Min" stroke="red" />

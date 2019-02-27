@@ -84,7 +84,7 @@ class Index extends React.Component {
                     <Grid container spacing={8} className={classes.root}>
                         <Grid item xs={6}>
                             <div>
-                                <TableComponent data={data}/>
+                                <TableComponent data={data.splice(0, Math.ceil(data.length / 2))}/>
                             </div>
                         </Grid>
                         <Grid item xs={6}>
