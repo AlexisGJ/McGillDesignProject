@@ -9,6 +9,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import moment from 'moment';
 
+import {ResponsiveContainer, LineChart, Line, YAxis} from 'recharts';
+
 import ModalComponent from '../components/ModalComponent'
 
 const styles = theme => ({
@@ -49,11 +51,13 @@ function convertData(data) {
       var measurementDate = moment(data[i]['readings'][j]['dateString'])
       var diffMinutes = Math.round(moment.duration(now.diff(measurementDate)).asMinutes());
 
+      data[i]['readings'][j]['mmol'] = Math.round(data[i]['readings'][j]['sgv'] / 18 * 100) / 100;  // convert from mg/dl to mmol/L
       data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
       data[i]['readings'][j]['dateFromNowMinutes'] = -diffMinutes;
     }
 
     data[i]['latestReading'] = data[i]['readings'][0];
+    data[i]['battery']['dateFromNow'] = moment(data[i]['battery']['created_at']).fromNow();
   }
   
   return data;
@@ -107,10 +111,10 @@ class SimpleTable extends React.Component {
             <TableHead>
               <TableRow>
                 <TableCell>Nom</TableCell>
-                <TableCell align="right">Type de capteur</TableCell>
-                <TableCell align="right">Valeur de glucose</TableCell>
-                <TableCell align="right">% batterie</TableCell>
-                <TableCell align="right">Mesuré le</TableCell>
+                <TableCell align="right">Historique</TableCell>
+                <TableCell align="right">Valeur de glucose (mmol/L)</TableCell>
+                <TableCell align="right">Batterie (%)</TableCell>
+                <TableCell align="right">Dernière valeur</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -119,9 +123,18 @@ class SimpleTable extends React.Component {
                   <TableCell component="th" scope="row">
                     {row.name}
                   </TableCell>
-                  <TableCell align="right">{row.latestReading.device}</TableCell>
-                  <TableCell align="right">{row.latestReading.sgv}</TableCell>
-                  <TableCell align="right">{row.latestReading.dateFromNowMinutes}</TableCell>
+                  <TableCell align="right">
+                    <div style={{ width: '100%', height: 50 }}>
+                      <ResponsiveContainer>
+                        <LineChart data={row.readings}>
+                          <YAxis type="number" domain={['dataMin', 'dataMax']} hide="true" />
+                          <Line type='monotone' dataKey='mmol' stroke='#999' strokeWidth={2} dot={{ r: 0 }}/>
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                  </TableCell>
+                  <TableCell align="right">{row.latestReading.mmol}</TableCell>
+                  <TableCell align="right">{row.battery.uploaderBattery} ({row.battery.dateFromNow})</TableCell>
                   <TableCell align="right">{row.latestReading.dateFromNow}</TableCell>
                 </TableRow>
               ))}

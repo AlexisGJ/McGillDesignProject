@@ -16,6 +16,9 @@ import Divider from '@material-ui/core/Divider';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 import '../static/css/main_custom.css'
 
@@ -34,10 +37,12 @@ const styles = theme => ({
     },
       heading: {
         fontSize: theme.typography.pxToRem(15),
+        textAlign: 'left',
       },
       secondaryHeading: {
         fontSize: theme.typography.pxToRem(15),
         color: theme.palette.text.secondary,
+        textAlign: 'left',
       },
       icon: {
         verticalAlign: 'bottom',
@@ -63,8 +68,20 @@ const styles = theme => ({
       },
 
       textField: {
-        marginLeft: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
+        width: '95%',
+      },
+      close: {
+        padding: theme.spacing.unit / 2,
+      },
+      message: {
+        display: 'flex',
+        alignItems: 'center',
+      },
+      snackbarContainer: {
+        minWidth: 500,
+      },
+      snackbarMargin: {
+        margin: theme.spacing.unit,
       },
 
       childActiveTrue: {
@@ -74,24 +91,6 @@ const styles = theme => ({
         color: 'red',
       },
   });
-
-
-const rows = [
-    {
-        "panelId": 'panel' + Math.random()*1000,
-        "panelTitle": "General settings",
-        "panelDescription": "Hey this is a description",
-        "panelText": "Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget maximus est, id dignissim quam.",
-
-    },
-    {
-        "panelId": 'panel' + Math.random()*1000,
-        "panelTitle": "General settings",
-        "panelDescription": "Hey this is a description",
-        "panelText": "Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget maximus est, id dignissim quam.",
-
-    }
-];
   
 
 class Settings extends React.Component {
@@ -102,6 +101,9 @@ class Settings extends React.Component {
             error: null,
             isLoaded: false,
             expanded: null,
+            snackbarOpen: false,
+            snackbarMessage: "",
+            snackbarVariant: "info",
             data: []
         };
     }
@@ -128,11 +130,54 @@ class Settings extends React.Component {
         )
     }
 
-    handleChange = panel => (event, expanded) => {
+    showSnackbarMessage = (message, variant) => {
+        this.setState({ 
+            snackbarOpen: true,
+            snackbarMessage: message,
+            snackbarVariant: variant
+        });
+    }
+    
+    snackbarClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        this.setState({ snackbarOpen: false });
+    };
+
+    handleClose = panel => (event, expanded) => {
         this.setState({
             expanded: expanded ? panel : false,
         });
     };
+
+    handleChange = (key, field, e) => {
+
+        var tempData = this.state.data
+        var newValue = e.target.value
+        if (field == 'active') {
+            newValue = !tempData[key].active;
+        }
+        tempData[key][field] = newValue
+
+        this.setState({
+            data: tempData
+        });
+        
+    }
+
+    updateChild = (row) => {
+        fetch('http://localhost:1234/api/child/' + row._id + '/update', {
+            method: 'post',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(row)
+        })
+        .then(
+            response => {if (response.status == 200) {this.showSnackbarMessage("Enregistré avec succès", "success")} else {this.showSnackbarMessage("Il y a eu une erreur lors de l'enregistrement", "error")}}
+        );
+        console.log(row);
+    }
 
     render() {
         const { classes } = this.props;
@@ -153,26 +198,14 @@ class Settings extends React.Component {
                             <Paper className={classes.paper} elevation={1}>
 
                             {data.map((row, key) =>
-                                // <ExpansionPanel expanded={expanded === row._id} onChange={this.handleChange(row._id)}>
-                                //     <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                //         <Typography className={classes.heading}>{row.name}</Typography>
-                                //         <Typography className={classes.secondaryHeading}>{row.location}</Typography>
-                                //     </ExpansionPanelSummary>
-                                //     <ExpansionPanelDetails>
-                                //         <Typography>
-                                //         {row.collection_id}
-                                //         </Typography>
-                                //     </ExpansionPanelDetails>
-                                // </ExpansionPanel>
-
-                                <ExpansionPanel key={row._id} expanded={expanded === row._id} onChange={this.handleChange(row._id)}>
+                                <ExpansionPanel key={row._id} expanded={expanded === row._id} onChange={this.handleClose(row._id)}>
                                     <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                    <div className={classes.column}>
-                                        <Typography className={classes.heading}><span className={row.active ? classes.childActiveTrue : classes.childActiveFalse}>&#9679;</span> {row.name}</Typography>
-                                    </div>
-                                    <div className={classes.column}>
-                                        <Typography className={classes.secondaryHeading}>{row.location}</Typography>
-                                    </div>
+                                        <div className={classes.column}>
+                                            <Typography className={classes.heading}><span className={row.active ? classes.childActiveTrue : classes.childActiveFalse}>&#9679;</span> {row.name}</Typography>
+                                        </div>
+                                        <div className={classes.column}>
+                                            <Typography className={classes.secondaryHeading}>{row.location}</Typography>
+                                        </div>
                                     </ExpansionPanelSummary>
                                     <ExpansionPanelDetails className={classes.details}>
                                         <Grid container>
@@ -185,6 +218,7 @@ class Settings extends React.Component {
                                                     name="name"
                                                     margin="normal"
                                                     variant="outlined"
+                                                    onChange={(e) => this.handleChange(key, 'name', e)}
                                                     value={row.name}
                                                 />
                                             </Grid>
@@ -197,6 +231,8 @@ class Settings extends React.Component {
                                                     name="sensorId"
                                                     margin="normal"
                                                     variant="outlined"
+                                                    onChange={(e) => this.handleChange(key, 'collection_id', e)}
+                                                    value={row.collection_id}
                                                 />
                                             </Grid>
                                             <Grid item xs={4}>
@@ -208,6 +244,8 @@ class Settings extends React.Component {
                                                     name="location"
                                                     margin="normal"
                                                     variant="outlined"
+                                                    onChange={(e) => this.handleChange(key, 'location', e)}
+                                                    value={row.location}
                                                 />
                                             </Grid>
                                             <Grid item xs={4}></Grid>
@@ -220,6 +258,7 @@ class Settings extends React.Component {
                                                     name="rangemin"
                                                     margin="normal"
                                                     variant="outlined"
+                                                    onChange={(e) => this.handleChange(key, 'range_min', e)}
                                                     value={row.range_min}
                                                 />
                                             </Grid>
@@ -232,6 +271,7 @@ class Settings extends React.Component {
                                                     name="rangemin"
                                                     margin="normal"
                                                     variant="outlined"
+                                                    onChange={(e) => this.handleChange(key, 'range_max', e)}
                                                     value={row.range_max}
                                                 />
                                             </Grid>
@@ -242,9 +282,9 @@ class Settings extends React.Component {
                                                 <FormControlLabel
                                                     control={
                                                     <Switch
-                                                        checked={this.state.gilad}
-                                                        // onChange={this.handleChange('gilad')}
-                                                        value="gilad"
+                                                        checked={row.active}
+                                                        onChange={(e) => this.handleChange(key, 'active', e)}
+                                                        color="primary"
                                                     />
                                                     }
                                                     label="Actif"
@@ -253,24 +293,11 @@ class Settings extends React.Component {
                                             
                                         </Grid>
                                         
-                                        {/* <div className={classes.column} />
-                                        <div className={classes.column}>
-                                            <Chip label={row.location} className={classes.chip} onDelete={() => {}} />
-                                        </div>
-                                        <div className={classNames(classes.column, classes.helper)}>
-                                            <Typography variant="caption">
-                                                Select your destination of choice
-                                                <br />
-                                                <a href="#sub-labels-and-columns" className={classes.link}>
-                                                    Learn more
-                                                </a>
-                                            </Typography>
-                                        </div> */}
                                     </ExpansionPanelDetails>
                                     <Divider />
                                     <ExpansionPanelActions>
-                                        <Button size="small" onClick={this.handleChange(row._id)}>Cancel</Button>
-                                        <Button size="small" color="primary">Save</Button>
+                                        {/* <Button size="small" onClick={this.handleClose(row._id)}>Cancel</Button> */}
+                                        <Button size="small" color="primary" onClick={(e) => this.updateChild(row)}>Save</Button>
                                     </ExpansionPanelActions>
                                 </ExpansionPanel>
                             )}
@@ -279,8 +306,26 @@ class Settings extends React.Component {
                         </Grid>
                         <Grid item xs={2}></Grid>
                     </Grid>
-                    
-                    <SnackbarComponent />
+
+
+                    <Snackbar
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'left',
+                        }}
+                        open={this.state.snackbarOpen}
+                        autoHideDuration={6000}
+                        onClose={this.snackbarClose}
+                        className={classes.snackbarContainer}
+                        >
+
+                        <SnackbarComponent
+                            variant={this.state.snackbarVariant}
+                            className={classes.snackbarMargin}
+                            message={this.state.snackbarMessage}
+                            />
+
+                    </Snackbar>
 
                 </div>
 

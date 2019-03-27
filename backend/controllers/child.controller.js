@@ -45,8 +45,9 @@ exports.child_details = function (req, res, next) {
 
 //Update child by id
 exports.child_update = function (req, res, next) {
-    Child.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, child) {
+    Child.findOneAndUpdate({_id: req.params.id}, {$set: req.body}, function (err, child) {
         if (err) return next(err);
+        console.log('Child updated.');
         res.send('Child udpated.');
     });
 };

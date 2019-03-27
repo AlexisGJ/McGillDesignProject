@@ -16,8 +16,8 @@ router.get('/all', child_controller.child_show_all);
 // Get child by id
 router.get('/:id', child_controller.child_details);
 
-// Update child by id
-router.put('/:id/update', child_controller.child_update);
+// Update child by id 
+router.post('/:id/update', child_controller.child_update);
 
 // Delete child by id
 router.delete('/:id/delete', child_controller.child_delete);

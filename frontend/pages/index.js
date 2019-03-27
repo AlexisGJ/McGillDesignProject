@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import GoogleLogin from 'react-google-login';
 
 import '../static/css/main_custom.css'
 
@@ -64,6 +65,10 @@ class Index extends React.Component {
         const { classes } = this.props;
         const { error, isLoaded, data } = this.state;
 
+        const responseGoogle = (response) => {
+            console.log(response);
+        }
+
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
@@ -80,6 +85,13 @@ class Index extends React.Component {
                         <Post slug="post/hello-world" title="Hello, world!" />
                     </li>
                     </ul> */}
+
+                    {/* <GoogleLogin
+                            clientId="379738068740-tgguug359j7mqrm0vqledsf9si5u7ssp.apps.googleusercontent.com"
+                            buttonText="Login to google"
+                            onSuccess={responseGoogle}
+                            onFailure={responseGoogle}
+                            /> */}
                     
                     <Grid container spacing={8} className={classes.root}>
                         <Grid item xs={6}>
@@ -93,8 +105,6 @@ class Index extends React.Component {
                             </div>
                         </Grid>
                     </Grid>
-                    
-                    <SnackbarComponent />
     
                 </div>
     

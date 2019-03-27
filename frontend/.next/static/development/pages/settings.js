@@ -113,7 +113,13 @@ function ButtonAppBar(props) {
       lineNumber: 39
     },
     __self: this
-  }, "Station de Supervision | Camp Carowanis"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40
+    },
+    __self: this
+  }, "Camp Carowanis"), " Station de Supervision"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     as: "/settings",
     href: "/settings",
     __source: {
@@ -164,37 +170,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/styles/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/Button/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Snackbar */ "./node_modules/@material-ui/core/Snackbar/index.js");
-/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/IconButton/index.js");
-/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/Close */ "./node_modules/@material-ui/icons/Close.js");
-/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_icons_CheckCircle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/CheckCircle */ "./node_modules/@material-ui/icons/CheckCircle.js");
+/* harmony import */ var _material_ui_icons_CheckCircle__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_CheckCircle__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_icons_Error__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/Error */ "./node_modules/@material-ui/icons/Error.js");
+/* harmony import */ var _material_ui_icons_Error__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Error__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_icons_Info__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/Info */ "./node_modules/@material-ui/icons/Info.js");
+/* harmony import */ var _material_ui_icons_Info__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Info__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/Close */ "./node_modules/@material-ui/icons/Close.js");
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/colors/green */ "./node_modules/@material-ui/core/colors/green.js");
+/* harmony import */ var _material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_core_colors_amber__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/colors/amber */ "./node_modules/@material-ui/core/colors/amber.js");
+/* harmony import */ var _material_ui_core_colors_amber__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors_amber__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/IconButton/index.js");
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Snackbar */ "./node_modules/@material-ui/core/Snackbar/index.js");
+/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _material_ui_core_SnackbarContent__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/SnackbarContent */ "./node_modules/@material-ui/core/SnackbarContent/index.js");
+/* harmony import */ var _material_ui_core_SnackbarContent__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_SnackbarContent__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _material_ui_icons_Warning__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons/Warning */ "./node_modules/@material-ui/icons/Warning.js");
+/* harmony import */ var _material_ui_icons_Warning__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Warning__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/styles/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_14__);
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/components/SnackbarComponent.js";
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 
 
@@ -203,136 +209,113 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
+
+
+
+
+
+
+
+var variantIcon = {
+  success: _material_ui_icons_CheckCircle__WEBPACK_IMPORTED_MODULE_4___default.a,
+  warning: _material_ui_icons_Warning__WEBPACK_IMPORTED_MODULE_13___default.a,
+  error: _material_ui_icons_Error__WEBPACK_IMPORTED_MODULE_5___default.a,
+  info: _material_ui_icons_Info__WEBPACK_IMPORTED_MODULE_6___default.a
+};
 
 var styles = function styles(theme) {
   return {
-    close: {
-      padding: theme.spacing.unit / 2
+    success: {
+      backgroundColor: _material_ui_core_colors_green__WEBPACK_IMPORTED_MODULE_8___default.a[600]
+    },
+    error: {
+      backgroundColor: theme.palette.error.dark
+    },
+    info: {
+      backgroundColor: theme.palette.primary.dark
+    },
+    warning: {
+      backgroundColor: _material_ui_core_colors_amber__WEBPACK_IMPORTED_MODULE_9___default.a[700]
+    },
+    icon: {
+      fontSize: 20
+    },
+    iconVariant: {
+      opacity: 0.9,
+      marginRight: theme.spacing.unit
+    },
+    message: {
+      display: 'flex',
+      alignItems: 'center'
     }
   };
 };
 
-var SimpleSnackbar =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(SimpleSnackbar, _React$Component);
+function MySnackbarContent(props) {
+  var classes = props.classes,
+      className = props.className,
+      message = props.message,
+      onClose = props.onClose,
+      variant = props.variant,
+      other = _objectWithoutProperties(props, ["classes", "className", "message", "onClose", "variant"]);
 
-  function SimpleSnackbar() {
-    var _getPrototypeOf2;
+  var Icon = variantIcon[variant];
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_SnackbarContent__WEBPACK_IMPORTED_MODULE_12___default.a, {
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes[variant], className),
+    "aria-describedby": "client-snackbar",
+    message: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      id: "client-snackbar",
+      className: classes.message,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Icon, {
+      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes.icon, classes.iconVariant),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: this
+    }), message),
+    action: [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_10___default.a, {
+      key: "close",
+      "aria-label": "Close",
+      color: "inherit",
+      className: classes.close,
+      onClick: onClose,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_7___default.a, {
+      className: classes.icon,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 72
+      },
+      __self: this
+    }))],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: this
+  });
+}
 
-    var _this;
-
-    _classCallCheck(this, SimpleSnackbar);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(SimpleSnackbar)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      open: false
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function () {
-      _this.setState({
-        open: true
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClose", function (event, reason) {
-      if (reason === 'clickaway') {
-        return;
-      }
-
-      _this.setState({
-        open: false
-      });
-    });
-
-    return _this;
-  }
-
-  _createClass(SimpleSnackbar, [{
-    key: "render",
-    value: function render() {
-      var classes = this.props.classes;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 35
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        onClick: this.handleClick,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        },
-        __self: this
-      }, "Open simple snackbar"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_4___default.a, {
-        anchorOrigin: {
-          vertical: 'bottom',
-          horizontal: 'left'
-        },
-        open: this.state.open,
-        autoHideDuration: 6000,
-        onClose: this.handleClose,
-        ContentProps: {
-          'aria-describedby': 'message-id'
-        },
-        message: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-          id: "message-id",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 48
-          },
-          __self: this
-        }, "Note archived"),
-        action: [react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
-          key: "undo",
-          color: "secondary",
-          size: "small",
-          onClick: this.handleClose,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 50
-          },
-          __self: this
-        }, "UNDO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_5___default.a, {
-          key: "close",
-          "aria-label": "Close",
-          color: "inherit",
-          className: classes.close,
-          onClick: this.handleClose,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 53
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_6___default.a, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 60
-          },
-          __self: this
-        }))],
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }));
-    }
-  }]);
-
-  return SimpleSnackbar;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-SimpleSnackbar.propTypes = {
-  classes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
+MySnackbarContent.propTypes = {
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired,
+  className: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+  message: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node,
+  onClose: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func,
+  variant: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.oneOf(['success', 'warning', 'error', 'info']).isRequired
 };
-/* harmony default export */ __webpack_exports__["default"] = (Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(styles)(SimpleSnackbar));
+var MySnackbarContentWrapper = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_14__["withStyles"])(styles)(MySnackbarContent);
+/* harmony default export */ __webpack_exports__["default"] = (MySnackbarContentWrapper);
 
 /***/ }),
 
@@ -16300,6 +16283,41 @@ var _Typography = _interopRequireDefault(__webpack_require__(/*! ./Typography */
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/core/colors/amber.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@material-ui/core/colors/amber.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var amber = {
+  50: '#fff8e1',
+  100: '#ffecb3',
+  200: '#ffe082',
+  300: '#ffd54f',
+  400: '#ffca28',
+  500: '#ffc107',
+  600: '#ffb300',
+  700: '#ffa000',
+  800: '#ff8f00',
+  900: '#ff6f00',
+  A100: '#ffe57f',
+  A200: '#ffd740',
+  A400: '#ffc400',
+  A700: '#ffab00'
+};
+var _default = amber;
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/core/colors/common.js":
 /*!*********************************************************!*\
   !*** ./node_modules/@material-ui/core/colors/common.js ***!
@@ -16319,6 +16337,41 @@ var common = {
   white: '#fff'
 };
 var _default = common;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/colors/green.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@material-ui/core/colors/green.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var green = {
+  50: '#e8f5e9',
+  100: '#c8e6c9',
+  200: '#a5d6a7',
+  300: '#81c784',
+  400: '#66bb6a',
+  500: '#4caf50',
+  600: '#43a047',
+  700: '#388e3c',
+  800: '#2e7d32',
+  900: '#1b5e20',
+  A100: '#b9f6ca',
+  A200: '#69f0ae',
+  A400: '#00e676',
+  A700: '#00c853'
+};
+var _default = green;
 exports.default = _default;
 
 /***/ }),
@@ -20094,6 +20147,38 @@ exports.default = _default;
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/CheckCircle.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/CheckCircle.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@material-ui/icons/node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
+  fill: "none",
+  d: "M0 0h24v24H0z"
+}), _react.default.createElement("path", {
+  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+})), 'CheckCircle');
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/Close.js":
 /*!**************************************************!*\
   !*** ./node_modules/@material-ui/icons/Close.js ***!
@@ -20121,6 +20206,38 @@ var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.d
   fill: "none",
   d: "M0 0h24v24H0z"
 })), 'Close');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Error.js":
+/*!**************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Error.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@material-ui/icons/node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
+  fill: "none",
+  d: "M0 0h24v24H0z"
+}), _react.default.createElement("path", {
+  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+})), 'Error');
 
 exports.default = _default;
 
@@ -20190,6 +20307,38 @@ exports.default = _default;
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/Info.js":
+/*!*************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Info.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@material-ui/icons/node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
+  fill: "none",
+  d: "M0 0h24v24H0z"
+}), _react.default.createElement("path", {
+  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+})), 'Info');
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/Settings.js":
 /*!*****************************************************!*\
   !*** ./node_modules/@material-ui/icons/Settings.js ***!
@@ -20219,6 +20368,38 @@ var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.d
   transform: "scale(1.2, 1.2)",
   d: "M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"
 })), 'Settings');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Warning.js":
+/*!****************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Warning.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@material-ui/icons/node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
+  fill: "none",
+  d: "M0 0h24v24H0z"
+}), _react.default.createElement("path", {
+  d: "M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+})), 'Warning');
 
 exports.default = _default;
 
@@ -37277,10 +37458,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var _material_ui_core_Switch__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @material-ui/core/Switch */ "./node_modules/@material-ui/core/Switch/index.js");
 /* harmony import */ var _material_ui_core_Switch__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Switch__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../static/css/main_custom.css */ "./static/css/main_custom.css");
-/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/SnackbarComponent */ "./components/SnackbarComponent.js");
-/* harmony import */ var _components_AppbarComponent__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/AppbarComponent */ "./components/AppbarComponent.js");
+/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/core/Snackbar */ "./node_modules/@material-ui/core/Snackbar/index.js");
+/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @material-ui/core/IconButton */ "./node_modules/@material-ui/core/IconButton/index.js");
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @material-ui/icons/Close */ "./node_modules/@material-ui/icons/Close.js");
+/* harmony import */ var _material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Close__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../static/css/main_custom.css */ "./static/css/main_custom.css");
+/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../components/SnackbarComponent */ "./components/SnackbarComponent.js");
+/* harmony import */ var _components_AppbarComponent__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../components/AppbarComponent */ "./components/AppbarComponent.js");
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/pages/settings.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -37325,6 +37512,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
+
+
 var styles = function styles(theme) {
   return {
     root: {
@@ -37337,11 +37527,13 @@ var styles = function styles(theme) {
       color: theme.palette.text.secondary
     },
     heading: {
-      fontSize: theme.typography.pxToRem(15)
+      fontSize: theme.typography.pxToRem(15),
+      textAlign: 'left'
     },
     secondaryHeading: {
       fontSize: theme.typography.pxToRem(15),
-      color: theme.palette.text.secondary
+      color: theme.palette.text.secondary,
+      textAlign: 'left'
     },
     icon: {
       verticalAlign: 'bottom',
@@ -37366,8 +37558,20 @@ var styles = function styles(theme) {
       }
     },
     textField: {
-      marginLeft: theme.spacing.unit,
-      marginRight: theme.spacing.unit
+      width: '95%'
+    },
+    close: {
+      padding: theme.spacing.unit / 2
+    },
+    message: {
+      display: 'flex',
+      alignItems: 'center'
+    },
+    snackbarContainer: {
+      minWidth: 500
+    },
+    snackbarMargin: {
+      margin: theme.spacing.unit
     },
     childActiveTrue: {
       color: 'green'
@@ -37377,18 +37581,6 @@ var styles = function styles(theme) {
     }
   };
 };
-
-var rows = [{
-  "panelId": 'panel' + Math.random() * 1000,
-  "panelTitle": "General settings",
-  "panelDescription": "Hey this is a description",
-  "panelText": "Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget maximus est, id dignissim quam."
-}, {
-  "panelId": 'panel' + Math.random() * 1000,
-  "panelTitle": "General settings",
-  "panelDescription": "Hey this is a description",
-  "panelText": "Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget maximus est, id dignissim quam."
-}];
 
 var Settings =
 /*#__PURE__*/
@@ -37402,7 +37594,25 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Settings).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleChange", function (panel) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "showSnackbarMessage", function (message, variant) {
+      _this.setState({
+        snackbarOpen: true,
+        snackbarMessage: message,
+        snackbarVariant: variant
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "snackbarClose", function (event, reason) {
+      if (reason === 'clickaway') {
+        return;
+      }
+
+      _this.setState({
+        snackbarOpen: false
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClose", function (panel) {
       return function (event, expanded) {
         _this.setState({
           expanded: expanded ? panel : false
@@ -37410,10 +37620,45 @@ function (_React$Component) {
       };
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleChange", function (key, field, e) {
+      var tempData = _this.state.data;
+      var newValue = e.target.value;
+
+      if (field == 'active') {
+        newValue = !tempData[key].active;
+      }
+
+      tempData[key][field] = newValue;
+
+      _this.setState({
+        data: tempData
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "updateChild", function (row) {
+      fetch('http://localhost:1234/api/child/' + row._id + '/update', {
+        method: 'post',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(row)
+      }).then(function (response) {
+        if (response.status == 200) {
+          _this.showSnackbarMessage("Enregistré avec succès", "success");
+        } else {
+          _this.showSnackbarMessage("Il y a eu une erreur lors de l'enregistrement", "error");
+        }
+      });
+      console.log(row);
+    });
+
     _this.state = {
       error: null,
       isLoaded: false,
       expanded: null,
+      snackbarOpen: false,
+      snackbarMessage: "",
+      snackbarVariant: "info",
       data: []
     };
     return _this;
@@ -37457,7 +37702,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 142
+            lineNumber: 187
           },
           __self: this
         }, "Error: ", error.message);
@@ -37465,7 +37710,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 144
+            lineNumber: 189
           },
           __self: this
         }, "Loading...");
@@ -37473,13 +37718,13 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 147
+            lineNumber: 192
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_20__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_23__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 148
+            lineNumber: 193
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -37488,7 +37733,7 @@ function (_React$Component) {
           className: classes.root,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 150
+            lineNumber: 195
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -37496,7 +37741,7 @@ function (_React$Component) {
           xs: 2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 151
+            lineNumber: 196
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -37504,7 +37749,7 @@ function (_React$Component) {
           xs: 8,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 152
+            lineNumber: 197
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -37512,294 +37757,313 @@ function (_React$Component) {
           elevation: 1,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 153
+            lineNumber: 198
           },
           __self: this
         }, data.map(function (row, key) {
-          return (// <ExpansionPanel expanded={expanded === row._id} onChange={this.handleChange(row._id)}>
-            //     <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-            //         <Typography className={classes.heading}>{row.name}</Typography>
-            //         <Typography className={classes.secondaryHeading}>{row.location}</Typography>
-            //     </ExpansionPanelSummary>
-            //     <ExpansionPanelDetails>
-            //         <Typography>
-            //         {row.collection_id}
-            //         </Typography>
-            //     </ExpansionPanelDetails>
-            // </ExpansionPanel>
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanel__WEBPACK_IMPORTED_MODULE_9___default.a, {
-              key: row._id,
-              expanded: expanded === row._id,
-              onChange: _this3.handleChange(row._id),
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 168
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelSummary__WEBPACK_IMPORTED_MODULE_11___default.a, {
-              expandIcon: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_13___default.a, {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 169
-                },
-                __self: this
-              }),
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 169
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-              className: classes.column,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 170
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
-              className: classes.heading,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 171
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-              className: row.active ? classes.childActiveTrue : classes.childActiveFalse,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 171
-              },
-              __self: this
-            }, "\u25CF"), " ", row.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-              className: classes.column,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 173
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
-              className: classes.secondaryHeading,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 174
-              },
-              __self: this
-            }, row.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelDetails__WEBPACK_IMPORTED_MODULE_10___default.a, {
-              className: classes.details,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 177
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
-              container: true,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 178
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
-              item: true,
-              xs: 4,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 179
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_15___default.a, {
-              id: "outlined-name-input",
-              label: "Nom",
-              className: classes.textField,
-              type: "text",
-              name: "name",
-              margin: "normal",
-              variant: "outlined",
-              value: row.name,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 180
-              },
-              __self: this
-            })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
-              item: true,
-              xs: 4,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 191
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_15___default.a, {
-              id: "outlined-sensorId-input",
-              label: "ID du capteur",
-              className: classes.textField,
-              type: "text",
-              name: "sensorId",
-              margin: "normal",
-              variant: "outlined",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 192
-              },
-              __self: this
-            })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
-              item: true,
-              xs: 4,
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanel__WEBPACK_IMPORTED_MODULE_9___default.a, {
+            key: row._id,
+            expanded: expanded === row._id,
+            onChange: _this3.handleClose(row._id),
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 201
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelSummary__WEBPACK_IMPORTED_MODULE_11___default.a, {
+            expandIcon: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_13___default.a, {
               __source: {
                 fileName: _jsxFileName,
                 lineNumber: 202
               },
               __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_15___default.a, {
-              id: "outlined-location-input",
-              label: "Location",
-              className: classes.textField,
-              type: "text",
-              name: "location",
-              margin: "normal",
-              variant: "outlined",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 203
+            }),
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 202
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: classes.column,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 203
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            className: classes.heading,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 204
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+            className: row.active ? classes.childActiveTrue : classes.childActiveFalse,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 204
+            },
+            __self: this
+          }, "\u25CF"), " ", row.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: classes.column,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 206
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            className: classes.secondaryHeading,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 207
+            },
+            __self: this
+          }, row.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelDetails__WEBPACK_IMPORTED_MODULE_10___default.a, {
+            className: classes.details,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 210
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+            container: true,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 211
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+            item: true,
+            xs: 4,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 212
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_15___default.a, {
+            id: "outlined-name-input",
+            label: "Nom",
+            className: classes.textField,
+            type: "text",
+            name: "name",
+            margin: "normal",
+            variant: "outlined",
+            onChange: function onChange(e) {
+              return _this3.handleChange(key, 'name', e);
+            },
+            value: row.name,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 213
+            },
+            __self: this
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+            item: true,
+            xs: 4,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 225
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_15___default.a, {
+            id: "outlined-sensorId-input",
+            label: "ID du capteur",
+            className: classes.textField,
+            type: "text",
+            name: "sensorId",
+            margin: "normal",
+            variant: "outlined",
+            onChange: function onChange(e) {
+              return _this3.handleChange(key, 'collection_id', e);
+            },
+            value: row.collection_id,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 226
+            },
+            __self: this
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+            item: true,
+            xs: 4,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 238
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_15___default.a, {
+            id: "outlined-location-input",
+            label: "Location",
+            className: classes.textField,
+            type: "text",
+            name: "location",
+            margin: "normal",
+            variant: "outlined",
+            onChange: function onChange(e) {
+              return _this3.handleChange(key, 'location', e);
+            },
+            value: row.location,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 239
+            },
+            __self: this
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+            item: true,
+            xs: 4,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 251
+            },
+            __self: this
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+            item: true,
+            xs: 4,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 252
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_15___default.a, {
+            id: "outlined-rangemin-input",
+            label: "Range minimum",
+            className: classes.textField,
+            type: "number",
+            name: "rangemin",
+            margin: "normal",
+            variant: "outlined",
+            onChange: function onChange(e) {
+              return _this3.handleChange(key, 'range_min', e);
+            },
+            value: row.range_min,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 253
+            },
+            __self: this
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+            item: true,
+            xs: 4,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 265
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_15___default.a, {
+            id: "outlined-rangemax-input",
+            label: "Range maximal",
+            className: classes.textField,
+            type: "number",
+            name: "rangemin",
+            margin: "normal",
+            variant: "outlined",
+            onChange: function onChange(e) {
+              return _this3.handleChange(key, 'range_max', e);
+            },
+            value: row.range_max,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 266
+            },
+            __self: this
+          })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+            item: true,
+            xs: 4,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 279
+            },
+            __self: this
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+            item: true,
+            xs: 4,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 280
+            },
+            __self: this
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
+            item: true,
+            xs: 4,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 281
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_16___default.a, {
+            control: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Switch__WEBPACK_IMPORTED_MODULE_17___default.a, {
+              checked: row.active,
+              onChange: function onChange(e) {
+                return _this3.handleChange(key, 'active', e);
               },
-              __self: this
-            })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
-              item: true,
-              xs: 4,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 213
-              },
-              __self: this
-            }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
-              item: true,
-              xs: 4,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 214
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_15___default.a, {
-              id: "outlined-rangemin-input",
-              label: "Range minimum",
-              className: classes.textField,
-              type: "number",
-              name: "rangemin",
-              margin: "normal",
-              variant: "outlined",
-              value: row.range_min,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 215
-              },
-              __self: this
-            })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
-              item: true,
-              xs: 4,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 226
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_15___default.a, {
-              id: "outlined-rangemax-input",
-              label: "Range maximal",
-              className: classes.textField,
-              type: "number",
-              name: "rangemin",
-              margin: "normal",
-              variant: "outlined",
-              value: row.range_max,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 227
-              },
-              __self: this
-            })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
-              item: true,
-              xs: 4,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 239
-              },
-              __self: this
-            }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
-              item: true,
-              xs: 4,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 240
-              },
-              __self: this
-            }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
-              item: true,
-              xs: 4,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 241
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_16___default.a, {
-              control: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Switch__WEBPACK_IMPORTED_MODULE_17___default.a, {
-                checked: _this3.state.gilad // onChange={this.handleChange('gilad')}
-                ,
-                value: "gilad",
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 244
-                },
-                __self: this
-              }),
-              label: "Actif",
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 242
-              },
-              __self: this
-            })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_14___default.a, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 270
-              },
-              __self: this
-            }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelActions__WEBPACK_IMPORTED_MODULE_12___default.a, {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 271
-              },
-              __self: this
-            }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
-              size: "small",
-              onClick: _this3.handleChange(row._id),
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 272
-              },
-              __self: this
-            }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
-              size: "small",
               color: "primary",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 273
+                lineNumber: 284
               },
               __self: this
-            }, "Save")))
-          );
+            }),
+            label: "Actif",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 282
+            },
+            __self: this
+          })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_14___default.a, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 297
+            },
+            __self: this
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelActions__WEBPACK_IMPORTED_MODULE_12___default.a, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 298
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
+            size: "small",
+            color: "primary",
+            onClick: function onClick(e) {
+              return _this3.updateChild(row);
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 300
+            },
+            __self: this
+          }, "Save")));
         }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
           item: true,
           xs: 2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 280
+            lineNumber: 307
           },
           __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_18___default.a, {
+          anchorOrigin: {
+            vertical: 'bottom',
+            horizontal: 'left'
+          },
+          open: this.state.snackbarOpen,
+          autoHideDuration: 6000,
+          onClose: this.snackbarClose,
+          className: classes.snackbarContainer,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 283
+            lineNumber: 311
           },
           __self: this
-        }));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_22__["default"], {
+          variant: this.state.snackbarVariant,
+          className: classes.snackbarMargin,
+          message: this.state.snackbarMessage,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 322
+          },
+          __self: this
+        })));
       }
     }
   }]);

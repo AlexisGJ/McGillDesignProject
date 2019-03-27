@@ -37,7 +37,7 @@ function ButtonAppBar(props) {
             </IconButton>
           </Link>
           <Typography variant="h6" color="inherit" className={classes.grow}>
-            Station de Supervision | Camp Carowanis
+            <b>Camp Carowanis</b> Station de Supervision
           </Typography>
           <Link as={`/settings`} href={`/settings`}>
             <IconButton color="inherit">

@@ -2,4 +2,29 @@ body {
     margin: 0;
 }
 
+.custom-tooltip {
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 10px;
+    border-radius: 3px;
+}
+.custom-tooltip .value {
+    font-size: 24px;
+}
+.custom-tooltip .value span {
+    font-size: 14px;
+}
+.custom-tooltip .time {
+    color: grey;
+    font-size: 12px;
+}
+
+.line-chart {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 12px;
+}
+.graph-referenece-line {
+    font-size: 10px;
+}
+
 /*# sourceMappingURL=styles.chunk.css.map*/
