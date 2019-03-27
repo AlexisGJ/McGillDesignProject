@@ -28,6 +28,19 @@ const styles = theme => ({
       backgroundColor: theme.palette.grey[200],
     },
   },
+
+  value_normal: {
+    fontWeight: 'bold',
+  },
+  value_low: {
+    color: 'red',
+    fontWeight: 'bold',
+  },
+  value_high: {
+    color: 'red',
+    fontWeight: 'bold',
+  },
+
   
 });
 
@@ -46,18 +59,31 @@ function createData(name, sensor, sgv, battery, lastTime) {
 
 function convertData(data) {
   for(var i=0; i<data.length; i++) {
-    for (var j=0; j<data[i]['readings'].length; j++) {
-      var now = moment(new Date());
-      var measurementDate = moment(data[i]['readings'][j]['dateString'])
-      var diffMinutes = Math.round(moment.duration(now.diff(measurementDate)).asMinutes());
 
-      data[i]['readings'][j]['mmol'] = Math.round(data[i]['readings'][j]['sgv'] / 18 * 100) / 100;  // convert from mg/dl to mmol/L
-      data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
-      data[i]['readings'][j]['dateFromNowMinutes'] = -diffMinutes;
+    if (data[i]['readings'].length > 0) {
+
+      for (var j=0; j<data[i]['readings'].length; j++) {
+        var now = moment(new Date());
+        var measurementDate = moment(data[i]['readings'][j]['dateString'])
+        var diffMinutes = Math.round(moment.duration(now.diff(measurementDate)).asMinutes());
+  
+        data[i]['readings'][j]['mmol'] = Math.round(data[i]['readings'][j]['sgv'] / 18 * 100) / 100;  // convert from mg/dl to mmol/L
+        data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
+        data[i]['readings'][j]['dateFromNowMinutes'] = -diffMinutes;
+      }
+  
+      data[i]['latestReading'] = data[i]['readings'][0];
+
+      if (data[i]['battery']) {
+        data[i]['battery']['dateFromNow'] = moment(data[i]['battery']['created_at']).fromNow();
+      }
+
+    } else {
+
+      data[i]['latestReading'] = "err_no_data";
+
     }
 
-    data[i]['latestReading'] = data[i]['readings'][0];
-    data[i]['battery']['dateFromNow'] = moment(data[i]['battery']['created_at']).fromNow();
   }
   
   return data;
@@ -119,24 +145,42 @@ class SimpleTable extends React.Component {
             </TableHead>
             <TableBody>
               {rows.map(row => (
-                <TableRow key={row._id} className={classes.tableRow} onClick={() => this.handleClick(row)}>
-                  <TableCell component="th" scope="row">
-                    {row.name}
-                  </TableCell>
-                  <TableCell align="right">
-                    <div style={{ width: '100%', height: 50 }}>
-                      <ResponsiveContainer>
-                        <LineChart data={row.readings}>
-                          <YAxis type="number" domain={['dataMin', 'dataMax']} hide="true" />
-                          <Line type='monotone' dataKey='mmol' stroke='#999' strokeWidth={2} dot={{ r: 0 }}/>
-                        </LineChart>
-                      </ResponsiveContainer>
-                    </div>
-                  </TableCell>
-                  <TableCell align="right">{row.latestReading.mmol}</TableCell>
-                  <TableCell align="right">{row.battery.uploaderBattery} ({row.battery.dateFromNow})</TableCell>
-                  <TableCell align="right">{row.latestReading.dateFromNow}</TableCell>
-                </TableRow>
+                row.latestReading == "err_no_data" ? (
+                  <TableRow key={row._id} className={classes.tableRow} onClick={() => this.handleClick(row)}>
+                    <TableCell component="th" scope="row">
+                      {row.name}
+                    </TableCell>
+                    <TableCell align="right">
+                    </TableCell>
+                    <TableCell align="right">N/A</TableCell>
+                    <TableCell align="right"></TableCell>
+                    <TableCell align="right">N/A</TableCell>
+                  </TableRow>
+                ) : (
+                  <TableRow key={row._id} className={classes.tableRow} onClick={() => this.handleClick(row)}>
+                    <TableCell component="th" scope="row">
+                      {row.name}
+                    </TableCell>
+                    <TableCell align="right">
+                      <div style={{ width: '100%', height: 50 }}>
+                        <ResponsiveContainer>
+                          <LineChart data={row.readings}>
+                            <YAxis type="number" domain={['dataMin', 'dataMax']} hide="true" />
+                            <Line type='monotone' dataKey='mmol' stroke='#999' strokeWidth={2} dot={{ r: 0 }}/>
+                          </LineChart>
+                        </ResponsiveContainer>
+                      </div>
+                    </TableCell>
+                    <TableCell align="right" className={((row.latestReading.mmol < row.range_min) ? classes.value_low : ((row.latestReading.mmol > row.range_max) ? classes.value_high : classes.value_normal))}>{row.latestReading.mmol}</TableCell>
+                    {row.battery ? (
+                      <TableCell align="right">{row.battery.uploaderBattery} ({row.battery.dateFromNow})</TableCell>
+                    ) : (
+                      <TableCell align="right"></TableCell>
+                    )}
+                    <TableCell align="right">{row.latestReading.dateFromNow}</TableCell>
+                  </TableRow>
+                )
+                
               ))}
             </TableBody>
           </Table>

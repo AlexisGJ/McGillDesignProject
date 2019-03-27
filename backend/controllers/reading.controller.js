@@ -49,7 +49,7 @@ exports.active_children_readings = function (req, res) {
       result.forEach(function (childrenObj, index) {
 
         // Get the latest battery info
-        dbo.collection("readings").find({uploaderBattery: {$exists: true}}).sort({"dateString": -1}).limit(1).toArray(function(err3, result3) {
+        dbo.collection(childrenObj["collection_id"]).find({uploaderBattery: {$exists: true}}).sort({"dateString": -1}).limit(1).toArray(function(err3, result3) {
           if (err3) throw err3;
 
           if (result3.length > 0) {
@@ -57,7 +57,7 @@ exports.active_children_readings = function (req, res) {
           }
         });
 
-        dbo.collection("readings").find({sgv: {$exists: true}}).sort({"dateString": -1}).limit(20).toArray(function(err2, result2) {
+        dbo.collection(childrenObj["collection_id"]).find({sgv: {$exists: true}}).sort({"dateString": -1}).limit(20).toArray(function(err2, result2) {
           if (err2) throw err2;
           
           readings = [];

@@ -879,6 +879,17 @@ var styles = function styles(theme) {
       '&:hover': {
         backgroundColor: theme.palette.grey[200]
       }
+    },
+    value_normal: {
+      fontWeight: 'bold'
+    },
+    value_low: {
+      color: 'red',
+      fontWeight: 'bold'
+    },
+    value_high: {
+      color: 'red',
+      fontWeight: 'bold'
     }
   };
 };
@@ -905,18 +916,25 @@ function createData(name, sensor, sgv, battery, lastTime) {
 
 function convertData(data) {
   for (var i = 0; i < data.length; i++) {
-    for (var j = 0; j < data[i]['readings'].length; j++) {
-      var now = moment__WEBPACK_IMPORTED_MODULE_9___default()(new Date());
-      var measurementDate = moment__WEBPACK_IMPORTED_MODULE_9___default()(data[i]['readings'][j]['dateString']);
-      var diffMinutes = Math.round(moment__WEBPACK_IMPORTED_MODULE_9___default.a.duration(now.diff(measurementDate)).asMinutes());
-      data[i]['readings'][j]['mmol'] = Math.round(data[i]['readings'][j]['sgv'] / 18 * 100) / 100; // convert from mg/dl to mmol/L
+    if (data[i]['readings'].length > 0) {
+      for (var j = 0; j < data[i]['readings'].length; j++) {
+        var now = moment__WEBPACK_IMPORTED_MODULE_9___default()(new Date());
+        var measurementDate = moment__WEBPACK_IMPORTED_MODULE_9___default()(data[i]['readings'][j]['dateString']);
+        var diffMinutes = Math.round(moment__WEBPACK_IMPORTED_MODULE_9___default.a.duration(now.diff(measurementDate)).asMinutes());
+        data[i]['readings'][j]['mmol'] = Math.round(data[i]['readings'][j]['sgv'] / 18 * 100) / 100; // convert from mg/dl to mmol/L
 
-      data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
-      data[i]['readings'][j]['dateFromNowMinutes'] = -diffMinutes;
+        data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
+        data[i]['readings'][j]['dateFromNowMinutes'] = -diffMinutes;
+      }
+
+      data[i]['latestReading'] = data[i]['readings'][0];
+
+      if (data[i]['battery']) {
+        data[i]['battery']['dateFromNow'] = moment__WEBPACK_IMPORTED_MODULE_9___default()(data[i]['battery']['created_at']).fromNow();
+      }
+    } else {
+      data[i]['latestReading'] = "err_no_data";
     }
-
-    data[i]['latestReading'] = data[i]['readings'][0];
-    data[i]['battery']['dateFromNow'] = moment__WEBPACK_IMPORTED_MODULE_9___default()(data[i]['battery']['created_at']).fromNow();
   }
 
   return data;
@@ -990,7 +1008,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 104
+            lineNumber: 130
           },
           __self: this
         }, "Error: ", error.message);
@@ -998,7 +1016,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 106
+            lineNumber: 132
           },
           __self: this
         }, "Loading...");
@@ -1007,70 +1025,70 @@ function (_React$Component) {
           className: classes.root,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 109
+            lineNumber: 135
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_3___default.a, {
           className: classes.table,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 110
+            lineNumber: 136
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 111
+            lineNumber: 137
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 112
+            lineNumber: 138
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 113
+            lineNumber: 139
           },
           __self: this
         }, "Nom"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 140
           },
           __self: this
         }, "Historique"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 115
+            lineNumber: 141
           },
           __self: this
         }, "Valeur de glucose (mmol/L)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 116
+            lineNumber: 142
           },
           __self: this
         }, "Batterie (%)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 117
+            lineNumber: 143
           },
           __self: this
         }, "Derni\xE8re valeur"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_4___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 146
           },
           __self: this
         }, rows.map(function (row) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
+          return row.latestReading == "err_no_data" ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
             key: row._id,
             className: classes.tableRow,
             onClick: function onClick() {
@@ -1078,7 +1096,7 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 122
+              lineNumber: 149
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1086,14 +1104,61 @@ function (_React$Component) {
             scope: "row",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 123
+              lineNumber: 150
             },
             __self: this
           }, row.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 126
+              lineNumber: 153
+            },
+            __self: this
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            align: "right",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 155
+            },
+            __self: this
+          }, "N/A"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            align: "right",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 156
+            },
+            __self: this
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            align: "right",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 157
+            },
+            __self: this
+          }, "N/A")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
+            key: row._id,
+            className: classes.tableRow,
+            onClick: function onClick() {
+              return _this2.handleClick(row);
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 160
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            component: "th",
+            scope: "row",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 161
+            },
+            __self: this
+          }, row.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            align: "right",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 164
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1103,20 +1168,20 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 127
+              lineNumber: 165
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["ResponsiveContainer"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 128
+              lineNumber: 166
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["LineChart"], {
             data: row.readings,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 129
+              lineNumber: 167
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["YAxis"], {
@@ -1125,7 +1190,7 @@ function (_React$Component) {
             hide: "true",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 130
+              lineNumber: 168
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["Line"], {
@@ -1138,28 +1203,36 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 131
+              lineNumber: 169
             },
             __self: this
           }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
+            className: row.latestReading.mmol < row.range_min ? classes.value_low : row.latestReading.mmol > row.range_max ? classes.value_high : classes.value_normal,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 136
+              lineNumber: 174
             },
             __self: this
-          }, row.latestReading.mmol), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          }, row.latestReading.mmol), row.battery ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 137
+              lineNumber: 176
             },
             __self: this
-          }, row.battery.uploaderBattery, " (", row.battery.dateFromNow, ")"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          }, row.battery.uploaderBattery, " (", row.battery.dateFromNow, ")") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 138
+              lineNumber: 178
+            },
+            __self: this
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+            align: "right",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 180
             },
             __self: this
           }, row.latestReading.dateFromNow));
@@ -1170,7 +1243,7 @@ function (_React$Component) {
           sensorData: this.state.row,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 144
+            lineNumber: 188
           },
           __self: this
         }));
