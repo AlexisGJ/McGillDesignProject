@@ -60,7 +60,7 @@ function createData(name, sensor, sgv, battery, lastTime) {
 function convertData(data) {
   for(var i=0; i<data.length; i++) {
 
-    if (data[i]['readings'].length > 0) {
+    if (data[i]['readings'] && data[i]['readings'].length > 0) {
 
       for (var j=0; j<data[i]['readings'].length; j++) {
         var now = moment(new Date());
@@ -70,6 +70,7 @@ function convertData(data) {
         data[i]['readings'][j]['mmol'] = Math.round(data[i]['readings'][j]['sgv'] / 18 * 100) / 100;  // convert from mg/dl to mmol/L
         data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
         data[i]['readings'][j]['dateFromNowMinutes'] = -diffMinutes;
+        data[i]['readings'][j]['dateTime'] = measurementDate.format('HH:mm');
       }
   
       data[i]['latestReading'] = data[i]['readings'][0];

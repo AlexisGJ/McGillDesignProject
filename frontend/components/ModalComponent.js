@@ -150,7 +150,7 @@ class SimpleModal extends React.Component {
                   margin={{ top: 5, right: 20, left: 0, bottom: 5 }}
                   className="line-chart"
                   >
-                  <XAxis dataKey="dateFromNowMinutes" height={140} tick={<CustomizedAxisTick />} label="minutes à partir de maintenant"/>
+                  <XAxis type="number" dataKey="dateFromNowMinutes" height={140} tick={<CustomizedAxisTick />} label="minutes à partir de maintenant"/>
                   <YAxis width={80}>
                     <Label value="mmol/L" offset={5} position="insideTopLeft" />
                   </YAxis>

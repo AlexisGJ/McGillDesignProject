@@ -86,12 +86,12 @@ class Index extends React.Component {
                     </li>
                     </ul> */}
 
-                    {/* <GoogleLogin
+                    <GoogleLogin
                             clientId="379738068740-tgguug359j7mqrm0vqledsf9si5u7ssp.apps.googleusercontent.com"
                             buttonText="Login to google"
                             onSuccess={responseGoogle}
                             onFailure={responseGoogle}
-                            /> */}
+                            />
                     
                     <Grid container spacing={8} className={classes.root}>
                         <Grid item xs={6}>
