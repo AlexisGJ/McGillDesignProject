@@ -7,7 +7,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import moment from 'moment';
 
 import {ResponsiveContainer, LineChart, Line, YAxis} from 'recharts';
 
@@ -57,38 +56,6 @@ function createData(name, sensor, sgv, battery, lastTime) {
 //   createData('Ahmad Prof', 'Dexcom G5', 3.0, 87, '2019-01-29 17:45:12'),
 // ];
 
-function convertData(data) {
-  for(var i=0; i<data.length; i++) {
-
-    if (data[i]['readings'] && data[i]['readings'].length > 0) {
-
-      for (var j=0; j<data[i]['readings'].length; j++) {
-        var now = moment(new Date());
-        var measurementDate = moment(data[i]['readings'][j]['dateString'])
-        var diffMinutes = Math.round(moment.duration(now.diff(measurementDate)).asMinutes());
-  
-        data[i]['readings'][j]['mmol'] = Math.round(data[i]['readings'][j]['sgv'] / 18 * 100) / 100;  // convert from mg/dl to mmol/L
-        data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
-        data[i]['readings'][j]['dateFromNowMinutes'] = -diffMinutes;
-        data[i]['readings'][j]['dateTime'] = measurementDate.format('HH:mm');
-      }
-  
-      data[i]['latestReading'] = data[i]['readings'][0];
-
-      if (data[i]['battery']) {
-        data[i]['battery']['dateFromNow'] = moment(data[i]['battery']['created_at']).fromNow();
-      }
-
-    } else {
-
-      data[i]['latestReading'] = "err_no_data";
-
-    }
-
-  }
-  
-  return data;
-}
 
 class SimpleTable extends React.Component {
 
@@ -105,8 +72,15 @@ class SimpleTable extends React.Component {
   }
 
   componentDidMount() {
+    // this.setState({
+    //   rows: this.props.data,
+    //   isLoaded: true
+    // })
+  }
+
+  componentWillReceiveProps() {
     this.setState({
-      rows: convertData(this.state.data),
+      rows: this.props.data,
       isLoaded: true
     })
   }

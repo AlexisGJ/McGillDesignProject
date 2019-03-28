@@ -322,7 +322,8 @@ function getModalStyle() {
   return {
     top: "".concat(top, "%"),
     left: "".concat(left, "%"),
-    transform: "translate(-".concat(top, "%, -").concat(left, "%)")
+    transform: "translate(-".concat(top, "%, -").concat(left, "%)"),
+    borderRadius: '5px'
   };
 }
 
@@ -366,7 +367,7 @@ function (_React$Component) {
         textAnchor: "middle",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 46
         },
         __self: this
       }, "hEYYYYYY YOUUUU");
@@ -399,7 +400,7 @@ function (_React$Component2) {
         transform: "translate(".concat(x, ",").concat(y, ")"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 58
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("text", {
@@ -411,7 +412,7 @@ function (_React$Component2) {
         transform: "rotate(-45)",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 59
         },
         __self: this
       }, -payload.value));
@@ -431,27 +432,27 @@ var CustomTooltip = function CustomTooltip(_ref) {
       className: "custom-tooltip",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 68
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "value",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 69
       },
       __self: this
     }, "".concat(payload[0].value), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 69
       },
       __self: this
     }, "mmol/L")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "time",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 70
       },
       __self: this
     }, "il y a ", "".concat(-label), " minutes"));
@@ -484,7 +485,7 @@ function (_React$Component3) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 86
+            lineNumber: 87
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -494,7 +495,7 @@ function (_React$Component3) {
           onClose: this.props.handleClose,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 87
+            lineNumber: 88
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -502,7 +503,7 @@ function (_React$Component3) {
           className: classes.paper,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 93
+            lineNumber: 94
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -510,14 +511,14 @@ function (_React$Component3) {
           id: "modal-title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 94
+            lineNumber: 95
           },
           __self: this
         }, sensorData.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
           container: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 98
+            lineNumber: 99
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -525,12 +526,12 @@ function (_React$Component3) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 99
+            lineNumber: 100
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_6___default.a, {
           id: "outlined-name-input",
-          label: "Device",
+          label: "Appareil",
           className: classes.textField,
           type: "text",
           name: "device",
@@ -542,7 +543,7 @@ function (_React$Component3) {
           value: sensorData.latestReading.device,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 100
+            lineNumber: 101
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -550,12 +551,12 @@ function (_React$Component3) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 115
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_6___default.a, {
           id: "outlined-sensorId-input",
-          label: "Location",
+          label: "Emplacement",
           className: classes.textField,
           type: "text",
           name: "location",
@@ -567,7 +568,7 @@ function (_React$Component3) {
           value: sensorData.location,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 115
+            lineNumber: 116
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -575,7 +576,7 @@ function (_React$Component3) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 129
+            lineNumber: 130
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -592,7 +593,7 @@ function (_React$Component3) {
           value: sensorData.latestReading.direction,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 130
+            lineNumber: 131
           },
           __self: this
         }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["LineChart"], {
@@ -608,7 +609,7 @@ function (_React$Component3) {
           className: "line-chart",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 146
+            lineNumber: 147
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["XAxis"], {
@@ -618,21 +619,21 @@ function (_React$Component3) {
           tick: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CustomizedAxisTick, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 153
+              lineNumber: 154
             },
             __self: this
           }),
           label: "minutes \xE0 partir de maintenant",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 153
+            lineNumber: 154
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["YAxis"], {
           width: 80,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 154
+            lineNumber: 155
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["Label"], {
@@ -641,27 +642,27 @@ function (_React$Component3) {
           position: "insideTopLeft",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 155
+            lineNumber: 156
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["Tooltip"], {
           content: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CustomTooltip, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 157
+              lineNumber: 158
             },
             __self: this
           }),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 157
+            lineNumber: 158
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["CartesianGrid"], {
           stroke: "#f5f5f5",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 158
+            lineNumber: 159
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["ReferenceLine"], {
@@ -671,7 +672,7 @@ function (_React$Component3) {
           className: "graph-referenece-line",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 159
+            lineNumber: 160
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["Label"], {
@@ -680,7 +681,7 @@ function (_React$Component3) {
           position: "insideTopRight",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 160
+            lineNumber: 161
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["ReferenceLine"], {
@@ -690,7 +691,7 @@ function (_React$Component3) {
           className: "graph-referenece-line",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 162
+            lineNumber: 163
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["Label"], {
@@ -699,7 +700,7 @@ function (_React$Component3) {
           position: "insideBottomRight",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 163
+            lineNumber: 164
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["Line"], {
@@ -713,7 +714,7 @@ function (_React$Component3) {
           yAxisId: 0,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 165
+            lineNumber: 166
           },
           __self: this
         })))));
@@ -922,11 +923,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Paper */ "@material-ui/core/Paper");
 /* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "moment");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! recharts */ "recharts");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(recharts__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _components_ModalComponent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/ModalComponent */ "./components/ModalComponent.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! recharts */ "recharts");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(recharts__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_ModalComponent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/ModalComponent */ "./components/ModalComponent.js");
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/components/TableComponent.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -948,7 +947,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -1011,33 +1009,6 @@ function createData(name, sensor, sgv, battery, lastTime) {
 // ];
 
 
-function convertData(data) {
-  for (var i = 0; i < data.length; i++) {
-    if (data[i]['readings'] && data[i]['readings'].length > 0) {
-      for (var j = 0; j < data[i]['readings'].length; j++) {
-        var now = moment__WEBPACK_IMPORTED_MODULE_9___default()(new Date());
-        var measurementDate = moment__WEBPACK_IMPORTED_MODULE_9___default()(data[i]['readings'][j]['dateString']);
-        var diffMinutes = Math.round(moment__WEBPACK_IMPORTED_MODULE_9___default.a.duration(now.diff(measurementDate)).asMinutes());
-        data[i]['readings'][j]['mmol'] = Math.round(data[i]['readings'][j]['sgv'] / 18 * 100) / 100; // convert from mg/dl to mmol/L
-
-        data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
-        data[i]['readings'][j]['dateFromNowMinutes'] = -diffMinutes;
-        data[i]['readings'][j]['dateTime'] = measurementDate.format('HH:mm');
-      }
-
-      data[i]['latestReading'] = data[i]['readings'][0];
-
-      if (data[i]['battery']) {
-        data[i]['battery']['dateFromNow'] = moment__WEBPACK_IMPORTED_MODULE_9___default()(data[i]['battery']['created_at']).fromNow();
-      }
-    } else {
-      data[i]['latestReading'] = "err_no_data";
-    }
-  }
-
-  return data;
-}
-
 var SimpleTable =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1085,9 +1056,16 @@ function (_React$Component) {
 
   _createClass(SimpleTable, [{
     key: "componentDidMount",
-    value: function componentDidMount() {
+    value: function componentDidMount() {// this.setState({
+      //   rows: this.props.data,
+      //   isLoaded: true
+      // })
+    }
+  }, {
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps() {
       this.setState({
-        rows: convertData(this.state.data),
+        rows: this.props.data,
         isLoaded: true
       });
     }
@@ -1106,7 +1084,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 131
+            lineNumber: 105
           },
           __self: this
         }, "Error: ", error.message);
@@ -1114,7 +1092,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 133
+            lineNumber: 107
           },
           __self: this
         }, "Loading...");
@@ -1123,66 +1101,66 @@ function (_React$Component) {
           className: classes.root,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 136
+            lineNumber: 110
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_3___default.a, {
           className: classes.table,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 137
+            lineNumber: 111
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 138
+            lineNumber: 112
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 139
+            lineNumber: 113
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 140
+            lineNumber: 114
           },
           __self: this
         }, "Nom"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 141
+            lineNumber: 115
           },
           __self: this
         }, "Historique"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 142
+            lineNumber: 116
           },
           __self: this
         }, "Valeur de glucose (mmol/L)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 143
+            lineNumber: 117
           },
           __self: this
         }, "Batterie (%)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
           align: "right",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 144
+            lineNumber: 118
           },
           __self: this
         }, "Derni\xE8re valeur"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_4___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 147
+            lineNumber: 121
           },
           __self: this
         }, rows.map(function (row) {
@@ -1194,7 +1172,7 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 150
+              lineNumber: 124
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1202,35 +1180,35 @@ function (_React$Component) {
             scope: "row",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 151
+              lineNumber: 125
             },
             __self: this
           }, row.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 154
+              lineNumber: 128
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 156
+              lineNumber: 130
             },
             __self: this
           }, "N/A"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 157
+              lineNumber: 131
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 158
+              lineNumber: 132
             },
             __self: this
           }, "N/A")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -1241,7 +1219,7 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 161
+              lineNumber: 135
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1249,14 +1227,14 @@ function (_React$Component) {
             scope: "row",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 162
+              lineNumber: 136
             },
             __self: this
           }, row.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 165
+              lineNumber: 139
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1266,32 +1244,32 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 166
+              lineNumber: 140
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["ResponsiveContainer"], {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_9__["ResponsiveContainer"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 167
+              lineNumber: 141
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["LineChart"], {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_9__["LineChart"], {
             data: row.readings,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 168
+              lineNumber: 142
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["YAxis"], {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_9__["YAxis"], {
             type: "number",
             domain: ['dataMin', 'dataMax'],
             hide: "true",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 169
+              lineNumber: 143
             },
             __self: this
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_10__["Line"], {
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_9__["Line"], {
             type: "monotone",
             dataKey: "mmol",
             stroke: "#999",
@@ -1301,7 +1279,7 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 170
+              lineNumber: 144
             },
             __self: this
           }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1309,39 +1287,39 @@ function (_React$Component) {
             className: row.latestReading.mmol < row.range_min ? classes.value_low : row.latestReading.mmol > row.range_max ? classes.value_high : classes.value_normal,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 175
+              lineNumber: 149
             },
             __self: this
           }, row.latestReading.mmol), row.battery ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 177
+              lineNumber: 151
             },
             __self: this
           }, row.battery.uploaderBattery, " (", row.battery.dateFromNow, ")") : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 179
+              lineNumber: 153
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
             align: "right",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 181
+              lineNumber: 155
             },
             __self: this
           }, row.latestReading.dateFromNow));
-        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalComponent__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalComponent__WEBPACK_IMPORTED_MODULE_10__["default"], {
           open: this.state.open,
           handleOpen: this.handleOpen,
           handleClose: this.handleClose,
           sensorData: this.state.row,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 189
+            lineNumber: 163
           },
           __self: this
         }));
@@ -1369,29 +1347,36 @@ var SimpleTableWrapped = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODUL
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "next/link");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "@babel/runtime/regenerator");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "next/link");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-google-login */ "react-google-login");
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../static/css/main_custom.css */ "./static/css/main_custom.css");
-/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_TableComponent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/TableComponent */ "./components/TableComponent.js");
-/* harmony import */ var _components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/SnackbarComponent */ "./components/SnackbarComponent.js");
-/* harmony import */ var _components_AppbarComponent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/AppbarComponent */ "./components/AppbarComponent.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "moment");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../static/css/main_custom.css */ "./static/css/main_custom.css");
+/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_TableComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/TableComponent */ "./components/TableComponent.js");
+/* harmony import */ var _components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/SnackbarComponent */ "./components/SnackbarComponent.js");
+/* harmony import */ var _components_AppbarComponent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/AppbarComponent */ "./components/AppbarComponent.js");
+
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/pages/index.js";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1401,13 +1386,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1421,24 +1409,24 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 var Post = function Post(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    as: "/".concat(props.slug),
-    href: "/post?title=".concat(props.title),
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    as: "/".concat(props.slug),
+    href: "/post?title=".concat(props.title),
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
     },
     __self: this
   }, props.title)));
@@ -1452,6 +1440,22 @@ var styles = function styles(theme) {
   };
 };
 
+var theme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["createMuiTheme"])({
+  palette: {
+    primary: {
+      main: '#455a64'
+    },
+    // Purple and green play nicely together.
+    secondary: {
+      main: '#11cb5f'
+    } // This is just green.A700 as hex.
+
+  },
+  typography: {
+    useNextVariants: true
+  }
+});
+
 var Index =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1463,10 +1467,43 @@ function (_React$Component) {
     _classCallCheck(this, Index);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "convertData", function (data) {
+      moment__WEBPACK_IMPORTED_MODULE_7___default.a.locale('fr-CA');
+
+      for (var i = 0; i < data.length; i++) {
+        if (data[i]['readings'] && data[i]['readings'].length > 0) {
+          for (var j = 0; j < data[i]['readings'].length; j++) {
+            var now = moment__WEBPACK_IMPORTED_MODULE_7___default()(new Date());
+            var measurementDate = moment__WEBPACK_IMPORTED_MODULE_7___default()(data[i]['readings'][j]['dateString']);
+            var diffMinutes = Math.round(moment__WEBPACK_IMPORTED_MODULE_7___default.a.duration(now.diff(measurementDate)).asMinutes());
+            data[i]['readings'][j]['mmol'] = Math.round(data[i]['readings'][j]['sgv'] / 18 * 100) / 100; // convert from mg/dl to mmol/L
+
+            data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
+            data[i]['readings'][j]['dateFromNowMinutes'] = -diffMinutes;
+            data[i]['readings'][j]['dateTime'] = measurementDate.format('HH:mm');
+          }
+
+          data[i]['latestReading'] = data[i]['readings'][0];
+
+          if (data[i]['battery']) {
+            data[i]['battery']['dateFromNow'] = moment__WEBPACK_IMPORTED_MODULE_7___default()(data[i]['battery']['created_at']).fromNow();
+          }
+        } else {
+          data[i]['latestReading'] = "err_no_data";
+        }
+      }
+
+      return data;
+    });
+
     _this.state = {
       error: null,
       isLoaded: false,
-      data: []
+      loadingData: false,
+      data: [],
+      dataFirstHalf: [],
+      dataSecondHalf: []
     };
     return _this;
   }
@@ -1476,140 +1513,183 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      fetch("http://localhost:1234/api/reading/allActiveChildren").then(function (res) {
-        return res.json();
-      }).then(function (result) {
-        console.log(result);
-
-        _this2.setState({
-          isLoaded: true,
-          data: result
-        });
-      }, // Note: it's important to handle errors here
-      // instead of a catch() block so that we don't swallow
-      // exceptions from actual bugs in components.
-      function (error) {
-        _this2.setState({
-          isLoaded: true,
-          error: error
-        });
-      });
+      this.timer = setInterval(function () {
+        return _this2.getData();
+      }, 5 * 1000);
     }
+  }, {
+    key: "getData",
+    value: function () {
+      var _getData = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _this3 = this;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                console.log("getData started!");
+                this.setState({
+                  loadingData: true
+                });
+                fetch("http://localhost:1234/api/reading/allActiveChildren").then(function (res) {
+                  return res.json();
+                }).then(function (result) {
+                  var convertedData = _this3.convertData(result);
+
+                  console.log(convertedData);
+
+                  _this3.setState({
+                    error: null,
+                    isLoaded: true,
+                    loadingData: false,
+                    data: convertedData,
+                    dataFirstHalf: convertedData.splice(0, Math.ceil(convertedData.length / 2)),
+                    dataSecondHalf: convertedData
+                  });
+                }, // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                function (error) {
+                  _this3.setState({
+                    error: error,
+                    isLoaded: true
+                  });
+                });
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function getData() {
+        return _getData.apply(this, arguments);
+      }
+
+      return getData;
+    }()
   }, {
     key: "render",
     value: function render() {
       var classes = this.props.classes;
-      var _this$state = this.state,
-          error = _this$state.error,
-          isLoaded = _this$state.isLoaded,
-          data = _this$state.data;
 
       var responseGoogle = function responseGoogle(response) {
         console.log(response);
       };
 
-      if (error) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      if (this.state.error) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 73
+            lineNumber: 140
           },
           __self: this
-        }, "Error: ", error.message);
-      } else if (!isLoaded) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "Error: ", this.state.error.message);
+      } else if (!this.state.isLoaded) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 75
+            lineNumber: 142
           },
           __self: this
         }, "Loading...");
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 78
+            lineNumber: 145
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["MuiThemeProvider"], {
+          theme: theme,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 79
+            lineNumber: 146
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_google_login__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 147
+          },
+          __self: this
+        }), this.state.loadingData ? "True" : "False", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_google_login__WEBPACK_IMPORTED_MODULE_6___default.a, {
           clientId: "379738068740-tgguug359j7mqrm0vqledsf9si5u7ssp.apps.googleusercontent.com",
           buttonText: "Login to google",
           onSuccess: responseGoogle,
           onFailure: responseGoogle,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 89
+            lineNumber: 159
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
           container: true,
           spacing: 8,
           className: classes.root,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 96
+            lineNumber: 166
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
           item: true,
           xs: 6,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 97
+            lineNumber: 167
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 98
+            lineNumber: 168
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_8__["default"], {
-          data: data.splice(0, Math.ceil(data.length / 2)),
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          data: this.state.dataFirstHalf,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 99
+            lineNumber: 169
           },
           __self: this
-        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
           item: true,
           xs: 6,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 102
+            lineNumber: 172
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 103
+            lineNumber: 173
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_8__["default"], {
-          data: data,
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          data: this.state.dataSecondHalf,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 104
+            lineNumber: 174
           },
           __self: this
-        })))));
+        }))))));
       }
     }
   }]);
 
   return Index;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
 Index.propTypes = {
-  classes: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object.isRequired
 };
-var IndexWrapped = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["withStyles"])(styles)(Index);
+var IndexWrapped = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["withStyles"])(styles)(Index);
 /* harmony default export */ __webpack_exports__["default"] = (IndexWrapped);
 
 /***/ }),
@@ -1634,6 +1714,17 @@ var IndexWrapped = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__[
 
 module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "@babel/runtime/regenerator":
+/*!*********************************************!*\
+  !*** external "@babel/runtime/regenerator" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@babel/runtime/regenerator");
 
 /***/ }),
 

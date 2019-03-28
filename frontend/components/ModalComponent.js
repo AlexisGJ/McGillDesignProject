@@ -22,6 +22,7 @@ function getModalStyle() {
     top: `${top}%`,
     left: `${left}%`,
     transform: `translate(-${top}%, -${left}%)`,
+    borderRadius: '5px',
   };
 }
 
@@ -99,7 +100,7 @@ class SimpleModal extends React.Component {
                 <Grid item xs={4}>
                     <TextField
                         id="outlined-name-input"
-                        label="Device"
+                        label="Appareil"
                         className={classes.textField}
                         type="text"
                         name="device"
@@ -114,7 +115,7 @@ class SimpleModal extends React.Component {
                 <Grid item xs={4}>
                     <TextField
                         id="outlined-sensorId-input"
-                        label="Location"
+                        label="Emplacement"
                         className={classes.textField}
                         type="text"
                         name="location"
