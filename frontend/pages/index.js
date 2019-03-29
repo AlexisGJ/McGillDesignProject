@@ -6,11 +6,10 @@ import Grid from '@material-ui/core/Grid';
 import Snackbar from '@material-ui/core/Snackbar';
 import moment from 'moment';
 
-import '../static/css/main_custom.css'
-
 import TableComponent from '../components/TableComponent'
 import SnackbarComponent from '../components/SnackbarComponent';
 import AppbarComponent from '../components/AppbarComponent';
+import { Typography } from '@material-ui/core';
 
 
 const Post = props => (
@@ -56,6 +55,7 @@ class Index extends React.Component {
             data: [],
             dataFirstHalf: [],
             dataSecondHalf: [],
+            lastSuccessfulUpdate: moment(),
 
             snackbarOpen: false,
             snackbarMessage: "",
@@ -79,20 +79,34 @@ class Index extends React.Component {
         .then(res => res.json())
         .then(
             (result) => {
-                let convertedData = this.convertData(result);
 
-                this.setState({
-                    error: null,
-                    isLoaded: true,
-                    loadingData: false,
-                    data: convertedData,
-                    dataFirstHalf: convertedData.splice(0, Math.ceil(convertedData.length / 2)),
-                    dataSecondHalf: convertedData,
-                });
+                if (result && result.length > 0) {
+                    let convertedData = this.convertData(result);
 
-                setTimeout(() => {
-                    this.showSnackbarMessage("Données mises à jour", "success");
-                }, 1000);
+                    this.setState({
+                        error: null,
+                        isLoaded: true,
+                        loadingData: false,
+                        data: convertedData,
+                        dataFirstHalf: convertedData.splice(0, Math.ceil(convertedData.length / 2)),
+                        dataSecondHalf: convertedData,
+                        lastSuccessfulUpdate: moment(),
+                    });
+
+                    setTimeout(() => {
+                        this.showSnackbarMessage("Données mises à jour", "success");
+                    }, 1000);
+                } else {
+                    this.setState({
+                        error: null,
+                        isLoaded: true,
+                        loadingData: false,
+                    });
+
+                    setTimeout(() => {
+                        this.showSnackbarMessage("Erreur: impossible d'obtenir les données", "error");
+                    }, 1000);
+                }
                 
 
                 },
@@ -104,6 +118,10 @@ class Index extends React.Component {
                     error: error,
                     isLoaded: true,
                 });
+
+                setTimeout(() => {
+                    this.showSnackbarMessage("Erreur: impossible d'obtenir les données", "error");
+                }, 1000);
             }
         )
     }
@@ -128,15 +146,43 @@ class Index extends React.Component {
             }
         
             data[i]['latestReading'] = data[i]['readings'][0];
+
+            var directionArrows = null;
+            switch (data[i]['latestReading']['direction']) {
+                case 'Flat':
+                  directionArrows = "&rarr;"
+                  break;
+                case 'SingleUp':
+                  directionArrows = "&uarr;"
+                  break;
+                case 'SingleDown':
+                  directionArrows = "&darr;"
+                  break;
+                case 'DoubleUp':
+                  directionArrows = "&uarr;&uarr;"
+                  break;
+                case 'DoubleDown':
+                  directionArrows = "&darr;&darr;"
+                  break;
+                case 'FortyFiveUp':
+                  directionArrows = "&nearr;"
+                  break;
+                case 'FortyFiveDown':
+                  directionArrows = "&searr;"
+                  break;
+                default:
+                  directionArrows = ""
+            }
+
+            data[i]['latestReading']['directionArrow'] = directionArrows;
+
       
             if (data[i]['battery']) {
               data[i]['battery']['dateFromNow'] = moment(data[i]['battery']['created_at']).fromNow();
             }
       
           } else {
-      
             data[i]['latestReading'] = "err_no_data";
-      
           }
       
         }
@@ -191,6 +237,12 @@ class Index extends React.Component {
                                 <div>
                                     <TableComponent data={this.state.dataSecondHalf}/>
                                 </div>
+                            </Grid>
+
+                            <Grid item xs={12}>
+                                <Typography style={{fontSize: '12px', textAlign: 'right'}}>
+                                    Dernière mise à jour {moment(this.state.lastSuccessfulUpdate).fromNow()}
+                                </Typography>
                             </Grid>
                         </Grid>
 

@@ -115,6 +115,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-google-login */ "react-google-login");
 /* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../static/css/main_custom.css */ "./static/css/main_custom.css");
+/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_6__);
 
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/pages/_app.js";
 
@@ -152,6 +154,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 __webpack_require__(/*! dotenv */ "dotenv").config();
 
+
+
 var MyApp =
 /*#__PURE__*/
 function (_App) {
@@ -171,15 +175,27 @@ function (_App) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(MyApp)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      isLoggedIn: false
+      isLoggedIn: false,
+      status: ""
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "responseGoogle", function (response) {
-      if (response.accessToken && response.profileObj && response.profileObj.email && response.profileObj.email == "carowanis.camp@gmail.com") {
-        console.log("Connected !");
+      if (response.accessToken && response.profileObj && response.profileObj.email) {
+        if (response.profileObj.email == "carowanis.camp@gmail.com") {
+          console.log("Connected !");
 
+          _this.setState({
+            isLoggedIn: true,
+            status: ""
+          });
+        } else {
+          _this.setState({
+            status: "Ce compte n'est pas autorisé"
+          });
+        }
+      } else {
         _this.setState({
-          isLoggedIn: true
+          status: "Erreur de connexion"
         });
       }
     });
@@ -196,26 +212,53 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 52
         },
         __self: this
       }, this.state.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 54
         },
         __self: this
-      })) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_google_login__WEBPACK_IMPORTED_MODULE_5___default.a, {
+      })) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "loginPage",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, "CAMP CAROWANIS"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "googleButton",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_google_login__WEBPACK_IMPORTED_MODULE_5___default.a, {
         clientId: "379738068740-tgguug359j7mqrm0vqledsf9si5u7ssp.apps.googleusercontent.com",
-        buttonText: "Login to google",
+        buttonText: "Connexion avec Google",
         onSuccess: this.responseGoogle,
         onFailure: this.responseGoogle,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 59
         },
         __self: this
-      }));
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "status",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, this.state.status)));
     }
   }], [{
     key: "getInitialProps",
@@ -265,6 +308,17 @@ function (_App) {
 
   return MyApp;
 }(next_app__WEBPACK_IMPORTED_MODULE_2___default.a);
+
+
+
+/***/ }),
+
+/***/ "./static/css/main_custom.css":
+/*!************************************!*\
+  !*** ./static/css/main_custom.css ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
 
 

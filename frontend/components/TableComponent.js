@@ -8,7 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-import {ResponsiveContainer, LineChart, Line, YAxis} from 'recharts';
+import {ResponsiveContainer, LineChart, Line, XAxis, YAxis} from 'recharts';
 
 import ModalComponent from '../components/ModalComponent'
 
@@ -26,6 +26,10 @@ const styles = theme => ({
     '&:hover': {
       backgroundColor: theme.palette.grey[200],
     },
+  },
+  tableSpan: {
+    fontSize: '0.6em',
+    fontColor: '#999',
   },
 
   value_normal: {
@@ -122,37 +126,40 @@ class SimpleTable extends React.Component {
               {rows.map(row => (
                 row.latestReading == "err_no_data" ? (
                   <TableRow key={row._id} className={classes.tableRow} onClick={() => this.handleClick(row)}>
-                    <TableCell component="th" scope="row">
+                    <TableCell component="th" scope="row" padding="dense">
                       {row.name}
                     </TableCell>
-                    <TableCell align="right">
+                    <TableCell align="right" padding="dense">
                     </TableCell>
-                    <TableCell align="right">N/A</TableCell>
-                    <TableCell align="right"></TableCell>
-                    <TableCell align="right">N/A</TableCell>
+                    <TableCell align="right" padding="dense">N/A</TableCell>
+                    <TableCell align="right" padding="dense"></TableCell>
+                    <TableCell align="right" padding="dense">N/A</TableCell>
                   </TableRow>
                 ) : (
                   <TableRow key={row._id} className={classes.tableRow} onClick={() => this.handleClick(row)}>
-                    <TableCell component="th" scope="row">
+                    <TableCell component="th" scope="row" padding="dense">
                       {row.name}
                     </TableCell>
-                    <TableCell align="right">
+                    <TableCell align="right" padding="dense">
                       <div style={{ width: '100%', height: 50 }}>
                         <ResponsiveContainer>
                           <LineChart data={row.readings}>
+                            <XAxis type="number" dataKey="dateFromNowMinutes" hide={true} />
                             <YAxis type="number" domain={['dataMin', 'dataMax']} hide={true} />
                             <Line type='monotone' dataKey='mmol' stroke='#999' strokeWidth={2} dot={{ r: 0 }}/>
                           </LineChart>
                         </ResponsiveContainer>
                       </div>
                     </TableCell>
-                    <TableCell align="right" className={((row.latestReading.mmol < row.range_min) ? classes.value_low : ((row.latestReading.mmol > row.range_max) ? classes.value_high : classes.value_normal))}>{row.latestReading.mmol}</TableCell>
+                    <TableCell align="right" padding="dense" className={((row.latestReading.mmol < row.range_min) ? classes.value_low : ((row.latestReading.mmol > row.range_max) ? classes.value_high : classes.value_normal))}>
+                      {row.latestReading.mmol} <span style={{fontSize: '1.3em', marginTop: '-5px'}} dangerouslySetInnerHTML={{__html: row.latestReading.directionArrow}}></span>
+                    </TableCell>
                     {row.battery ? (
-                      <TableCell align="right">{row.battery.uploaderBattery} ({row.battery.dateFromNow})</TableCell>
+                      <TableCell align="right" padding="dense">{row.battery.uploaderBattery} %<br></br><span className={classes.tableSpan}>{row.battery.dateFromNow}</span></TableCell>
                     ) : (
-                      <TableCell align="right"></TableCell>
+                      <TableCell align="right" padding="dense"></TableCell>
                     )}
-                    <TableCell align="right">{row.latestReading.dateFromNow}</TableCell>
+                    <TableCell align="right" padding="dense">{row.latestReading.dateTime}<br></br><span className={classes.tableSpan}>{row.latestReading.dateFromNow}</span></TableCell>
                   </TableRow>
                 )
                 

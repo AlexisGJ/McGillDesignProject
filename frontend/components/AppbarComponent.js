@@ -11,6 +11,7 @@ import Icon from '@material-ui/core/Icon';
 import HomeIcon from '@material-ui/icons/Home';
 import SettingsIcon from '@material-ui/icons/Settings';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import moment from 'moment';
 
 
 const styles = {
@@ -34,9 +35,23 @@ class ButtonAppBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false
+      loading: false,
+      time: moment().format('HH:mm')
     };
   }
+
+  displayTime(){
+    this.setState({
+        time: moment().format('HH:mm')
+    });
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+        this.displayTime();
+    }, 5000);
+  }
+
 
   componentWillReceiveProps() {
     this.setState({
@@ -57,17 +72,18 @@ class ButtonAppBar extends React.Component {
               </IconButton>
             </Link>
             <Typography variant="h6" color="inherit">
-              <b>Camp Carowanis</b> Station de Supervision
+              <b>Camp Carowanis</b> <span style={{fontWeight: 'lighter', color: 'rgba(255,255,255,0.8)', fontSize: '0.8em'}}>Station de Supervision</span>
             </Typography>
             {this.state.loading && <CircularProgress className={classes.progress} color="secondary" size={20} />}
             <Typography className={classes.grow}></Typography>
             
+            <Typography variant="h6" color="inherit" style={{marginRight: '10px'}}>{this.state.time}</Typography>
             <Link as={`/settings`} href={`/settings`}>
               <IconButton color="inherit">
                   <SettingsIcon />
               </IconButton>
             </Link>
-            <Button color="inherit">Déconnexion</Button>
+            {/* <Button color="inherit">Déconnexion</Button> */}
           </Toolbar>
         </AppBar>
       </div>

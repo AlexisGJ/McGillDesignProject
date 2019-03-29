@@ -5,6 +5,8 @@ import { Redirect, Route } from 'react-router-dom'
 import GoogleLogin from 'react-google-login';
 require('dotenv').config()
 
+import '../static/css/main_custom.css'
+
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -17,14 +19,29 @@ export default class MyApp extends App {
     return { pageProps }
   }
 
-  state = {isLoggedIn: false}
+  state = {
+    isLoggedIn: false,
+    status: "",
+  }
 
   responseGoogle = (response) => {
-    if (response.accessToken && response.profileObj && response.profileObj.email && response.profileObj.email == process.env.ALLOWED_EMAIL) {
-      console.log("Connected !")
+    if (response.accessToken && response.profileObj && response.profileObj.email) {
+      if (response.profileObj.email == process.env.ALLOWED_EMAIL) {
+        console.log("Connected !")
+        this.setState({
+          isLoggedIn: true,
+          status: "",
+        });
+      } else {
+        this.setState({
+          status: "Ce compte n'est pas autorisé",
+        })
+      }
+      
+    } else {
       this.setState({
-        isLoggedIn: true,
-      });
+        status: "Erreur de connexion",
+      })
     }
   }
 
@@ -36,12 +53,18 @@ export default class MyApp extends App {
         {this.state.isLoggedIn ? (
           <Component {...pageProps} />
         ) : (
-          <GoogleLogin
-            clientId="379738068740-tgguug359j7mqrm0vqledsf9si5u7ssp.apps.googleusercontent.com"
-            buttonText="Login to google"
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
-            />
+          <div className="loginPage">
+            <h1>CAMP CAROWANIS</h1>
+            <div className="googleButton">
+              <GoogleLogin
+                clientId="379738068740-tgguug359j7mqrm0vqledsf9si5u7ssp.apps.googleusercontent.com"
+                buttonText="Connexion avec Google"
+                onSuccess={this.responseGoogle}
+                onFailure={this.responseGoogle}
+                />
+            </div>
+            <div className="status">{this.state.status}</div>
+          </div>
         )}
       </Container>
     )
