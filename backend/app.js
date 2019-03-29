@@ -25,8 +25,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/api/child', child);
 app.use('/api/reading', reading);
 
-let port = 1234;
+let port = process.env.PORT || 1234;
 
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
     console.log('Server is up and running on port numner ' + port);
 });
