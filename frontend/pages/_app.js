@@ -3,7 +3,7 @@ import App, { Container } from 'next/app'
 import Head from 'next/head'
 import { Redirect, Route } from 'react-router-dom'
 import GoogleLogin from 'react-google-login';
-require('dotenv').config()
+// require('dotenv').config()
 
 import '../static/css/main_custom.css'
 
