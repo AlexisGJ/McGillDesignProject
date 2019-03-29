@@ -28,8 +28,8 @@ import AppbarComponent from '../components/AppbarComponent';
 
 const theme = createMuiTheme({
     palette: {
-      primary: { main: '#455a64' }, // Purple and green play nicely together.
-      secondary: { main: '#11cb5f' }, // This is just green.A700 as hex.
+      primary: { main: '#455a64' },
+      secondary: { main: '#ffffff' },
     },
     typography: {
         useNextVariants: true,
@@ -203,7 +203,7 @@ class Settings extends React.Component {
             return(
                 <div>
                     <MuiThemeProvider theme={theme}>
-                        <AppbarComponent />
+                        <AppbarComponent loading={false}/>
 
                         <Grid container spacing={24} className={classes.root}>
                             <Grid item xs={2}></Grid>

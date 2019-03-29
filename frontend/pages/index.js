@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Snackbar from '@material-ui/core/Snackbar';
 import GoogleLogin from 'react-google-login';
 import moment from 'moment';
 
@@ -24,13 +25,20 @@ const Post = props => (
 const styles = theme => ({
     root: {
       padding: 20
-    }
+    },
+
+    snackbarContainer: {
+        minWidth: 500,
+    },
+    snackbarMargin: {
+        margin: theme.spacing.unit,
+    },
 });
 
 const theme = createMuiTheme({
     palette: {
-      primary: { main: '#455a64' }, // Purple and green play nicely together.
-      secondary: { main: '#11cb5f' }, // This is just green.A700 as hex.
+      primary: { main: '#455a64' },
+      secondary: { main: '#ffffff' },
     },
     typography: {
         useNextVariants: true,
@@ -48,12 +56,17 @@ class Index extends React.Component {
             loadingData: false,
             data: [],
             dataFirstHalf: [],
-            dataSecondHalf: []
+            dataSecondHalf: [],
+
+            snackbarOpen: false,
+            snackbarMessage: "",
+            snackbarVariant: "info",
         };
     }
 
     componentDidMount() {
-        this.timer = setInterval(()=> this.getData(), 5 * 1000)
+        this.getData();
+        this.timer = setInterval(()=> this.getData(), 0.5 * 60 * 1000);
     }
 
     async getData() {
@@ -67,9 +80,7 @@ class Index extends React.Component {
         .then(res => res.json())
         .then(
             (result) => {
-
                 let convertedData = this.convertData(result);
-                console.log(convertedData);
 
                 this.setState({
                     error: null,
@@ -79,6 +90,11 @@ class Index extends React.Component {
                     dataFirstHalf: convertedData.splice(0, Math.ceil(convertedData.length / 2)),
                     dataSecondHalf: convertedData,
                 });
+
+                setTimeout(() => {
+                    this.showSnackbarMessage("Données mises à jour", "success");
+                }, 1000);
+                
 
                 },
                 // Note: it's important to handle errors here
@@ -129,6 +145,22 @@ class Index extends React.Component {
         return data;
     }
 
+    showSnackbarMessage = (message, variant) => {
+        this.setState({ 
+            snackbarOpen: true,
+            snackbarMessage: message,
+            snackbarVariant: variant
+        });
+    }
+    
+    snackbarClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        this.setState({ snackbarOpen: false });
+    };
+
     render() {
         const { classes } = this.props;
 
@@ -144,7 +176,7 @@ class Index extends React.Component {
             return(
                 <div>
                     <MuiThemeProvider theme={theme}>
-                        <AppbarComponent />
+                        <AppbarComponent loading={this.state.loadingData}/>
                         {/* <h2>My blog</h2>
                         <ul>
                         <li>
@@ -153,8 +185,6 @@ class Index extends React.Component {
                             <Post slug="post/hello-world" title="Hello, world!" />
                         </li>
                         </ul> */}
-
-                        {this.state.loadingData ? "True" : "False"}
 
                         <GoogleLogin
                                 clientId="379738068740-tgguug359j7mqrm0vqledsf9si5u7ssp.apps.googleusercontent.com"
@@ -175,6 +205,25 @@ class Index extends React.Component {
                                 </div>
                             </Grid>
                         </Grid>
+
+                        <Snackbar
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'left',
+                            }}
+                            open={this.state.snackbarOpen}
+                            autoHideDuration={4000}
+                            onClose={this.snackbarClose}
+                            className={classes.snackbarContainer}
+                            >
+
+                            <SnackbarComponent
+                                variant={this.state.snackbarVariant}
+                                className={classes.snackbarMargin}
+                                message={this.state.snackbarMessage}
+                                />
+
+                        </Snackbar>
                     </MuiThemeProvider>
                 </div>
     

@@ -126,7 +126,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons/Settings */ "@material-ui/icons/Settings");
 /* harmony import */ var _material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/CircularProgress */ "@material-ui/core/CircularProgress");
+/* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_12__);
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/components/AppbarComponent.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
 
 
 
@@ -149,99 +171,147 @@ var styles = {
   menuButton: {
     marginLeft: -12,
     marginRight: 20
+  },
+  progress: {
+    marginLeft: '20px'
   }
 };
 
-function ButtonAppBar(props) {
-  var classes = props.classes;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: classes.root,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    position: "static",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    as: "/",
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8___default.a, {
-    className: classes.menuButton,
-    color: "inherit",
-    "aria-label": "Menu",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_10___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
-    variant: "h6",
-    color: "inherit",
-    className: classes.grow,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: this
-  }, "Camp Carowanis"), " Station de Supervision"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    as: "/settings",
-    href: "/settings",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8___default.a, {
-    color: "inherit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_11___default.a, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    color: "inherit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: this
-  }, "D\xE9connexion"))));
-}
+var ButtonAppBar =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ButtonAppBar, _React$Component);
+
+  function ButtonAppBar(props) {
+    var _this;
+
+    _classCallCheck(this, ButtonAppBar);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ButtonAppBar).call(this, props));
+    _this.state = {
+      loading: false
+    };
+    return _this;
+  }
+
+  _createClass(ButtonAppBar, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps() {
+      this.setState({
+        loading: this.props.loading
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var classes = this.props.classes;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: classes.root,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        position: "static",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        as: "/",
+        href: "/",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        className: classes.menuButton,
+        color: "inherit",
+        "aria-label": "Menu",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_10___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        variant: "h6",
+        color: "inherit",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        },
+        __self: this
+      }, "Camp Carowanis"), " Station de Supervision"), this.state.loading && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_12___default.a, {
+        className: classes.progress,
+        color: "secondary",
+        size: 20,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        className: classes.grow,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        as: "/settings",
+        href: "/settings",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        color: "inherit",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_11___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        color: "inherit",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        },
+        __self: this
+      }, "D\xE9connexion"))));
+    }
+  }]);
+
+  return ButtonAppBar;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 ButtonAppBar.propTypes = {
   classes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
@@ -1056,10 +1126,11 @@ function (_React$Component) {
 
   _createClass(SimpleTable, [{
     key: "componentDidMount",
-    value: function componentDidMount() {// this.setState({
-      //   rows: this.props.data,
-      //   isLoaded: true
-      // })
+    value: function componentDidMount() {
+      this.setState({
+        rows: this.props.data,
+        isLoaded: true
+      });
     }
   }, {
     key: "componentWillReceiveProps",
@@ -1263,7 +1334,7 @@ function (_React$Component) {
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_9__["YAxis"], {
             type: "number",
             domain: ['dataMin', 'dataMax'],
-            hide: "true",
+            hide: true,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 143
@@ -1359,15 +1430,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-google-login */ "react-google-login");
-/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "moment");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../static/css/main_custom.css */ "./static/css/main_custom.css");
-/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_TableComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/TableComponent */ "./components/TableComponent.js");
-/* harmony import */ var _components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/SnackbarComponent */ "./components/SnackbarComponent.js");
-/* harmony import */ var _components_AppbarComponent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/AppbarComponent */ "./components/AppbarComponent.js");
+/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Snackbar */ "@material-ui/core/Snackbar");
+/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-google-login */ "react-google-login");
+/* harmony import */ var react_google_login__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_google_login__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "moment");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../static/css/main_custom.css */ "./static/css/main_custom.css");
+/* harmony import */ var _static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_static_css_main_custom_css__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_TableComponent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/TableComponent */ "./components/TableComponent.js");
+/* harmony import */ var _components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/SnackbarComponent */ "./components/SnackbarComponent.js");
+/* harmony import */ var _components_AppbarComponent__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/AppbarComponent */ "./components/AppbarComponent.js");
 
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/pages/index.js";
 
@@ -1408,11 +1481,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Post = function Post(props) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 18
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1420,13 +1494,13 @@ var Post = function Post(props) {
     href: "/post?title=".concat(props.title),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: this
   }, props.title)));
@@ -1436,6 +1510,12 @@ var styles = function styles(theme) {
   return {
     root: {
       padding: 20
+    },
+    snackbarContainer: {
+      minWidth: 500
+    },
+    snackbarMargin: {
+      margin: theme.spacing.unit
     }
   };
 };
@@ -1445,11 +1525,9 @@ var theme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["create
     primary: {
       main: '#455a64'
     },
-    // Purple and green play nicely together.
     secondary: {
-      main: '#11cb5f'
-    } // This is just green.A700 as hex.
-
+      main: '#ffffff'
+    }
   },
   typography: {
     useNextVariants: true
@@ -1469,14 +1547,14 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "convertData", function (data) {
-      moment__WEBPACK_IMPORTED_MODULE_7___default.a.locale('fr-CA');
+      moment__WEBPACK_IMPORTED_MODULE_8___default.a.locale('fr-CA');
 
       for (var i = 0; i < data.length; i++) {
         if (data[i]['readings'] && data[i]['readings'].length > 0) {
           for (var j = 0; j < data[i]['readings'].length; j++) {
-            var now = moment__WEBPACK_IMPORTED_MODULE_7___default()(new Date());
-            var measurementDate = moment__WEBPACK_IMPORTED_MODULE_7___default()(data[i]['readings'][j]['dateString']);
-            var diffMinutes = Math.round(moment__WEBPACK_IMPORTED_MODULE_7___default.a.duration(now.diff(measurementDate)).asMinutes());
+            var now = moment__WEBPACK_IMPORTED_MODULE_8___default()(new Date());
+            var measurementDate = moment__WEBPACK_IMPORTED_MODULE_8___default()(data[i]['readings'][j]['dateString']);
+            var diffMinutes = Math.round(moment__WEBPACK_IMPORTED_MODULE_8___default.a.duration(now.diff(measurementDate)).asMinutes());
             data[i]['readings'][j]['mmol'] = Math.round(data[i]['readings'][j]['sgv'] / 18 * 100) / 100; // convert from mg/dl to mmol/L
 
             data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
@@ -1487,7 +1565,7 @@ function (_React$Component) {
           data[i]['latestReading'] = data[i]['readings'][0];
 
           if (data[i]['battery']) {
-            data[i]['battery']['dateFromNow'] = moment__WEBPACK_IMPORTED_MODULE_7___default()(data[i]['battery']['created_at']).fromNow();
+            data[i]['battery']['dateFromNow'] = moment__WEBPACK_IMPORTED_MODULE_8___default()(data[i]['battery']['created_at']).fromNow();
           }
         } else {
           data[i]['latestReading'] = "err_no_data";
@@ -1497,13 +1575,34 @@ function (_React$Component) {
       return data;
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "showSnackbarMessage", function (message, variant) {
+      _this.setState({
+        snackbarOpen: true,
+        snackbarMessage: message,
+        snackbarVariant: variant
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "snackbarClose", function (event, reason) {
+      if (reason === 'clickaway') {
+        return;
+      }
+
+      _this.setState({
+        snackbarOpen: false
+      });
+    });
+
     _this.state = {
       error: null,
       isLoaded: false,
       loadingData: false,
       data: [],
       dataFirstHalf: [],
-      dataSecondHalf: []
+      dataSecondHalf: [],
+      snackbarOpen: false,
+      snackbarMessage: "",
+      snackbarVariant: "info"
     };
     return _this;
   }
@@ -1513,9 +1612,10 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
+      this.getData();
       this.timer = setInterval(function () {
         return _this2.getData();
-      }, 5 * 1000);
+      }, 0.5 * 60 * 1000);
     }
   }, {
     key: "getData",
@@ -1538,8 +1638,6 @@ function (_React$Component) {
                 }).then(function (result) {
                   var convertedData = _this3.convertData(result);
 
-                  console.log(convertedData);
-
                   _this3.setState({
                     error: null,
                     isLoaded: true,
@@ -1548,6 +1646,10 @@ function (_React$Component) {
                     dataFirstHalf: convertedData.splice(0, Math.ceil(convertedData.length / 2)),
                     dataSecondHalf: convertedData
                   });
+
+                  setTimeout(function () {
+                    _this3.showSnackbarMessage("Données mises à jour", "success");
+                  }, 1000);
                 }, // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
                 // exceptions from actual bugs in components.
@@ -1585,7 +1687,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 140
+            lineNumber: 172
           },
           __self: this
         }, "Error: ", this.state.error.message);
@@ -1593,7 +1695,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 142
+            lineNumber: 174
           },
           __self: this
         }, "Loading...");
@@ -1601,30 +1703,31 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 145
+            lineNumber: 177
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["MuiThemeProvider"], {
           theme: theme,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 146
+            lineNumber: 178
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_12__["default"], {
+          loading: this.state.loadingData,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 147
+            lineNumber: 179
           },
           __self: this
-        }), this.state.loadingData ? "True" : "False", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_google_login__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_google_login__WEBPACK_IMPORTED_MODULE_7___default.a, {
           clientId: "379738068740-tgguug359j7mqrm0vqledsf9si5u7ssp.apps.googleusercontent.com",
           buttonText: "Login to google",
           onSuccess: responseGoogle,
           onFailure: responseGoogle,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 159
+            lineNumber: 189
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1633,7 +1736,7 @@ function (_React$Component) {
           className: classes.root,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 166
+            lineNumber: 196
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1641,20 +1744,20 @@ function (_React$Component) {
           xs: 6,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 167
+            lineNumber: 197
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 168
+            lineNumber: 198
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_10__["default"], {
           data: this.state.dataFirstHalf,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 169
+            lineNumber: 199
           },
           __self: this
         }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1662,23 +1765,46 @@ function (_React$Component) {
           xs: 6,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 172
+            lineNumber: 202
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 173
+            lineNumber: 203
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_10__["default"], {
           data: this.state.dataSecondHalf,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 174
+            lineNumber: 204
           },
           __self: this
-        }))))));
+        })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_6___default.a, {
+          anchorOrigin: {
+            vertical: 'bottom',
+            horizontal: 'left'
+          },
+          open: this.state.snackbarOpen,
+          autoHideDuration: 4000,
+          onClose: this.snackbarClose,
+          className: classes.snackbarContainer,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 209
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_11__["default"], {
+          variant: this.state.snackbarVariant,
+          className: classes.snackbarMargin,
+          message: this.state.snackbarMessage,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 220
+          },
+          __self: this
+        }))));
       }
     }
   }]);
@@ -1747,6 +1873,17 @@ module.exports = require("@material-ui/core/AppBar");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Button");
+
+/***/ }),
+
+/***/ "@material-ui/core/CircularProgress":
+/*!*****************************************************!*\
+  !*** external "@material-ui/core/CircularProgress" ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/CircularProgress");
 
 /***/ }),
 

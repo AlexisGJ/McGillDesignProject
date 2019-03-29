@@ -72,10 +72,10 @@ class SimpleTable extends React.Component {
   }
 
   componentDidMount() {
-    // this.setState({
-    //   rows: this.props.data,
-    //   isLoaded: true
-    // })
+    this.setState({
+      rows: this.props.data,
+      isLoaded: true
+    })
   }
 
   componentWillReceiveProps() {
@@ -140,7 +140,7 @@ class SimpleTable extends React.Component {
                       <div style={{ width: '100%', height: 50 }}>
                         <ResponsiveContainer>
                           <LineChart data={row.readings}>
-                            <YAxis type="number" domain={['dataMin', 'dataMax']} hide="true" />
+                            <YAxis type="number" domain={['dataMin', 'dataMax']} hide={true} />
                             <Line type='monotone' dataKey='mmol' stroke='#999' strokeWidth={2} dot={{ r: 0 }}/>
                           </LineChart>
                         </ResponsiveContainer>
