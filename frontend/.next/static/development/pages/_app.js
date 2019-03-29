@@ -13731,6 +13731,9 @@ function (_App) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "responseGoogle", function (response) {
+      console.log(response);
+      console.log("carowanis.camp@gmail.com");
+
       if (response.accessToken && response.profileObj && response.profileObj.email) {
         if (response.profileObj.email == "carowanis.camp@gmail.com") {
           console.log("Connected !");
@@ -13763,33 +13766,33 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 56
         },
         __self: this
       }, this.state.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 58
         },
         __self: this
       })) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "loginPage",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 60
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 61
         },
         __self: this
       }, "CAMP CAROWANIS"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "googleButton",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 62
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_google_login__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -13799,14 +13802,14 @@ function (_App) {
         onFailure: this.responseGoogle,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 63
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "status",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 70
         },
         __self: this
       }, this.state.status)));

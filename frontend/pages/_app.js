@@ -25,6 +25,10 @@ export default class MyApp extends App {
   }
 
   responseGoogle = (response) => {
+
+    console.log(response);
+    console.log(process.env.ALLOWED_EMAIL)
+
     if (response.accessToken && response.profileObj && response.profileObj.email) {
       if (response.profileObj.email == process.env.ALLOWED_EMAIL) {
         console.log("Connected !")
