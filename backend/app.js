@@ -27,6 +27,6 @@ app.use('/api/reading', reading);
 
 let port = 1234;
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log('Server is up and running on port numner ' + port);
 });
