@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build",
-    "start": "NODE_ENV=production HTTPS=true next start -p process.env.PORT"
+    "start": "NODE_ENV=production HTTPS=true next start -p $PORT"
   },
   "repository": {
     "type": "git",
