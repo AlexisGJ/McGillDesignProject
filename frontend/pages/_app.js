@@ -3,7 +3,7 @@ import App, { Container } from 'next/app'
 import Head from 'next/head'
 import { Redirect, Route } from 'react-router-dom'
 import GoogleLogin from 'react-google-login';
-// require('dotenv').config()
+require('dotenv').config()
 
 import '../static/css/main_custom.css'
 
@@ -30,7 +30,7 @@ export default class MyApp extends App {
     console.log(process.env.ALLOWED_EMAIL)
 
     if (response.accessToken && response.profileObj && response.profileObj.email) {
-      if (response.profileObj.email == process.env.ALLOWED_EMAIL) {
+      if (response.profileObj.email == process.env.REACT_APP_ALLOWED_EMAIL) {
         console.log("Connected !")
         this.setState({
           isLoggedIn: true,
