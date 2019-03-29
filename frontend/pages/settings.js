@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import classNames from 'classnames';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -24,6 +25,17 @@ import '../static/css/main_custom.css'
 
 import SnackbarComponent from '../components/SnackbarComponent';
 import AppbarComponent from '../components/AppbarComponent';
+
+const theme = createMuiTheme({
+    palette: {
+      primary: { main: '#455a64' },
+      secondary: { main: '#ffffff' },
+    },
+    typography: {
+        useNextVariants: true,
+    },
+});
+
 
 const styles = theme => ({
     root: {
@@ -190,143 +202,144 @@ class Settings extends React.Component {
         } else {
             return(
                 <div>
-                    <AppbarComponent />
+                    <MuiThemeProvider theme={theme}>
+                        <AppbarComponent loading={false}/>
 
-                    <Grid container spacing={24} className={classes.root}>
-                        <Grid item xs={2}></Grid>
-                        <Grid item xs={8}>
-                            <Paper className={classes.paper} elevation={1}>
+                        <Grid container spacing={24} className={classes.root}>
+                            <Grid item xs={2}></Grid>
+                            <Grid item xs={8}>
+                                <Paper className={classes.paper} elevation={1}>
 
-                            {data.map((row, key) =>
-                                <ExpansionPanel key={row._id} expanded={expanded === row._id} onChange={this.handleClose(row._id)}>
-                                    <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                                        <div className={classes.column}>
-                                            <Typography className={classes.heading}><span className={row.active ? classes.childActiveTrue : classes.childActiveFalse}>&#9679;</span> {row.name}</Typography>
-                                        </div>
-                                        <div className={classes.column}>
-                                            <Typography className={classes.secondaryHeading}>{row.location}</Typography>
-                                        </div>
-                                    </ExpansionPanelSummary>
-                                    <ExpansionPanelDetails className={classes.details}>
-                                        <Grid container>
-                                            <Grid item xs={4}>
-                                                <TextField
-                                                    id="outlined-name-input"
-                                                    label="Nom"
-                                                    className={classes.textField}
-                                                    type="text"
-                                                    name="name"
-                                                    margin="normal"
-                                                    variant="outlined"
-                                                    onChange={(e) => this.handleChange(key, 'name', e)}
-                                                    value={row.name}
-                                                />
-                                            </Grid>
-                                            <Grid item xs={4}>
-                                                <TextField
-                                                    id="outlined-sensorId-input"
-                                                    label="ID du capteur"
-                                                    className={classes.textField}
-                                                    type="text"
-                                                    name="sensorId"
-                                                    margin="normal"
-                                                    variant="outlined"
-                                                    onChange={(e) => this.handleChange(key, 'collection_id', e)}
-                                                    value={row.collection_id}
-                                                />
-                                            </Grid>
-                                            <Grid item xs={4}>
-                                                <TextField
-                                                    id="outlined-location-input"
-                                                    label="Location"
-                                                    className={classes.textField}
-                                                    type="text"
-                                                    name="location"
-                                                    margin="normal"
-                                                    variant="outlined"
-                                                    onChange={(e) => this.handleChange(key, 'location', e)}
-                                                    value={row.location}
-                                                />
-                                            </Grid>
-                                            <Grid item xs={4}></Grid>
-                                            <Grid item xs={4}>
-                                                <TextField
-                                                    id="outlined-rangemin-input"
-                                                    label="Range minimum"
-                                                    className={classes.textField}
-                                                    type="number"
-                                                    name="rangemin"
-                                                    margin="normal"
-                                                    variant="outlined"
-                                                    onChange={(e) => this.handleChange(key, 'range_min', e)}
-                                                    value={row.range_min}
-                                                />
-                                            </Grid>
-                                            <Grid item xs={4}>
-                                                <TextField
-                                                    id="outlined-rangemax-input"
-                                                    label="Range maximal"
-                                                    className={classes.textField}
-                                                    type="number"
-                                                    name="rangemin"
-                                                    margin="normal"
-                                                    variant="outlined"
-                                                    onChange={(e) => this.handleChange(key, 'range_max', e)}
-                                                    value={row.range_max}
-                                                />
-                                            </Grid>
-
-                                            <Grid item xs={4}></Grid>
-                                            <Grid item xs={4}></Grid>
-                                            <Grid item xs={4}>
-                                                <FormControlLabel
-                                                    control={
-                                                    <Switch
-                                                        checked={row.active}
-                                                        onChange={(e) => this.handleChange(key, 'active', e)}
-                                                        color="primary"
+                                {data.map((row, key) =>
+                                    <ExpansionPanel key={row._id} expanded={expanded === row._id} onChange={this.handleClose(row._id)}>
+                                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                                            <div className={classes.column}>
+                                                <Typography className={classes.heading}><span className={row.active ? classes.childActiveTrue : classes.childActiveFalse}>&#9679;</span> {row.name}</Typography>
+                                            </div>
+                                            <div className={classes.column}>
+                                                <Typography className={classes.secondaryHeading}>{row.location}</Typography>
+                                            </div>
+                                        </ExpansionPanelSummary>
+                                        <ExpansionPanelDetails className={classes.details}>
+                                            <Grid container>
+                                                <Grid item xs={4}>
+                                                    <TextField
+                                                        id="outlined-name-input"
+                                                        label="Nom"
+                                                        className={classes.textField}
+                                                        type="text"
+                                                        name="name"
+                                                        margin="normal"
+                                                        variant="outlined"
+                                                        onChange={(e) => this.handleChange(key, 'name', e)}
+                                                        value={row.name}
                                                     />
-                                                    }
-                                                    label="Actif"
-                                                />
+                                                </Grid>
+                                                <Grid item xs={4}>
+                                                    <TextField
+                                                        id="outlined-sensorId-input"
+                                                        label="ID du capteur"
+                                                        className={classes.textField}
+                                                        type="text"
+                                                        name="sensorId"
+                                                        margin="normal"
+                                                        variant="outlined"
+                                                        onChange={(e) => this.handleChange(key, 'collection_id', e)}
+                                                        value={row.collection_id}
+                                                    />
+                                                </Grid>
+                                                <Grid item xs={4}>
+                                                    <TextField
+                                                        id="outlined-location-input"
+                                                        label="Location"
+                                                        className={classes.textField}
+                                                        type="text"
+                                                        name="location"
+                                                        margin="normal"
+                                                        variant="outlined"
+                                                        onChange={(e) => this.handleChange(key, 'location', e)}
+                                                        value={row.location}
+                                                    />
+                                                </Grid>
+                                                <Grid item xs={4}></Grid>
+                                                <Grid item xs={4}>
+                                                    <TextField
+                                                        id="outlined-rangemin-input"
+                                                        label="Range minimum"
+                                                        className={classes.textField}
+                                                        type="number"
+                                                        name="rangemin"
+                                                        margin="normal"
+                                                        variant="outlined"
+                                                        onChange={(e) => this.handleChange(key, 'range_min', e)}
+                                                        value={row.range_min}
+                                                    />
+                                                </Grid>
+                                                <Grid item xs={4}>
+                                                    <TextField
+                                                        id="outlined-rangemax-input"
+                                                        label="Range maximal"
+                                                        className={classes.textField}
+                                                        type="number"
+                                                        name="rangemin"
+                                                        margin="normal"
+                                                        variant="outlined"
+                                                        onChange={(e) => this.handleChange(key, 'range_max', e)}
+                                                        value={row.range_max}
+                                                    />
+                                                </Grid>
+
+                                                <Grid item xs={4}></Grid>
+                                                <Grid item xs={4}></Grid>
+                                                <Grid item xs={4}>
+                                                    <FormControlLabel
+                                                        control={
+                                                        <Switch
+                                                            checked={row.active}
+                                                            onChange={(e) => this.handleChange(key, 'active', e)}
+                                                            color="primary"
+                                                        />
+                                                        }
+                                                        label="Actif"
+                                                    />
+                                                </Grid>
+                                                
                                             </Grid>
                                             
-                                        </Grid>
-                                        
-                                    </ExpansionPanelDetails>
-                                    <Divider />
-                                    <ExpansionPanelActions>
-                                        {/* <Button size="small" onClick={this.handleClose(row._id)}>Cancel</Button> */}
-                                        <Button size="small" color="primary" onClick={(e) => this.updateChild(row)}>Save</Button>
-                                    </ExpansionPanelActions>
-                                </ExpansionPanel>
-                            )}
+                                        </ExpansionPanelDetails>
+                                        <Divider />
+                                        <ExpansionPanelActions>
+                                            {/* <Button size="small" onClick={this.handleClose(row._id)}>Cancel</Button> */}
+                                            <Button size="small" color="primary" onClick={(e) => this.updateChild(row)}>Save</Button>
+                                        </ExpansionPanelActions>
+                                    </ExpansionPanel>
+                                )}
 
-                            </Paper>
+                                </Paper>
+                            </Grid>
+                            <Grid item xs={2}></Grid>
                         </Grid>
-                        <Grid item xs={2}></Grid>
-                    </Grid>
 
 
-                    <Snackbar
-                        anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'left',
-                        }}
-                        open={this.state.snackbarOpen}
-                        autoHideDuration={6000}
-                        onClose={this.snackbarClose}
-                        className={classes.snackbarContainer}
-                        >
+                        <Snackbar
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'left',
+                            }}
+                            open={this.state.snackbarOpen}
+                            autoHideDuration={6000}
+                            onClose={this.snackbarClose}
+                            className={classes.snackbarContainer}
+                            >
 
-                        <SnackbarComponent
-                            variant={this.state.snackbarVariant}
-                            className={classes.snackbarMargin}
-                            message={this.state.snackbarMessage}
-                            />
+                            <SnackbarComponent
+                                variant={this.state.snackbarVariant}
+                                className={classes.snackbarMargin}
+                                message={this.state.snackbarMessage}
+                                />
 
-                    </Snackbar>
-
+                        </Snackbar>
+                    </MuiThemeProvider>
                 </div>
 
             );
