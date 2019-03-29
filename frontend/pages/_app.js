@@ -26,11 +26,8 @@ export default class MyApp extends App {
 
   responseGoogle = (response) => {
 
-    console.log(response);
-    console.log(process.env.ALLOWED_EMAIL)
-
     if (response.accessToken && response.profileObj && response.profileObj.email) {
-      if (response.profileObj.email == process.env.REACT_APP_ALLOWED_EMAIL) {
+      if (response.profileObj.email == 'carowanis.camp@gmail.com') {
         console.log("Connected !")
         this.setState({
           isLoggedIn: true,

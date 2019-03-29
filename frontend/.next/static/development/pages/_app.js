@@ -13654,7 +13654,7 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(process, module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MyApp; });
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MyApp; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -13731,11 +13731,8 @@ function (_App) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "responseGoogle", function (response) {
-      console.log(response);
-      console.log("carowanis.camp@gmail.com");
-
       if (response.accessToken && response.profileObj && response.profileObj.email) {
-        if (response.profileObj.email == process.env.REACT_APP_ALLOWED_EMAIL) {
+        if (response.profileObj.email == 'carowanis.camp@gmail.com') {
           console.log("Connected !");
 
           _this.setState({
@@ -13766,33 +13763,33 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 53
         },
         __self: this
       }, this.state.isLoggedIn ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 55
         },
         __self: this
       })) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "loginPage",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 57
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 58
         },
         __self: this
       }, "CAMP CAROWANIS"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "googleButton",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 59
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_google_login__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -13802,14 +13799,14 @@ function (_App) {
         onFailure: this.responseGoogle,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 60
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "status",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 67
         },
         __self: this
       }, this.state.status)));
@@ -13882,7 +13879,7 @@ function (_App) {
       }
     })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/_app")
   
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/process/browser.js */ "./node_modules/process/browser.js"), __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
