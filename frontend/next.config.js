@@ -1,2 +1,12 @@
 const withCSS = require('@zeit/next-css')
-module.exports = withCSS()
+const { parsed: localEnv } = require('dotenv').config()
+const webpack = require('webpack')
+
+module.exports = withCSS({
+    webpack(config, options) {
+        config.node = {fs: "empty"};
+        config.plugins.push(new webpack.EnvironmentPlugin(localEnv))
+        
+        return config;
+    }
+});

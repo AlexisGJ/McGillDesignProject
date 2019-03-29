@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Snackbar from '@material-ui/core/Snackbar';
-import GoogleLogin from 'react-google-login';
 import moment from 'moment';
 
 import '../static/css/main_custom.css'
@@ -164,10 +163,6 @@ class Index extends React.Component {
     render() {
         const { classes } = this.props;
 
-        const responseGoogle = (response) => {
-            console.log(response);
-        }
-
         if (this.state.error) {
             return <div>Error: {this.state.error.message}</div>;
         } else if (!this.state.isLoaded) {
@@ -185,13 +180,6 @@ class Index extends React.Component {
                             <Post slug="post/hello-world" title="Hello, world!" />
                         </li>
                         </ul> */}
-
-                        <GoogleLogin
-                                clientId="379738068740-tgguug359j7mqrm0vqledsf9si5u7ssp.apps.googleusercontent.com"
-                                buttonText="Login to google"
-                                onSuccess={responseGoogle}
-                                onFailure={responseGoogle}
-                                />
                         
                         <Grid container spacing={8} className={classes.root}>
                             <Grid item xs={6}>
