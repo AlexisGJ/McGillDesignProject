@@ -27,6 +27,10 @@ import '../static/css/main_custom.css'
 import SnackbarComponent from '../components/SnackbarComponent';
 import AppbarComponent from '../components/AppbarComponent';
 
+
+const API_URL = (process.env.NODE_ENV && process.env.NODE_ENV === 'production') ? "https://camp-carowanis-api.herokuapp.com" : "http://localhost:1234";
+
+
 const theme = createMuiTheme({
     palette: {
       primary: { main: '#455a64' },
@@ -132,7 +136,7 @@ class Settings extends React.Component {
     }
 
     getData = () => {
-        fetch("http://localhost:1234/api/child/all")
+        fetch(API_URL + "/api/child/all")
         .then(res => res.json())
         .then(
             (result) => {
@@ -204,7 +208,7 @@ class Settings extends React.Component {
     }
 
     updateChild = (row) => {
-        fetch('http://localhost:1234/api/child/' + row._id + '/update', {
+        fetch(API_URL + '/api/child/' + row._id + '/update', {
             method: 'post',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(row)
@@ -223,7 +227,7 @@ class Settings extends React.Component {
     }
 
     createChild = () => {
-        fetch('http://localhost:1234/api/child/create', {
+        fetch(API_URL + '/api/child/create', {
             method: 'post',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(this.state.newChild)
@@ -244,7 +248,7 @@ class Settings extends React.Component {
     }
 
     deleteChild = (row) => {
-        fetch('http://localhost:1234/api/child/' + row._id + '/delete', {
+        fetch(API_URL + '/api/child/' + row._id + '/delete', {
             method: 'post',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(row)

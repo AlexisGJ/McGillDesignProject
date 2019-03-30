@@ -12,6 +12,9 @@ import AppbarComponent from '../components/AppbarComponent';
 import { Typography } from '@material-ui/core';
 
 
+const API_URL = (process.env.NODE_ENV && process.env.NODE_ENV === 'production') ? "https://camp-carowanis-api.herokuapp.com" : "http://localhost:1234";
+
+
 const Post = props => (
     <li>
         <Link as={`/${props.slug}`} href={`/post?title=${props.title}`}>
@@ -111,7 +114,7 @@ class Index extends React.Component {
             loadingData: true,
         });
 
-        fetch("http://localhost:1234/api/reading/allActiveChildren")
+        fetch(API_URL + "/api/reading/allActiveChildren")
         .then(res => res.json())
         .then(
             (result) => {

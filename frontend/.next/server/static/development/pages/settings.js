@@ -622,6 +622,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+var API_URL =  false ? undefined : "http://localhost:1234";
 var theme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["createMuiTheme"])({
   palette: {
     primary: {
@@ -720,7 +721,7 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Settings).call(this, props));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getData", function () {
-      fetch("http://localhost:1234/api/child/all").then(function (res) {
+      fetch(API_URL + "/api/child/all").then(function (res) {
         return res.json();
       }).then(function (result) {
         _this.setState({
@@ -795,7 +796,7 @@ function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "updateChild", function (row) {
-      fetch('http://localhost:1234/api/child/' + row._id + '/update', {
+      fetch(API_URL + '/api/child/' + row._id + '/update', {
         method: 'post',
         headers: {
           "Content-Type": "application/json"
@@ -814,7 +815,7 @@ function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "createChild", function () {
-      fetch('http://localhost:1234/api/child/create', {
+      fetch(API_URL + '/api/child/create', {
         method: 'post',
         headers: {
           "Content-Type": "application/json"
@@ -843,7 +844,7 @@ function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "deleteChild", function (row) {
-      fetch('http://localhost:1234/api/child/' + row._id + '/delete', {
+      fetch(API_URL + '/api/child/' + row._id + '/delete', {
         method: 'post',
         headers: {
           "Content-Type": "application/json"
@@ -902,7 +903,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 269
+            lineNumber: 273
           },
           __self: this
         }, "Error: ", error.message);
@@ -910,7 +911,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 271
+            lineNumber: 275
           },
           __self: this
         }, "Loading...");
@@ -918,21 +919,21 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 274
+            lineNumber: 278
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["MuiThemeProvider"], {
           theme: theme,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 275
+            lineNumber: 279
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_24__["default"], {
           loading: false,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 276
+            lineNumber: 280
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -941,7 +942,7 @@ function (_React$Component) {
           className: classes.root,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 278
+            lineNumber: 282
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -949,7 +950,7 @@ function (_React$Component) {
           xs: 2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 279
+            lineNumber: 283
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -957,7 +958,7 @@ function (_React$Component) {
           xs: 8,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 280
+            lineNumber: 284
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -965,7 +966,7 @@ function (_React$Component) {
           elevation: 1,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 281
+            lineNumber: 285
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanel__WEBPACK_IMPORTED_MODULE_9___default.a, {
@@ -974,7 +975,7 @@ function (_React$Component) {
           onChange: this.handleClose('create_child'),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 283
+            lineNumber: 287
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelSummary__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -982,21 +983,21 @@ function (_React$Component) {
             color: "secondary",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 284
+              lineNumber: 288
             },
             __self: this
           }),
           className: classes.addPanel,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 284
+            lineNumber: 288
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: classes.column,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 285
+            lineNumber: 289
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1006,21 +1007,21 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 286
+            lineNumber: 290
           },
           __self: this
         }, "Ajouter une nouvelle entr\xE9e"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelDetails__WEBPACK_IMPORTED_MODULE_10___default.a, {
           className: classes.details,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 289
+            lineNumber: 293
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
           container: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 290
+            lineNumber: 294
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1028,7 +1029,7 @@ function (_React$Component) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 291
+            lineNumber: 295
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1045,7 +1046,7 @@ function (_React$Component) {
           value: newChild.name,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 292
+            lineNumber: 296
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1053,7 +1054,7 @@ function (_React$Component) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 304
+            lineNumber: 308
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1070,7 +1071,7 @@ function (_React$Component) {
           value: newChild.collection_id,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 305
+            lineNumber: 309
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1078,7 +1079,7 @@ function (_React$Component) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 317
+            lineNumber: 321
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1095,7 +1096,7 @@ function (_React$Component) {
           value: newChild.location,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 318
+            lineNumber: 322
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1103,7 +1104,7 @@ function (_React$Component) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 330
+            lineNumber: 334
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1111,7 +1112,7 @@ function (_React$Component) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 331
+            lineNumber: 335
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1128,7 +1129,7 @@ function (_React$Component) {
           value: newChild.range_min,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 332
+            lineNumber: 336
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1136,7 +1137,7 @@ function (_React$Component) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 344
+            lineNumber: 348
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1153,7 +1154,7 @@ function (_React$Component) {
           value: newChild.range_max,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 345
+            lineNumber: 349
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1161,7 +1162,7 @@ function (_React$Component) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 358
+            lineNumber: 362
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1169,7 +1170,7 @@ function (_React$Component) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 359
+            lineNumber: 363
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1177,7 +1178,7 @@ function (_React$Component) {
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 360
+            lineNumber: 364
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_17___default.a, {
@@ -1189,26 +1190,26 @@ function (_React$Component) {
             color: "primary",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 363
+              lineNumber: 367
             },
             __self: this
           }),
           label: "Actif",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 361
+            lineNumber: 365
           },
           __self: this
         })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_15___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 376
+            lineNumber: 380
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelActions__WEBPACK_IMPORTED_MODULE_12___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 377
+            lineNumber: 381
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -1219,7 +1220,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 379
+            lineNumber: 383
           },
           __self: this
         }, "Save"))), data.map(function (row, key) {
@@ -1229,69 +1230,69 @@ function (_React$Component) {
             onChange: _this2.handleClose(row._id),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 388
+              lineNumber: 392
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelSummary__WEBPACK_IMPORTED_MODULE_11___default.a, {
             expandIcon: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_13___default.a, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 389
+                lineNumber: 393
               },
               __self: this
             }),
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 389
+              lineNumber: 393
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: classes.column,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 390
+              lineNumber: 394
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
             className: classes.heading,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 391
+              lineNumber: 395
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
             className: row.active ? classes.childActiveTrue : classes.childActiveFalse,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 391
+              lineNumber: 395
             },
             __self: this
           }, "\u25CF"), " ", row.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: classes.column,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 393
+              lineNumber: 397
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
             className: classes.secondaryHeading,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 394
+              lineNumber: 398
             },
             __self: this
           }, row.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelDetails__WEBPACK_IMPORTED_MODULE_10___default.a, {
             className: classes.details,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 397
+              lineNumber: 401
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
             container: true,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 398
+              lineNumber: 402
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1299,7 +1300,7 @@ function (_React$Component) {
             xs: 4,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 399
+              lineNumber: 403
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1316,7 +1317,7 @@ function (_React$Component) {
             value: row.name,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 400
+              lineNumber: 404
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1324,7 +1325,7 @@ function (_React$Component) {
             xs: 4,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 412
+              lineNumber: 416
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1341,7 +1342,7 @@ function (_React$Component) {
             value: row.collection_id,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 413
+              lineNumber: 417
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1349,7 +1350,7 @@ function (_React$Component) {
             xs: 4,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 425
+              lineNumber: 429
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1366,7 +1367,7 @@ function (_React$Component) {
             value: row.location,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 426
+              lineNumber: 430
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1374,7 +1375,7 @@ function (_React$Component) {
             xs: 4,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 438
+              lineNumber: 442
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1382,7 +1383,7 @@ function (_React$Component) {
             xs: 4,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 439
+              lineNumber: 443
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1399,7 +1400,7 @@ function (_React$Component) {
             value: row.range_min,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 440
+              lineNumber: 444
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1407,7 +1408,7 @@ function (_React$Component) {
             xs: 4,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 452
+              lineNumber: 456
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -1424,7 +1425,7 @@ function (_React$Component) {
             value: row.range_max,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 453
+              lineNumber: 457
             },
             __self: this
           })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1432,7 +1433,7 @@ function (_React$Component) {
             xs: 4,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 466
+              lineNumber: 470
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1440,7 +1441,7 @@ function (_React$Component) {
             xs: 4,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 467
+              lineNumber: 471
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1448,7 +1449,7 @@ function (_React$Component) {
             xs: 4,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 468
+              lineNumber: 472
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControlLabel__WEBPACK_IMPORTED_MODULE_17___default.a, {
@@ -1460,26 +1461,26 @@ function (_React$Component) {
               color: "primary",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 471
+                lineNumber: 475
               },
               __self: this
             }),
             label: "Actif",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 469
+              lineNumber: 473
             },
             __self: this
           })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_15___default.a, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 484
+              lineNumber: 488
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_ExpansionPanelActions__WEBPACK_IMPORTED_MODULE_12___default.a, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 485
+              lineNumber: 489
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -1489,7 +1490,7 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 486
+              lineNumber: 490
             },
             __self: this
           }, "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -1500,7 +1501,7 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 487
+              lineNumber: 491
             },
             __self: this
           }, "Save")));
@@ -1509,7 +1510,7 @@ function (_React$Component) {
           xs: 2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 494
+            lineNumber: 498
           },
           __self: this
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_19___default.a, {
@@ -1523,7 +1524,7 @@ function (_React$Component) {
           className: classes.snackbarContainer,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 498
+            lineNumber: 502
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_23__["default"], {
@@ -1532,7 +1533,7 @@ function (_React$Component) {
           message: this.state.snackbarMessage,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 509
+            lineNumber: 513
           },
           __self: this
         }))));

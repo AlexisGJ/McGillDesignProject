@@ -1687,12 +1687,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+var API_URL =  false ? undefined : "http://localhost:1234";
 
 var Post = function Post(props) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1700,13 +1701,13 @@ var Post = function Post(props) {
     href: "/post?title=".concat(props.title),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 20
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 21
     },
     __self: this
   }, props.title)));
@@ -1967,7 +1968,7 @@ function (_React$Component) {
                 this.setState({
                   loadingData: true
                 });
-                fetch("http://localhost:1234/api/reading/allActiveChildren").then(function (res) {
+                fetch(API_URL + "/api/reading/allActiveChildren").then(function (res) {
                   return res.json();
                 }).then(function (result) {
                   if (result && result.length > 0) {
@@ -2036,7 +2037,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 274
+            lineNumber: 277
           },
           __self: this
         }, "Error: ", this.state.error.message);
@@ -2044,7 +2045,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 276
+            lineNumber: 279
           },
           __self: this
         }, "Loading...");
@@ -2052,21 +2053,21 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 279
+            lineNumber: 282
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["MuiThemeProvider"], {
           theme: theme,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 280
+            lineNumber: 283
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_10__["default"], {
           loading: this.state.loadingData,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 281
+            lineNumber: 284
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -2075,7 +2076,7 @@ function (_React$Component) {
           className: classes.root,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 291
+            lineNumber: 294
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -2083,13 +2084,13 @@ function (_React$Component) {
           xs: 6,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 292
+            lineNumber: 295
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 293
+            lineNumber: 296
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -2099,7 +2100,7 @@ function (_React$Component) {
           orderBy: this.state.orderBy,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 294
+            lineNumber: 297
           },
           __self: this
         }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -2107,13 +2108,13 @@ function (_React$Component) {
           xs: 6,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 302
+            lineNumber: 305
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 303
+            lineNumber: 306
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -2123,7 +2124,7 @@ function (_React$Component) {
           orderBy: this.state.orderBy,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 304
+            lineNumber: 307
           },
           __self: this
         }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -2131,7 +2132,7 @@ function (_React$Component) {
           xs: 12,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 313
+            lineNumber: 316
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__["Typography"], {
@@ -2141,7 +2142,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 314
+            lineNumber: 317
           },
           __self: this
         }, "Derni\xE8re mise \xE0 jour ", moment__WEBPACK_IMPORTED_MODULE_7___default()(this.state.lastSuccessfulUpdate).fromNow()))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -2155,7 +2156,7 @@ function (_React$Component) {
           className: classes.snackbarContainer,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 320
+            lineNumber: 323
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -2164,7 +2165,7 @@ function (_React$Component) {
           message: this.state.snackbarMessage,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 331
+            lineNumber: 334
           },
           __self: this
         }))));
