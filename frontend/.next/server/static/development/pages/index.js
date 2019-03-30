@@ -1026,11 +1026,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/TableRow */ "@material-ui/core/TableRow");
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Paper */ "@material-ui/core/Paper");
-/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! recharts */ "recharts");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(recharts__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _components_ModalComponent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/ModalComponent */ "./components/ModalComponent.js");
+/* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Tooltip */ "@material-ui/core/Tooltip");
+/* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_core_TableSortLabel__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/TableSortLabel */ "@material-ui/core/TableSortLabel");
+/* harmony import */ var _material_ui_core_TableSortLabel__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TableSortLabel__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Paper */ "@material-ui/core/Paper");
+/* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! recharts */ "recharts");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(recharts__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_ModalComponent__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/ModalComponent */ "./components/ModalComponent.js");
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/components/TableComponent.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -1052,6 +1056,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -1098,179 +1104,284 @@ var styles = function styles(theme) {
   };
 };
 
-var id = 0;
+function desc(a, b, orderBy) {
+  if (b[orderBy] < a[orderBy]) {
+    return -1;
+  }
 
-function createData(name, sensor, sgv, battery, lastTime) {
-  id += 1;
-  return {
-    id: id,
-    name: name,
-    sensor: sensor,
-    sgv: sgv,
-    battery: battery,
-    lastTime: lastTime
+  if (b[orderBy] > a[orderBy]) {
+    return 1;
+  }
+
+  return 0;
+}
+
+function stableSort(array, cmp) {
+  var stabilizedThis = array.map(function (el, index) {
+    return [el, index];
+  });
+  stabilizedThis.sort(function (a, b) {
+    var order = cmp(a[0], b[0]);
+    if (order !== 0) return order;
+    return a[1] - b[1];
+  });
+  return stabilizedThis.map(function (el) {
+    return el[0];
+  });
+}
+
+function getSorting(order, orderBy) {
+  return order === 'desc' ? function (a, b) {
+    return desc(a, b, orderBy);
+  } : function (a, b) {
+    return -desc(a, b, orderBy);
   };
-} // const rows = [
-//   createData('Ege Ozer', 'Dexcom G5', 2.4, 24, '2019-01-29 11:30:12'),
-//   createData('Rami Djema', 'FreeStyle Libre', 4.4, 51, '2019-01-29 14:58:12'),
-//   createData('Alexis Giguere', 'Dexcom G5', 5.2, 12, '2019-01-29 09:03:12'),
-//   createData('Ahmad Prof', 'Dexcom G5', 3.0, 87, '2019-01-29 17:45:12'),
-// ];
+}
 
+var rows = [{
+  id: 'name',
+  numeric: false,
+  disablePadding: false,
+  label: 'Nom',
+  enableSorting: true
+}, {
+  id: 'historique',
+  numeric: false,
+  disablePadding: false,
+  label: 'Historique',
+  enableSorting: false
+}, {
+  id: 'mmol',
+  numeric: true,
+  disablePadding: true,
+  label: 'Niveau de glucose (mmol/L)',
+  enableSorting: true
+}, {
+  id: 'uploaderBattery',
+  numeric: true,
+  disablePadding: true,
+  label: 'Batterie',
+  enableSorting: true
+}, {
+  id: 'dateFromNowMinutes',
+  numeric: true,
+  disablePadding: false,
+  label: 'Dernière valeur',
+  enableSorting: true
+}];
+
+var EnhancedTableHead =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(EnhancedTableHead, _React$Component);
+
+  function EnhancedTableHead() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, EnhancedTableHead);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(EnhancedTableHead)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "createSortHandler", function (property) {
+      return function (event) {
+        _this.props.onRequestSort(event, property);
+      };
+    });
+
+    return _this;
+  }
+
+  _createClass(EnhancedTableHead, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _this$props = this.props,
+          order = _this$props.order,
+          orderBy = _this$props.orderBy;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 95
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
+        },
+        __self: this
+      }, rows.map(function (row) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          key: row.id,
+          align: row.id == 'name' ? 'left' : 'right',
+          padding: row.disablePadding ? 'none' : 'default',
+          sortDirection: orderBy === row.id ? order : false,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 99
+          },
+          __self: this
+        }, row.enableSorting ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_8___default.a, {
+          title: "Sort",
+          placement: row.numeric ? 'bottom-end' : 'bottom-start',
+          enterDelay: 300,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableSortLabel__WEBPACK_IMPORTED_MODULE_9___default.a, {
+          active: orderBy === row.id,
+          direction: order,
+          onClick: _this2.createSortHandler(row.id),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 111
+          },
+          __self: this
+        }, row.label)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableSortLabel__WEBPACK_IMPORTED_MODULE_9___default.a, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 120
+          },
+          __self: this
+        }, row.label));
+      }, this)));
+    }
+  }]);
+
+  return EnhancedTableHead;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+EnhancedTableHead.propTypes = {
+  onRequestSort: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired,
+  order: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired,
+  orderBy: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string.isRequired
+};
 
 var SimpleTable =
 /*#__PURE__*/
-function (_React$Component) {
-  _inherits(SimpleTable, _React$Component);
+function (_React$Component2) {
+  _inherits(SimpleTable, _React$Component2);
 
   function SimpleTable(props) {
-    var _this;
+    var _this3;
 
     _classCallCheck(this, SimpleTable);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SimpleTable).call(this, props));
+    _this3 = _possibleConstructorReturn(this, _getPrototypeOf(SimpleTable).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function (row) {
-      _this.setState({
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "handleClick", function (row) {
+      _this3.setState({
         open: true,
         row: row
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleOpen", function () {
-      _this.setState({
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "handleOpen", function () {
+      _this3.setState({
         open: true
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClose", function () {
-      _this.setState({
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this3)), "handleClose", function () {
+      _this3.setState({
         open: false
       });
     });
 
-    _this.state = {
+    _this3.state = {
       error: null,
       isLoaded: false,
-      data: props.data,
+      // data: props.data,
       open: false,
       row: {
         name: "",
         sensor: ""
-      },
-      rows: []
+      }
     };
-    return _this;
+    return _this3;
   }
 
   _createClass(SimpleTable, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.setState({
-        rows: this.props.data,
+        // rows: this.props.data,
         isLoaded: true
       });
-    }
-  }, {
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps() {
-      this.setState({
-        rows: this.props.data,
-        isLoaded: true
-      });
-    }
+    } // componentWillReceiveProps() {
+    //   this.setState({
+    //     rows: this.props.data,
+    //     isLoaded: true
+    //   })
+    // }
+
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this4 = this;
 
-      var classes = this.props.classes;
+      var _this$props2 = this.props,
+          classes = _this$props2.classes,
+          rows = _this$props2.rows,
+          order = _this$props2.order,
+          orderBy = _this$props2.orderBy;
       var _this$state = this.state,
           error = _this$state.error,
-          isLoaded = _this$state.isLoaded,
-          rows = _this$state.rows;
+          isLoaded = _this$state.isLoaded;
 
       if (error) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 109
+            lineNumber: 189
           },
           __self: this
         }, "Error: ", error.message);
-      } else if (!isLoaded) {
+      } else if (!isLoaded || !rows) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 111
+            lineNumber: 191
           },
           __self: this
         }, "Loading...");
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_10___default.a, {
           className: classes.root,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 194
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_3___default.a, {
           className: classes.table,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 115
+            lineNumber: 195
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(EnhancedTableHead, {
+          order: order,
+          orderBy: orderBy,
+          onRequestSort: this.props.handleRequestSort,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 116
+            lineNumber: 196
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_4___default.a, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 117
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 118
-          },
-          __self: this
-        }, "Nom"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-          align: "right",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 119
-          },
-          __self: this
-        }, "Historique"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-          align: "right",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 120
-          },
-          __self: this
-        }, "Valeur de glucose (mmol/L)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-          align: "right",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 121
-          },
-          __self: this
-        }, "Batterie (%)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
-          align: "right",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 122
-          },
-          __self: this
-        }, "Derni\xE8re valeur"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_4___default.a, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 125
+            lineNumber: 201
           },
           __self: this
         }, rows.map(function (row) {
@@ -1278,11 +1389,11 @@ function (_React$Component) {
             key: row._id,
             className: classes.tableRow,
             onClick: function onClick() {
-              return _this2.handleClick(row);
+              return _this4.handleClick(row);
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 128
+              lineNumber: 204
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1291,7 +1402,7 @@ function (_React$Component) {
             padding: "dense",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 129
+              lineNumber: 205
             },
             __self: this
           }, row.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1299,7 +1410,7 @@ function (_React$Component) {
             padding: "dense",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 132
+              lineNumber: 208
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1307,7 +1418,7 @@ function (_React$Component) {
             padding: "dense",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 134
+              lineNumber: 210
             },
             __self: this
           }, "N/A"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1315,7 +1426,7 @@ function (_React$Component) {
             padding: "dense",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 135
+              lineNumber: 211
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1323,18 +1434,18 @@ function (_React$Component) {
             padding: "dense",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 136
+              lineNumber: 212
             },
             __self: this
           }, "N/A")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_7___default.a, {
             key: row._id,
             className: classes.tableRow,
             onClick: function onClick() {
-              return _this2.handleClick(row);
+              return _this4.handleClick(row);
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 139
+              lineNumber: 215
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1343,7 +1454,7 @@ function (_React$Component) {
             padding: "dense",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 140
+              lineNumber: 216
             },
             __self: this
           }, row.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1351,7 +1462,7 @@ function (_React$Component) {
             padding: "dense",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 143
+              lineNumber: 219
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1361,41 +1472,41 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 144
+              lineNumber: 220
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_9__["ResponsiveContainer"], {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_11__["ResponsiveContainer"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 145
+              lineNumber: 221
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_9__["LineChart"], {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_11__["LineChart"], {
             data: row.readings,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 146
+              lineNumber: 222
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_9__["XAxis"], {
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_11__["XAxis"], {
             type: "number",
             dataKey: "dateFromNowMinutes",
             hide: true,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 147
+              lineNumber: 223
             },
             __self: this
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_9__["YAxis"], {
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_11__["YAxis"], {
             type: "number",
             domain: ['dataMin', 'dataMax'],
             hide: true,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 148
+              lineNumber: 224
             },
             __self: this
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_9__["Line"], {
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_11__["Line"], {
             type: "monotone",
             dataKey: "mmol",
             stroke: "#999",
@@ -1405,7 +1516,7 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 149
+              lineNumber: 225
             },
             __self: this
           }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1414,7 +1525,7 @@ function (_React$Component) {
             className: row.latestReading.mmol < row.range_min ? classes.value_low : row.latestReading.mmol > row.range_max ? classes.value_high : classes.value_normal,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 154
+              lineNumber: 230
             },
             __self: this
           }, row.latestReading.mmol, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1427,7 +1538,7 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 155
+              lineNumber: 231
             },
             __self: this
           })), row.battery ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1435,20 +1546,20 @@ function (_React$Component) {
             padding: "dense",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 158
+              lineNumber: 234
             },
             __self: this
           }, row.battery.uploaderBattery, " %", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 158
+              lineNumber: 234
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
             className: classes.tableSpan,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 158
+              lineNumber: 234
             },
             __self: this
           }, row.battery.dateFromNow)) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1456,7 +1567,7 @@ function (_React$Component) {
             padding: "dense",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 160
+              lineNumber: 236
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1464,31 +1575,31 @@ function (_React$Component) {
             padding: "dense",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 162
+              lineNumber: 238
             },
             __self: this
           }, row.latestReading.dateTime, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 162
+              lineNumber: 238
             },
             __self: this
           }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
             className: classes.tableSpan,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 162
+              lineNumber: 238
             },
             __self: this
           }, row.latestReading.dateFromNow)));
-        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalComponent__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ModalComponent__WEBPACK_IMPORTED_MODULE_12__["default"], {
           open: this.state.open,
           handleOpen: this.handleOpen,
           handleClose: this.handleClose,
           sensorData: this.state.row,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 170
+            lineNumber: 246
           },
           __self: this
         }));
@@ -1629,6 +1740,72 @@ var theme = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["create
   }
 });
 
+function desc(a, b, orderBy) {
+  if (b[orderBy] < a[orderBy]) {
+    return -1;
+  }
+
+  if (b[orderBy] > a[orderBy]) {
+    return 1;
+  }
+
+  return 0;
+}
+
+function stableSort(array, cmp) {
+  var stabilizedThis = array.map(function (el, index) {
+    return [el, index];
+  });
+  stabilizedThis.sort(function (a, b) {
+    var order = cmp(a[0], b[0]);
+    if (order !== 0) return order;
+    return a[1] - b[1];
+  });
+  return stabilizedThis.map(function (el) {
+    return el[0];
+  });
+}
+
+function getSorting(order, orderBy) {
+  return order === 'desc' ? function (a, b) {
+    return desc(a, b, orderBy);
+  } : function (a, b) {
+    return -desc(a, b, orderBy);
+  };
+}
+
+var rows = [{
+  id: 'name',
+  numeric: false,
+  disablePadding: false,
+  label: 'Nom',
+  enableSorting: true
+}, {
+  id: 'historique',
+  numeric: false,
+  disablePadding: false,
+  label: 'Historique',
+  enableSorting: false
+}, {
+  id: 'mmol',
+  numeric: true,
+  disablePadding: true,
+  label: 'Niveau de glucose (mmol/L)',
+  enableSorting: true
+}, {
+  id: 'uploaderBattery',
+  numeric: true,
+  disablePadding: true,
+  label: 'Batterie',
+  enableSorting: true
+}, {
+  id: 'dateFromNowMinutes',
+  numeric: true,
+  disablePadding: false,
+  label: 'Dernière valeur',
+  enableSorting: true
+}];
+
 var Index =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1658,6 +1835,8 @@ function (_React$Component) {
           }
 
           data[i]['latestReading'] = data[i]['readings'][0];
+          data[i]['mmol'] = data[i]['readings'][0]['mmol'];
+          data[i]['dateFromNowMinutes'] = data[i]['readings'][0]['dateFromNowMinutes'];
           var directionArrows = null;
 
           switch (data[i]['latestReading']['direction']) {
@@ -1697,6 +1876,7 @@ function (_React$Component) {
 
           if (data[i]['battery']) {
             data[i]['battery']['dateFromNow'] = moment__WEBPACK_IMPORTED_MODULE_7___default()(data[i]['battery']['created_at']).fromNow();
+            data[i]['uploaderBattery'] = data[i]['battery']['uploaderBattery'];
           }
         } else {
           data[i]['latestReading'] = "err_no_data";
@@ -1724,6 +1904,26 @@ function (_React$Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleRequestSort", function (event, property) {
+      var orderBy = property;
+      var order = 'desc';
+
+      if (_this.state.orderBy === property && _this.state.order === 'desc') {
+        order = 'asc';
+      }
+
+      var sortedData = stableSort(_this.state.data, getSorting(order, orderBy));
+
+      _this.setState({
+        order: order,
+        orderBy: orderBy,
+        dataFirstHalf: sortedData.splice(0, Math.ceil(sortedData.length / 2)),
+        dataSecondHalf: sortedData
+      });
+
+      setTimeout(_this.forceUpdate(), 1000);
+    });
+
     _this.state = {
       error: null,
       isLoaded: false,
@@ -1734,7 +1934,9 @@ function (_React$Component) {
       lastSuccessfulUpdate: moment__WEBPACK_IMPORTED_MODULE_7___default()(),
       snackbarOpen: false,
       snackbarMessage: "",
-      snackbarVariant: "info"
+      snackbarVariant: "info",
+      order: 'asc',
+      orderBy: 'name'
     };
     return _this;
   }
@@ -1771,13 +1973,15 @@ function (_React$Component) {
                   if (result && result.length > 0) {
                     var convertedData = _this3.convertData(result);
 
+                    var sortedData = stableSort(convertedData, getSorting(_this3.state.order, _this3.state.orderBy));
+
                     _this3.setState({
                       error: null,
                       isLoaded: true,
                       loadingData: false,
-                      data: convertedData,
-                      dataFirstHalf: convertedData.splice(0, Math.ceil(convertedData.length / 2)),
-                      dataSecondHalf: convertedData,
+                      data: convertedData.slice(0),
+                      dataFirstHalf: sortedData.splice(0, Math.ceil(sortedData.length / 2)),
+                      dataSecondHalf: sortedData,
                       lastSuccessfulUpdate: moment__WEBPACK_IMPORTED_MODULE_7___default()()
                     });
 
@@ -1832,7 +2036,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 213
+            lineNumber: 274
           },
           __self: this
         }, "Error: ", this.state.error.message);
@@ -1840,7 +2044,7 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 215
+            lineNumber: 276
           },
           __self: this
         }, "Loading...");
@@ -1848,21 +2052,21 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 218
+            lineNumber: 279
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["MuiThemeProvider"], {
           theme: theme,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 219
+            lineNumber: 280
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_AppbarComponent__WEBPACK_IMPORTED_MODULE_10__["default"], {
           loading: this.state.loadingData,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 220
+            lineNumber: 281
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1871,7 +2075,7 @@ function (_React$Component) {
           className: classes.root,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 230
+            lineNumber: 291
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1879,20 +2083,23 @@ function (_React$Component) {
           xs: 6,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 231
+            lineNumber: 292
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 232
+            lineNumber: 293
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_8__["default"], {
-          data: this.state.dataFirstHalf,
+          rows: this.state.dataFirstHalf,
+          handleRequestSort: this.handleRequestSort,
+          order: this.state.order,
+          orderBy: this.state.orderBy,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 233
+            lineNumber: 294
           },
           __self: this
         }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1900,20 +2107,23 @@ function (_React$Component) {
           xs: 6,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 236
+            lineNumber: 302
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 237
+            lineNumber: 303
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TableComponent__WEBPACK_IMPORTED_MODULE_8__["default"], {
-          data: this.state.dataSecondHalf,
+          rows: this.state.dataSecondHalf,
+          handleRequestSort: this.handleRequestSort,
+          order: this.state.order,
+          orderBy: this.state.orderBy,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 238
+            lineNumber: 304
           },
           __self: this
         }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -1921,7 +2131,7 @@ function (_React$Component) {
           xs: 12,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 242
+            lineNumber: 313
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__["Typography"], {
@@ -1931,7 +2141,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 243
+            lineNumber: 314
           },
           __self: this
         }, "Derni\xE8re mise \xE0 jour ", moment__WEBPACK_IMPORTED_MODULE_7___default()(this.state.lastSuccessfulUpdate).fromNow()))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -1945,7 +2155,7 @@ function (_React$Component) {
           className: classes.snackbarContainer,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 249
+            lineNumber: 320
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_SnackbarComponent__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -1954,7 +2164,7 @@ function (_React$Component) {
           message: this.state.snackbarMessage,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 260
+            lineNumber: 331
           },
           __self: this
         }))));
@@ -2183,6 +2393,17 @@ module.exports = require("@material-ui/core/TableRow");
 
 /***/ }),
 
+/***/ "@material-ui/core/TableSortLabel":
+/*!***************************************************!*\
+  !*** external "@material-ui/core/TableSortLabel" ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/TableSortLabel");
+
+/***/ }),
+
 /***/ "@material-ui/core/TextField":
 /*!**********************************************!*\
   !*** external "@material-ui/core/TextField" ***!
@@ -2202,6 +2423,17 @@ module.exports = require("@material-ui/core/TextField");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Toolbar");
+
+/***/ }),
+
+/***/ "@material-ui/core/Tooltip":
+/*!********************************************!*\
+  !*** external "@material-ui/core/Tooltip" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Tooltip");
 
 /***/ }),
 

@@ -6,6 +6,8 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import Tooltip from '@material-ui/core/Tooltip';
+import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Paper from '@material-ui/core/Paper';
 
 import {ResponsiveContainer, LineChart, Line, XAxis, YAxis} from 'recharts';
@@ -47,18 +49,95 @@ const styles = theme => ({
   
 });
 
-let id = 0;
-function createData(name, sensor, sgv, battery, lastTime) {
-  id += 1;
-  return { id, name, sensor, sgv, battery, lastTime };
+
+function desc(a, b, orderBy) {
+  if (b[orderBy] < a[orderBy]) {
+    return -1;
+  }
+  if (b[orderBy] > a[orderBy]) {
+    return 1;
+  }
+  return 0;
 }
 
-// const rows = [
-//   createData('Ege Ozer', 'Dexcom G5', 2.4, 24, '2019-01-29 11:30:12'),
-//   createData('Rami Djema', 'FreeStyle Libre', 4.4, 51, '2019-01-29 14:58:12'),
-//   createData('Alexis Giguere', 'Dexcom G5', 5.2, 12, '2019-01-29 09:03:12'),
-//   createData('Ahmad Prof', 'Dexcom G5', 3.0, 87, '2019-01-29 17:45:12'),
-// ];
+function stableSort(array, cmp) {
+  const stabilizedThis = array.map((el, index) => [el, index]);
+  stabilizedThis.sort((a, b) => {
+    const order = cmp(a[0], b[0]);
+    if (order !== 0) return order;
+    return a[1] - b[1];
+  });
+  return stabilizedThis.map(el => el[0]);
+}
+
+function getSorting(order, orderBy) {
+  return order === 'desc' ? (a, b) => desc(a, b, orderBy) : (a, b) => -desc(a, b, orderBy);
+}
+
+const rows = [
+  { id: 'name', numeric: false, disablePadding: false, label: 'Nom', enableSorting: true },
+  { id: 'historique', numeric: false, disablePadding: false, label: 'Historique', enableSorting: false },
+  { id: 'mmol', numeric: true, disablePadding: true, label: 'Niveau de glucose (mmol/L)', enableSorting: true },
+  { id: 'uploaderBattery', numeric: true, disablePadding: true, label: 'Batterie', enableSorting: true },
+  { id: 'dateFromNowMinutes', numeric: true, disablePadding: false, label: 'Dernière valeur', enableSorting: true },
+];
+
+
+class EnhancedTableHead extends React.Component {
+  createSortHandler = property => event => {
+    this.props.onRequestSort(event, property);
+  };
+
+  render() {
+    const { order, orderBy } = this.props;
+
+    return (
+      <TableHead>
+        <TableRow>
+          {rows.map(
+            row => (
+              <TableCell
+                key={row.id}
+                align={row.id == 'name' ? 'left' : 'right'}
+                padding={row.disablePadding ? 'none' : 'default'}
+                sortDirection={orderBy === row.id ? order : false}
+              >
+              {row.enableSorting ? (
+                <Tooltip
+                  title="Sort"
+                  placement={row.numeric ? 'bottom-end' : 'bottom-start'}
+                  enterDelay={300}
+                >
+                  <TableSortLabel
+                    active={orderBy === row.id}
+                    direction={order}
+                    onClick={this.createSortHandler(row.id)}
+                  >
+                    {row.label}
+                  </TableSortLabel>
+                </Tooltip>
+              ) : (
+                <TableSortLabel>
+                  {row.label}
+                </TableSortLabel>
+              )}
+              
+              </TableCell>
+            ),
+            this,
+          )}
+        </TableRow>
+      </TableHead>
+    );
+  }
+}
+
+EnhancedTableHead.propTypes = {
+  onRequestSort: PropTypes.func.isRequired,
+  order: PropTypes.string.isRequired,
+  orderBy: PropTypes.string.isRequired,
+};
+
 
 
 class SimpleTable extends React.Component {
@@ -66,28 +145,29 @@ class SimpleTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        error: null,
-        isLoaded: false,
-        data: props.data,
-        open: false,
-        row: {name: "", sensor: ""},
-        rows: []
+      error: null,
+      isLoaded: false,
+      // data: props.data,
+      open: false,
+      row: {name: "", sensor: ""},
     };
   }
 
+  
+
   componentDidMount() {
     this.setState({
-      rows: this.props.data,
+      // rows: this.props.data,
       isLoaded: true
     })
   }
 
-  componentWillReceiveProps() {
-    this.setState({
-      rows: this.props.data,
-      isLoaded: true
-    })
-  }
+  // componentWillReceiveProps() {
+  //   this.setState({
+  //     rows: this.props.data,
+  //     isLoaded: true
+  //   })
+  // }
 
   handleClick = (row) => {
     this.setState({open: true, row: row});
@@ -102,26 +182,22 @@ class SimpleTable extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
-    const { error, isLoaded, rows } = this.state;
+    const { classes, rows, order, orderBy } = this.props;
+    const { error, isLoaded } = this.state;
 
     if (error) {
         return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
+    } else if (!isLoaded || !rows) {
         return <div>Loading...</div>;
     } else {
       return (
         <Paper className={classes.root}>
           <Table className={classes.table}>
-            <TableHead>
-              <TableRow>
-                <TableCell>Nom</TableCell>
-                <TableCell align="right">Historique</TableCell>
-                <TableCell align="right">Valeur de glucose (mmol/L)</TableCell>
-                <TableCell align="right">Batterie (%)</TableCell>
-                <TableCell align="right">Dernière valeur</TableCell>
-              </TableRow>
-            </TableHead>
+            <EnhancedTableHead
+              order={order}
+              orderBy={orderBy}
+              onRequestSort={this.props.handleRequestSort}
+            />
             <TableBody>
               {rows.map(row => (
                 row.latestReading == "err_no_data" ? (

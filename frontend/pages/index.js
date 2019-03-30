@@ -42,6 +42,39 @@ const theme = createMuiTheme({
         useNextVariants: true,
     },
 });
+
+
+function desc(a, b, orderBy) {
+    if (b[orderBy] < a[orderBy]) {
+      return -1;
+    }
+    if (b[orderBy] > a[orderBy]) {
+      return 1;
+    }
+    return 0;
+  }
+  
+  function stableSort(array, cmp) {
+    const stabilizedThis = array.map((el, index) => [el, index]);
+    stabilizedThis.sort((a, b) => {
+      const order = cmp(a[0], b[0]);
+      if (order !== 0) return order;
+      return a[1] - b[1];
+    });
+    return stabilizedThis.map(el => el[0]);
+  }
+  
+  function getSorting(order, orderBy) {
+    return order === 'desc' ? (a, b) => desc(a, b, orderBy) : (a, b) => -desc(a, b, orderBy);
+  }
+  
+  const rows = [
+    { id: 'name', numeric: false, disablePadding: false, label: 'Nom', enableSorting: true },
+    { id: 'historique', numeric: false, disablePadding: false, label: 'Historique', enableSorting: false },
+    { id: 'mmol', numeric: true, disablePadding: true, label: 'Niveau de glucose (mmol/L)', enableSorting: true },
+    { id: 'uploaderBattery', numeric: true, disablePadding: true, label: 'Batterie', enableSorting: true },
+    { id: 'dateFromNowMinutes', numeric: true, disablePadding: false, label: 'Dernière valeur', enableSorting: true },
+  ];
   
 
 class Index extends React.Component {
@@ -60,6 +93,9 @@ class Index extends React.Component {
             snackbarOpen: false,
             snackbarMessage: "",
             snackbarVariant: "info",
+
+            order: 'asc',
+            orderBy: 'name',
         };
     }
 
@@ -82,14 +118,15 @@ class Index extends React.Component {
 
                 if (result && result.length > 0) {
                     let convertedData = this.convertData(result);
+                    let sortedData = stableSort(convertedData, getSorting(this.state.order, this.state.orderBy));
 
                     this.setState({
                         error: null,
                         isLoaded: true,
                         loadingData: false,
-                        data: convertedData,
-                        dataFirstHalf: convertedData.splice(0, Math.ceil(convertedData.length / 2)),
-                        dataSecondHalf: convertedData,
+                        data: convertedData.slice(0),
+                        dataFirstHalf: sortedData.splice(0, Math.ceil(sortedData.length / 2)),
+                        dataSecondHalf: sortedData,
                         lastSuccessfulUpdate: moment(),
                     });
 
@@ -146,6 +183,8 @@ class Index extends React.Component {
             }
         
             data[i]['latestReading'] = data[i]['readings'][0];
+            data[i]['mmol'] = data[i]['readings'][0]['mmol'];
+            data[i]['dateFromNowMinutes'] = data[i]['readings'][0]['dateFromNowMinutes'];
 
             var directionArrows = null;
             switch (data[i]['latestReading']['direction']) {
@@ -179,6 +218,7 @@ class Index extends React.Component {
       
             if (data[i]['battery']) {
               data[i]['battery']['dateFromNow'] = moment(data[i]['battery']['created_at']).fromNow();
+              data[i]['uploaderBattery'] = data[i]['battery']['uploaderBattery'];
             }
       
           } else {
@@ -206,6 +246,27 @@ class Index extends React.Component {
         this.setState({ snackbarOpen: false });
     };
 
+    handleRequestSort = (event, property) => {
+        const orderBy = property;
+        let order = 'desc';
+    
+        if (this.state.orderBy === property && this.state.order === 'desc') {
+          order = 'asc';
+        }
+
+        let sortedData = stableSort(this.state.data, getSorting(order, orderBy));
+
+        this.setState({ 
+            order: order,
+            orderBy: orderBy,
+            dataFirstHalf: sortedData.splice(0, Math.ceil(sortedData.length / 2)),
+            dataSecondHalf: sortedData,
+        });
+
+        setTimeout(this.forceUpdate(), 1000);
+
+    };
+
     render() {
         const { classes } = this.props;
 
@@ -230,12 +291,22 @@ class Index extends React.Component {
                         <Grid container spacing={8} className={classes.root}>
                             <Grid item xs={6}>
                                 <div>
-                                    <TableComponent data={this.state.dataFirstHalf}/>
+                                    <TableComponent 
+                                        rows={this.state.dataFirstHalf} 
+                                        handleRequestSort={this.handleRequestSort}
+                                        order={this.state.order}
+                                        orderBy={this.state.orderBy}
+                                    />
                                 </div>
                             </Grid>
                             <Grid item xs={6}>
                                 <div>
-                                    <TableComponent data={this.state.dataSecondHalf}/>
+                                    <TableComponent 
+                                        rows={this.state.dataSecondHalf}
+                                        handleRequestSort={this.handleRequestSort}
+                                        order={this.state.order}
+                                        orderBy={this.state.orderBy}
+                                    />
                                 </div>
                             </Grid>
 
