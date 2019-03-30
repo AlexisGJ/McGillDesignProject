@@ -20,6 +20,6 @@ router.get('/:id', child_controller.child_details);
 router.post('/:id/update', child_controller.child_update);
 
 // Delete child by id
-router.delete('/:id/delete', child_controller.child_delete);
+router.post('/:id/delete', child_controller.child_delete);
 
 module.exports = router;

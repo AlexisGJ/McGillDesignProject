@@ -13,6 +13,7 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelActions from '@material-ui/core/ExpansionPanelActions';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import AddIcon from '@material-ui/icons/Add';
 import Divider from '@material-ui/core/Divider';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -102,6 +103,11 @@ const styles = theme => ({
       childActiveFalse: {
         color: 'red',
       },
+
+      addPanel: {
+        background: '#455a64',
+        color: '#fff'
+      },
   });
   
 
@@ -116,11 +122,16 @@ class Settings extends React.Component {
             snackbarOpen: false,
             snackbarMessage: "",
             snackbarVariant: "info",
-            data: []
+            data: [],
+            newChild: {name: "", collection_id: "", location: "Tente #", range_min: 4, range_max: 8, active: true},
         };
     }
 
     componentDidMount() {
+        this.getData();
+    }
+
+    getData = () => {
         fetch("http://localhost:1234/api/child/all")
         .then(res => res.json())
         .then(
@@ -179,6 +190,19 @@ class Settings extends React.Component {
         
     }
 
+    handleChangeNewChild = (field, e) => {
+        var tempData = this.state.newChild
+        var newValue = e.target.value
+        if (field == 'active') {
+            newValue = !tempData.active;
+        }
+        tempData[field] = newValue
+
+        this.setState({
+            newChild: tempData
+        });
+    }
+
     updateChild = (row) => {
         fetch('http://localhost:1234/api/child/' + row._id + '/update', {
             method: 'post',
@@ -186,14 +210,60 @@ class Settings extends React.Component {
             body: JSON.stringify(row)
         })
         .then(
-            response => {if (response.status == 200) {this.showSnackbarMessage("Enregistré avec succès", "success")} else {this.showSnackbarMessage("Il y a eu une erreur lors de l'enregistrement", "error")}}
+            response => {
+                if (response.status == 200) {
+                    this.showSnackbarMessage("Enregistré avec succès", "success");
+                    this.getData();
+                } else {
+                    this.showSnackbarMessage("Il y a eu une erreur lors de l'enregistrement", "error");
+                }
+            }
         );
         console.log(row);
     }
 
+    createChild = () => {
+        fetch('http://localhost:1234/api/child/create', {
+            method: 'post',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(this.state.newChild)
+        })
+        .then(
+            response => {
+                if (response.status == 200) {
+                    this.showSnackbarMessage("Enregistré avec succès", "success");
+                    this.setState({
+                        newChild: {name: "", collection_id: "", location: "Tente #", range_min: 4, range_max: 8, active: true},
+                    });
+                    this.getData();
+                } else {
+                    this.showSnackbarMessage("Il y a eu une erreur lors de l'enregistrement", "error");
+                }
+            }
+        );
+    }
+
+    deleteChild = (row) => {
+        fetch('http://localhost:1234/api/child/' + row._id + '/delete', {
+            method: 'post',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(row)
+        })
+        .then(
+            response => {
+                if (response.status == 200) {
+                    this.showSnackbarMessage("Supprimé avec succès", "success");
+                    this.getData();
+                } else {
+                    this.showSnackbarMessage("Il y a eu une erreur lors de la suppression", "error");
+                }
+            }
+        );
+    }
+
     render() {
         const { classes } = this.props;
-        const { error, isLoaded, data, expanded } = this.state;
+        const { error, isLoaded, data, expanded, newChild } = this.state;
 
         if (error) {
             return <div>Error: {error.message}</div>;
@@ -209,6 +279,110 @@ class Settings extends React.Component {
                             <Grid item xs={2}></Grid>
                             <Grid item xs={8}>
                                 <Paper className={classes.paper} elevation={1}>
+
+                                <ExpansionPanel key={'create_child'} expanded={expanded === 'create_child'} onChange={this.handleClose('create_child')}>
+                                    <ExpansionPanelSummary expandIcon={<AddIcon color="secondary" />} className={classes.addPanel}>
+                                        <div className={classes.column}>
+                                            <Typography className={classes.heading} style={{color: '#fff'}}>Ajouter une nouvelle entrée</Typography>
+                                        </div>
+                                    </ExpansionPanelSummary>
+                                    <ExpansionPanelDetails className={classes.details}>
+                                        <Grid container>
+                                            <Grid item xs={4}>
+                                                <TextField
+                                                    id="outlined-name-input"
+                                                    label="Nom"
+                                                    className={classes.textField}
+                                                    type="text"
+                                                    name="name"
+                                                    margin="normal"
+                                                    variant="outlined"
+                                                    onChange={(e) => this.handleChangeNewChild('name', e)}
+                                                    value={newChild.name}
+                                                />
+                                            </Grid>
+                                            <Grid item xs={4}>
+                                                <TextField
+                                                    id="outlined-sensorId-input"
+                                                    label="ID du capteur"
+                                                    className={classes.textField}
+                                                    type="text"
+                                                    name="sensorId"
+                                                    margin="normal"
+                                                    variant="outlined"
+                                                    onChange={(e) => this.handleChangeNewChild('collection_id', e)}
+                                                    value={newChild.collection_id}
+                                                />
+                                            </Grid>
+                                            <Grid item xs={4}>
+                                                <TextField
+                                                    id="outlined-location-input"
+                                                    label="Location"
+                                                    className={classes.textField}
+                                                    type="text"
+                                                    name="location"
+                                                    margin="normal"
+                                                    variant="outlined"
+                                                    onChange={(e) => this.handleChangeNewChild('location', e)}
+                                                    value={newChild.location}
+                                                />
+                                            </Grid>
+                                            <Grid item xs={4}></Grid>
+                                            <Grid item xs={4}>
+                                                <TextField
+                                                    id="outlined-rangemin-input"
+                                                    label="Range minimum"
+                                                    className={classes.textField}
+                                                    type="number"
+                                                    name="rangemin"
+                                                    margin="normal"
+                                                    variant="outlined"
+                                                    onChange={(e) => this.handleChangeNewChild('range_min', e)}
+                                                    value={newChild.range_min}
+                                                />
+                                            </Grid>
+                                            <Grid item xs={4}>
+                                                <TextField
+                                                    id="outlined-rangemax-input"
+                                                    label="Range maximal"
+                                                    className={classes.textField}
+                                                    type="number"
+                                                    name="rangemin"
+                                                    margin="normal"
+                                                    variant="outlined"
+                                                    onChange={(e) => this.handleChangeNewChild('range_max', e)}
+                                                    value={newChild.range_max}
+                                                />
+                                            </Grid>
+
+                                            <Grid item xs={4}></Grid>
+                                            <Grid item xs={4}></Grid>
+                                            <Grid item xs={4}>
+                                                <FormControlLabel
+                                                    control={
+                                                    <Switch
+                                                        checked={newChild.active}
+                                                        onChange={(e) => this.handleChangeNewChild('active', e)}
+                                                        color="primary"
+                                                    />
+                                                    }
+                                                    label="Actif"
+                                                />
+                                            </Grid>
+                                            
+                                        </Grid>
+                                        
+                                    </ExpansionPanelDetails>
+                                    <Divider />
+                                    <ExpansionPanelActions>
+                                        {/* <Button size="small" onClick={this.handleClose(row._id)}>Cancel</Button> */}
+                                        <Button size="small" color="primary" onClick={(e) => (this.createChild(), this.handleClose('create_child'))}>Save</Button>
+                                    </ExpansionPanelActions>
+                                </ExpansionPanel>
+
+                                
+
+
 
                                 {data.map((row, key) =>
                                     <ExpansionPanel key={row._id} expanded={expanded === row._id} onChange={this.handleClose(row._id)}>
@@ -309,8 +483,8 @@ class Settings extends React.Component {
                                         </ExpansionPanelDetails>
                                         <Divider />
                                         <ExpansionPanelActions>
-                                            {/* <Button size="small" onClick={this.handleClose(row._id)}>Cancel</Button> */}
-                                            <Button size="small" color="primary" onClick={(e) => this.updateChild(row)}>Save</Button>
+                                            <Button size="small" onClick={(e) => (this.deleteChild(row), this.handleClose(row._id))}>Delete</Button>
+                                            <Button size="small" color="primary" onClick={(e) => (this.updateChild(row), this.handleClose(row._id))}>Save</Button>
                                         </ExpansionPanelActions>
                                     </ExpansionPanel>
                                 )}
