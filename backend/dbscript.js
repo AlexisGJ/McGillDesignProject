@@ -3,11 +3,9 @@ require('dotenv').config()
 var url = process.env.MONGODB_URI;
 
 var moment = require('moment');
-var minutes = 1.0, the_interval = minutes * 60 * 1000;
+var minutes = 2.0, the_interval = minutes * 60 * 1000;
 
-// TODO:
-// Flat, FortyFiveUp, FortyFiveDown
-// Battery
+var directions = ["Flat", "FortyFiveUp", "FortyFiveDown"];
 
 function random_normal_sgv() {
   var u = 0, v = 0;
@@ -26,21 +24,29 @@ let populateDb = function(collectionNumber){
     MongoClient.connect(url, function(err, db) {
       if (err) throw err;
       var dbo = db.db("carowanisdb");
-      var myobj = {
+      var reading = {
           "device": "xDrip-DexcomG5",
           "date": 1547665519796,
           "dateString": moment().format(),
           "sgv": random_normal_sgv() * 200,
-          "direction": "DoubleDown",
+          "direction": directions[Math.floor(Math.random() * Math.floor(3))],
           "type": "sgv",
           "filtered": 169440,
           "unfiltered": 127504,
           "rssi": 100,
           "noise": 1
       };
-      dbo.collection("testchild" + collectionNumber).insertOne(myobj, function(err, res) {
+      var battery = {
+        "uploaderBattery" : Math.floor(Math.random() * Math.floor(101))
+      }
+      dbo.collection("testchild" + collectionNumber).insertOne(reading, function(err, res) {
         if (err) throw err;
-        console.log("document inserted");
+        console.log("document inserted for reading");
+        db.close();
+      });
+      dbo.collection("testchild" + collectionNumber).insertOne(battery, function(err, res) {
+        if (err) throw err;
+        console.log("document inserted for battery");
         db.close();
       });
     });
