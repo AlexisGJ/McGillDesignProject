@@ -11,7 +11,6 @@ app.use(cors({credentials: true, origin: true})); // Allow CORS cross-origin
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-// let dev_db_url = 'mongodb://carowanis:egeege123@ds046357.mlab.com:46357/carowanisdb';
 let mongoDB = process.env.MONGODB_URI;
 mongoose.connect(mongoDB, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
