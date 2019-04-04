@@ -726,7 +726,9 @@ function (_React$Component) {
       }).then(function (result) {
         _this.setState({
           isLoaded: true,
-          data: result
+          data: result.sort(function (a, b) {
+            return a.name.localeCompare(b.name);
+          })
         });
       }, // Note: it's important to handle errors here
       // instead of a catch() block so that we don't swallow

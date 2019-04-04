@@ -142,7 +142,7 @@ class Settings extends React.Component {
             (result) => {
                 this.setState({
                     isLoaded: true,
-                    data: result
+                    data: result.sort((a, b) => a.name.localeCompare(b.name))
                 });
                 },
                 // Note: it's important to handle errors here

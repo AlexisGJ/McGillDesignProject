@@ -1,4 +1,5 @@
 const Reading = require('../models/reading.model');
+var moment = require('moment');
 
 // Test endpoint
 exports.test = function (req, res) {
@@ -27,6 +28,8 @@ exports.active_children_readings = async function (req, res) {
 
   var active_children = await req.app.db.collection("children").find({active: {$eq: true}}).toArray();
 
+  var oneHourDate = moment().subtract(1, 'days').format();
+
   for(var i=0; i<active_children.length; i++) {
 
     // Get the latest battery status update
@@ -36,7 +39,7 @@ exports.active_children_readings = async function (req, res) {
     }
 
     // Get the 20 latest readings
-    var latest_readings = await req.app.db.collection(active_children[i]["collection_id"]).find({sgv: {$exists: true}}).sort({"dateString": -1}).limit(20).toArray();
+    var latest_readings = await req.app.db.collection(active_children[i]["collection_id"]).find({$and: [{sgv: {$exists: true}}, {dateString: {$gte: oneHourDate}}]}).sort({"dateString": -1}).toArray();
 
     readings = [];
     latest_readings.forEach(function(item) {

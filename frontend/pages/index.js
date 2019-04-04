@@ -15,14 +15,6 @@ import { Typography } from '@material-ui/core';
 const API_URL = (process.env.NODE_ENV && process.env.NODE_ENV === 'production') ? "https://camp-carowanis-api.herokuapp.com" : "http://localhost:1234";
 
 
-const Post = props => (
-    <li>
-        <Link as={`/${props.slug}`} href={`/post?title=${props.title}`}>
-            <a>{props.title}</a>
-        </Link>
-    </li>
-)
-
 const styles = theme => ({
     root: {
       padding: 20
@@ -173,6 +165,8 @@ class Index extends React.Component {
         for(var i=0; i<data.length; i++) {
       
           if (data[i]['readings'] && data[i]['readings'].length > 0) {
+
+            data[i]['readingsLastHour'] = [];
       
             for (var j=0; j<data[i]['readings'].length; j++) {
               var now = moment(new Date());
@@ -183,11 +177,21 @@ class Index extends React.Component {
               data[i]['readings'][j]['dateFromNow'] = measurementDate.fromNow();
               data[i]['readings'][j]['dateFromNowMinutes'] = -diffMinutes;
               data[i]['readings'][j]['dateTime'] = measurementDate.format('HH:mm');
+              data[i]['readings'][j]['epoch'] = measurementDate.unix() * 1000;
+
+              if (diffMinutes < 60) {
+                var summaryReading = {};
+                summaryReading['mmol'] = data[i]['readings'][j]['mmol'];
+                summaryReading['dateFromNowMinutes'] = data[i]['readings'][j]['dateFromNowMinutes'];
+
+                data[i]['readingsLastHour'].push(summaryReading);
+              }
+
             }
         
             data[i]['latestReading'] = data[i]['readings'][0];
             data[i]['mmol'] = data[i]['readings'][0]['mmol'];
-            data[i]['dateFromNowMinutes'] = data[i]['readings'][0]['dateFromNowMinutes'];
+            data[i]['dateFromNowMinutes'] = -data[i]['readings'][0]['dateFromNowMinutes'];
 
             var directionArrows = null;
             switch (data[i]['latestReading']['direction']) {
@@ -282,14 +286,6 @@ class Index extends React.Component {
                 <div>
                     <MuiThemeProvider theme={theme}>
                         <AppbarComponent loading={this.state.loadingData}/>
-                        {/* <h2>My blog</h2>
-                        <ul>
-                        <li>
-                            <Post slug="post/yet-another-post" title="Yet another post" />
-                            <Post slug="post/second-post" title="Second post" />
-                            <Post slug="post/hello-world" title="Hello, world!" />
-                        </li>
-                        </ul> */}
                         
                         <Grid container spacing={8} className={classes.root}>
                             <Grid item xs={6}>

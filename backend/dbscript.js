@@ -3,7 +3,6 @@ require('dotenv').config()
 var url = process.env.MONGODB_URI;
 
 var moment = require('moment');
-var minutes = 2.0, the_interval = minutes * 60 * 1000;
 
 var directions = ["Flat", "FortyFiveUp", "FortyFiveDown"];
 
@@ -37,7 +36,8 @@ let populateDb = function(collectionNumber){
           "noise": 1
       };
       var battery = {
-        "uploaderBattery" : Math.floor(Math.random() * Math.floor(101))
+        "uploaderBattery" : Math.floor(Math.random() * Math.floor(101)),
+        "created_at": moment().format(),
       }
       dbo.collection("testchild" + collectionNumber).insertOne(reading, function(err, res) {
         if (err) throw err;
@@ -52,10 +52,15 @@ let populateDb = function(collectionNumber){
     });
   }
 
+var index = 1;
+var batchSize = 10;
 setInterval(function() {
-    var i;
-    for (i = 1; i < 51; i++) { 
-        populateDb(i);
+    for (var i = index; i < index + batchSize; i++) {
+        populateDb(index);
+        index++;
+        if (index > 50) {
+          index = 1;
+        }
     }
-}, the_interval);
+}, 1 * 1000);
 

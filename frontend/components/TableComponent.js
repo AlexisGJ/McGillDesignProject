@@ -46,6 +46,13 @@ const styles = theme => ({
     fontWeight: 'bold',
   },
 
+  value_red: {
+    color: 'red',
+  },
+  value_black: {
+    color: 'black',
+  },
+
   
 });
 
@@ -76,7 +83,7 @@ function getSorting(order, orderBy) {
 
 const rows = [
   { id: 'name', numeric: false, disablePadding: false, label: 'Nom', enableSorting: true },
-  { id: 'historique', numeric: false, disablePadding: false, label: 'Historique', enableSorting: false },
+  { id: 'historique', numeric: false, disablePadding: false, label: 'Tendance dernière heure', enableSorting: false },
   { id: 'mmol', numeric: true, disablePadding: true, label: 'Niveau de glucose (mmol/L)', enableSorting: true },
   { id: 'uploaderBattery', numeric: true, disablePadding: true, label: 'Batterie', enableSorting: true },
   { id: 'dateFromNowMinutes', numeric: true, disablePadding: false, label: 'Dernière valeur', enableSorting: true },
@@ -217,9 +224,9 @@ class SimpleTable extends React.Component {
                       {row.name}
                     </TableCell>
                     <TableCell align="right" padding="dense">
-                      <div style={{ width: '100%', height: 50 }}>
+                      <div style={{ width: '150px', height: '30px', }}>
                         <ResponsiveContainer>
-                          <LineChart data={row.readings}>
+                          <LineChart data={row.readingsLastHour}>
                             <XAxis type="number" dataKey="dateFromNowMinutes" hide={true} />
                             <YAxis type="number" domain={['dataMin', 'dataMax']} hide={true} />
                             <Line type='monotone' dataKey='mmol' stroke='#999' strokeWidth={2} dot={{ r: 0 }}/>
@@ -231,11 +238,11 @@ class SimpleTable extends React.Component {
                       {row.latestReading.mmol} <span style={{fontSize: '1.3em', marginTop: '-5px'}} dangerouslySetInnerHTML={{__html: row.latestReading.directionArrow}}></span>
                     </TableCell>
                     {row.battery ? (
-                      <TableCell align="right" padding="dense">{row.battery.uploaderBattery} %<br></br><span className={classes.tableSpan}>{row.battery.dateFromNow}</span></TableCell>
+                      <TableCell align="right" padding="dense" className={(row.battery.uploaderBattery < 20) ? classes.value_red : classes.value_black}>{row.battery.uploaderBattery} %<br></br><span className={classes.tableSpan}>{row.battery.dateFromNow}</span></TableCell>
                     ) : (
                       <TableCell align="right" padding="dense"></TableCell>
                     )}
-                    <TableCell align="right" padding="dense">{row.latestReading.dateTime}<br></br><span className={classes.tableSpan}>{row.latestReading.dateFromNow}</span></TableCell>
+                    <TableCell align="right" padding="dense" className={(row.dateFromNowMinutes > 60) ? classes.value_red : classes.value_black}>{row.latestReading.dateTime}<br></br><span className={classes.tableSpan}>{row.latestReading.dateFromNow}</span></TableCell>
                   </TableRow>
                 )
                 
@@ -243,7 +250,7 @@ class SimpleTable extends React.Component {
             </TableBody>
           </Table>
   
-          <ModalComponent open={this.state.open} handleOpen={this.handleOpen} handleClose={this.handleClose} sensorData={this.state.row}/>
+          <ModalComponent open={this.state.open} handleOpen={this.handleOpen} handleClose={this.handleClose} data={this.state.row}/>
         </Paper>
       );
     }
