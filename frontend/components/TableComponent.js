@@ -31,7 +31,7 @@ const styles = theme => ({
   },
   tableSpan: {
     fontSize: '0.6em',
-    fontColor: '#999',
+    color: '#777',
   },
 
   value_normal: {

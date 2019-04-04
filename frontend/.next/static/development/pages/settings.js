@@ -56435,7 +56435,7 @@ function (_React$Component) {
               lineNumber: 490
             },
             __self: this
-          }, "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
+          }, "Supprimer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_7___default.a, {
             size: "small",
             color: "primary",
             onClick: function onClick(e) {
@@ -56446,7 +56446,7 @@ function (_React$Component) {
               lineNumber: 491
             },
             __self: this
-          }, "Save")));
+          }, "Enregister")));
         }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_8___default.a, {
           item: true,
           xs: 2,

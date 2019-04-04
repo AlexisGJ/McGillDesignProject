@@ -487,8 +487,8 @@ class Settings extends React.Component {
                                         </ExpansionPanelDetails>
                                         <Divider />
                                         <ExpansionPanelActions>
-                                            <Button size="small" onClick={(e) => (this.deleteChild(row), this.handleClose(row._id))}>Delete</Button>
-                                            <Button size="small" color="primary" onClick={(e) => (this.updateChild(row), this.handleClose(row._id))}>Save</Button>
+                                            <Button size="small" onClick={(e) => (this.deleteChild(row), this.handleClose(row._id))}>Supprimer</Button>
+                                            <Button size="small" color="primary" onClick={(e) => (this.updateChild(row), this.handleClose(row._id))}>Enregister</Button>
                                         </ExpansionPanelActions>
                                     </ExpansionPanel>
                                 )}

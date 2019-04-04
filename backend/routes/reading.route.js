@@ -11,6 +11,6 @@ router.get('/test', reading_controller.test);
 router.get('/allActiveChildren', reading_controller.active_children_readings);
 
 // Get latest reading by collection number
-router.get('/:collectionNumber', reading_controller.reading_details);
+router.get('/:collectionNumber/:hoursBefore', reading_controller.reading_details);
 
 module.exports = router;

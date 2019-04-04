@@ -364,35 +364,44 @@ ButtonAppBar.propTypes = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Modal */ "@material-ui/core/Modal");
-/* harmony import */ var _material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "@material-ui/core/MenuItem");
-/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/TextField */ "@material-ui/core/TextField");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Fab */ "@material-ui/core/Fab");
-/* harmony import */ var _material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _material_ui_icons_Refresh__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons/Refresh */ "@material-ui/icons/Refresh");
-/* harmony import */ var _material_ui_icons_Refresh__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Refresh__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! moment */ "moment");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var d3_scale__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! d3-scale */ "d3-scale");
-/* harmony import */ var d3_scale__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(d3_scale__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! recharts */ "recharts");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(recharts__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "@babel/runtime/regenerator");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Modal */ "@material-ui/core/Modal");
+/* harmony import */ var _material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "@material-ui/core/MenuItem");
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/TextField */ "@material-ui/core/TextField");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Fab */ "@material-ui/core/Fab");
+/* harmony import */ var _material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _material_ui_icons_Refresh__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons/Refresh */ "@material-ui/icons/Refresh");
+/* harmony import */ var _material_ui_icons_Refresh__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Refresh__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! moment */ "moment");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var d3_scale__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! d3-scale */ "d3-scale");
+/* harmony import */ var d3_scale__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(d3_scale__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! recharts */ "recharts");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(recharts__WEBPACK_IMPORTED_MODULE_14__);
+
 var _jsxFileName = "/Users/alexisgj/GitHub/mcgill-design-project/frontend/components/ModalComponent.js";
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -426,6 +435,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var API_URL =  false ? undefined : "http://localhost:1234";
 
 function getModalStyle() {
   var top = 50;
@@ -474,15 +484,15 @@ function (_React$Component) {
           y = _this$props.y,
           stroke = _this$props.stroke,
           payload = _this$props.payload;
-      var date = moment__WEBPACK_IMPORTED_MODULE_11___default()(new Date()).subtract(-payload.value, "minutes").format("HH:mm");
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("g", {
+      var date = moment__WEBPACK_IMPORTED_MODULE_12___default()(new Date()).subtract(-payload.value, "minutes").format("HH:mm");
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("g", {
         transform: "translate(".concat(x, ",").concat(y, ")"),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 59
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("text", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("text", {
         x: 0,
         y: 0,
         dy: 16,
@@ -491,7 +501,7 @@ function (_React$Component) {
         transform: "rotate(-45)",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 60
         },
         __self: this
       }, date));
@@ -499,7 +509,7 @@ function (_React$Component) {
   }]);
 
   return CustomizedAxisTick;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
 var CustomTooltip = function CustomTooltip(_ref) {
   var active = _ref.active,
@@ -507,32 +517,32 @@ var CustomTooltip = function CustomTooltip(_ref) {
       label = _ref.label;
 
   if (active) {
-    var date = moment__WEBPACK_IMPORTED_MODULE_11___default()(new Date()).subtract(-label, "minutes").fromNow();
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    var date = moment__WEBPACK_IMPORTED_MODULE_12___default()(new Date()).subtract(-label, "minutes").fromNow();
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "custom-tooltip",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 70
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "value",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 71
       },
       __self: this
-    }, "".concat(payload[0].value), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    }, "".concat(payload[0].value), " ", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 71
       },
       __self: this
-    }, "mmol/L")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, "mmol/L")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
       className: "time",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 72
       },
       __self: this
     }, date));
@@ -541,17 +551,17 @@ var CustomTooltip = function CustomTooltip(_ref) {
   return null;
 };
 
-var timeScale = [{
-  value: '1',
+var timeScaleOptions = [{
+  value: 1,
   label: 'Dernière heure'
 }, {
-  value: '3',
+  value: 3,
   label: '3 dernières heures'
 }, {
-  value: '12',
+  value: 12,
   label: '12 dernières heures'
 }, {
-  value: '24',
+  value: 24,
   label: '24 dernières heures'
 }];
 
@@ -566,11 +576,34 @@ function (_React$Component2) {
     _classCallCheck(this, SimpleModal);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SimpleModal).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "convertData", function (data) {
+      moment__WEBPACK_IMPORTED_MODULE_12___default.a.locale('fr-CA');
+      var now = moment__WEBPACK_IMPORTED_MODULE_12___default()(new Date());
+
+      for (var i = 0; i < data.length; i++) {
+        var measurementDate = moment__WEBPACK_IMPORTED_MODULE_12___default()(data[i]['dateString']);
+        var diffMinutes = Math.round(moment__WEBPACK_IMPORTED_MODULE_12___default.a.duration(now.diff(measurementDate)).asMinutes());
+        data[i]['mmol'] = Math.round(data[i]['sgv'] / 18 * 100) / 100; // convert from mg/dl to mmol/L
+
+        data[i]['dateFromNowMinutes'] = -diffMinutes;
+      }
+
+      return data;
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleChange", function (name) {
+      return function (event) {
+        _this.setState(_defineProperty({}, name, event.target.value));
+      };
+    });
+
     _this.state = {
       loaded: false,
       data: props.data,
       allData: props.data,
-      timeScale: '1'
+      timeScale: 1,
+      loadedData: false
     };
     return _this;
   }
@@ -586,14 +619,61 @@ function (_React$Component2) {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
       if (nextProps.data !== this.props.data) {
-        if (nextProps.data.readings) {
+        if (nextProps.data.collection_id && nextProps.data.readings) {
           this.setState({
             data: nextProps.data.readings.reverse(),
-            allData: nextProps.data
+            allData: nextProps.data,
+            timeScale: 1,
+            loadedData: false
           });
+          this.getData(nextProps.data.collection_id);
         }
       }
     }
+  }, {
+    key: "getData",
+    value: function () {
+      var _getData = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(collection_id) {
+        var _this2 = this;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                fetch(API_URL + "/api/reading/" + collection_id + "/24").then(function (res) {
+                  return res.json();
+                }).then(function (result) {
+                  if (result && result.length > 0) {
+                    var convertedData = _this2.convertData(result);
+
+                    _this2.setState({
+                      data: convertedData,
+                      loadedData: true
+                    });
+                  }
+                }, // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                function (error) {
+                  console.log(error);
+                });
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function getData(_x) {
+        return _getData.apply(this, arguments);
+      }
+
+      return getData;
+    }()
   }, {
     key: "render",
     value: function render() {
@@ -601,59 +681,61 @@ function (_React$Component2) {
       var _this$state = this.state,
           loaded = _this$state.loaded,
           data = _this$state.data,
-          allData = _this$state.allData;
+          allData = _this$state.allData,
+          timeScale = _this$state.timeScale,
+          loadedData = _this$state.loadedData;
 
-      if (!loaded || !allData._id) {
+      if (!loaded || !allData._id || !loadedData) {
         return null;
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 130
+            lineNumber: 183
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Modal__WEBPACK_IMPORTED_MODULE_5___default.a, {
           "aria-labelledby": "simple-modal-title",
           "aria-describedby": "simple-modal-description",
           open: this.props.open,
           onClose: this.props.handleClose,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 131
+            lineNumber: 184
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           style: getModalStyle(),
           className: classes.paper,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 137
+            lineNumber: 190
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4___default.a, {
           variant: "h4",
           id: "modal-title",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 138
+            lineNumber: 191
           },
           __self: this
-        }, allData.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        }, allData.name), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6___default.a, {
           container: true,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 142
+            lineNumber: 195
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6___default.a, {
           item: true,
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 143
+            lineNumber: 196
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_8___default.a, {
           id: "outlined-name-input",
           label: "Appareil",
           className: classes.textField,
@@ -667,18 +749,18 @@ function (_React$Component2) {
           value: allData.latestReading.device,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 144
+            lineNumber: 197
           },
           __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6___default.a, {
           item: true,
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 158
+            lineNumber: 211
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_8___default.a, {
           id: "outlined-sensorId-input",
           label: "Emplacement",
           className: classes.textField,
@@ -692,45 +774,47 @@ function (_React$Component2) {
           value: allData.location,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 159
+            lineNumber: 212
           },
           __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_6___default.a, {
           item: true,
           xs: 4,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 173
+            lineNumber: 226
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_8___default.a, {
           id: "outlined-select-timeScale",
           select: true,
           label: "Donn\xE9es",
           className: classes.textField,
-          value: this.state.timeScale // onChange={this.handleChange('currency')}
-          ,
+          value: timeScale,
+          onChange: this.handleChange('timeScale'),
           margin: "normal",
           variant: "outlined",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 174
+            lineNumber: 227
           },
           __self: this
-        }, timeScale.map(function (option) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        }, timeScaleOptions.map(function (option) {
+          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7___default.a, {
             key: option.value,
             value: option.value,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 185
+              lineNumber: 238
             },
             __self: this
           }, option.label);
-        }), ">"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_13__["LineChart"], {
+        }), ">"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_14__["LineChart"], {
           width: 600,
           height: 500,
-          data: data,
+          data: data.filter(function (row) {
+            return row.dateFromNowMinutes > -(timeScale * 60);
+          }),
           margin: {
             top: 5,
             right: 20,
@@ -740,64 +824,67 @@ function (_React$Component2) {
           className: "line-chart",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 193
+            lineNumber: 247
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_13__["XAxis"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_14__["XAxis"], {
+          allowDataOverflow: true,
+          domain: [-(timeScale * 60), 'auto'],
           type: "number",
           dataKey: "dateFromNowMinutes",
           height: 100,
           tickCount: 10,
-          tick: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CustomizedAxisTick, {
+          tick: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(CustomizedAxisTick, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 200
+              lineNumber: 256
             },
             __self: this
           }),
           label: "temps",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 200
+            lineNumber: 256
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_13__["YAxis"], {
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_14__["YAxis"], {
+          allowDataOverflow: true,
           width: 80,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 201
+            lineNumber: 257
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_13__["Label"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_14__["Label"], {
           value: "mmol/L",
           offset: 5,
           position: "insideTopLeft",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 202
+            lineNumber: 258
           },
           __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_13__["Tooltip"], {
-          content: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CustomTooltip, {
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_14__["Tooltip"], {
+          content: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(CustomTooltip, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 204
+              lineNumber: 260
             },
             __self: this
           }),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 204
+            lineNumber: 260
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_13__["CartesianGrid"], {
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_14__["CartesianGrid"], {
           stroke: "#f5f5f5",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 205
+            lineNumber: 261
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_13__["Line"], {
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_14__["Line"], {
           yAxisId: 0,
           type: "monotone",
           dataKey: "mmol",
@@ -808,45 +895,45 @@ function (_React$Component2) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 207
+            lineNumber: 263
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_13__["ReferenceLine"], {
+        }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_14__["ReferenceLine"], {
           y: allData.range_min,
           stroke: "#97191b",
           strokeWidth: 2,
           className: "graph-referenece-line",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 208
+            lineNumber: 264
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_13__["Label"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_14__["Label"], {
           value: "MIN " + allData.range_min,
           offset: 5,
           position: "insideTopRight",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 209
+            lineNumber: 265
           },
           __self: this
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_13__["ReferenceLine"], {
+        })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_14__["ReferenceLine"], {
           y: allData.range_max,
           stroke: "#97191b",
           strokeWidth: 2,
           className: "graph-referenece-line",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 211
+            lineNumber: 267
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_13__["Label"], {
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(recharts__WEBPACK_IMPORTED_MODULE_14__["Label"], {
           value: "MAX " + allData.range_max,
           offset: 5,
           position: "insideBottomRight",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 212
+            lineNumber: 268
           },
           __self: this
         }))))));
@@ -855,13 +942,13 @@ function (_React$Component2) {
   }]);
 
   return SimpleModal;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
 
 SimpleModal.propTypes = {
-  classes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object.isRequired
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object.isRequired
 }; // We need an intermediary variable for handling the recursive nesting.
 
-var SimpleModalWrapped = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["withStyles"])(styles)(SimpleModal);
+var SimpleModalWrapped = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["withStyles"])(styles)(SimpleModal);
 /* harmony default export */ __webpack_exports__["default"] = (SimpleModalWrapped);
 
 /***/ }),
@@ -1115,7 +1202,7 @@ var styles = function styles(theme) {
     },
     tableSpan: {
       fontSize: '0.6em',
-      fontColor: '#999'
+      color: '#777'
     },
     value_normal: {
       fontWeight: 'bold'
