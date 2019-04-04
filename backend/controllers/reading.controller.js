@@ -1,5 +1,5 @@
 const Reading = require('../models/reading.model');
-var moment = require('moment');
+var moment = require('moment-timezone');
 
 // Test endpoint
 exports.test = function (req, res) {
@@ -12,7 +12,7 @@ exports.reading_details = async function (req, res) {
   var collection_id = req.params.collectionNumber;
   var hoursBefore = req.params.hoursBefore;
 
-  var oneHourDate = moment().subtract(hoursBefore, 'hours').format();
+  var oneHourDate = moment().subtract(hoursBefore, 'hours').tz("America/Montreal").format();
 
   var latest_readings = await req.app.db.collection(collection_id).find({$and: [{sgv: {$exists: true}}, {dateString: {$gte: oneHourDate}}]}).sort({"dateString": -1}).toArray();
 
@@ -35,7 +35,7 @@ exports.active_children_readings = async function (req, res) {
 
   var active_children = await req.app.db.collection("children").find({active: {$eq: true}}).toArray();
 
-  var oneHourDate = moment().subtract(1, 'hours').format();
+  var oneHourDate = moment().subtract(1, 'hours').tz("America/Montreal").format();
 
   for(var i=0; i<active_children.length; i++) {
 
