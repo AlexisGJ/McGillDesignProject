@@ -9,14 +9,6 @@ require('dotenv').config()
 
 const app = require('../app.js'); // Our app
 
-// const godMode = {
-// 	"email": "god@realemail.com",
-// 	"password": "cdb234",
-// 	"type": "Applicant"
-// };
-
-// var godToken = null;
-
 describe('Testing carowanis web application backend server', function() {
   this.timeout(5000); // How long to wait for a response (ms)
 
