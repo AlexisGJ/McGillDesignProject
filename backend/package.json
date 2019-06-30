@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev": "node app.js",
-    "start": "node app.js",
-    "test": "mocha --recursive --exit"
+    "test": "mocha --recursive --require .env --exit",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
+    "chai-contained": "0.0.3",
     "chai-http": "^4.2.1",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
@@ -22,6 +23,7 @@
     "moment-timezone": "^0.5.23",
     "mongoose": "^5.4.9",
     "passport": "^0.4.0",
+    "save": "^2.3.3",
     "serve": "^8.2.0"
   },
   "devDependencies": {
