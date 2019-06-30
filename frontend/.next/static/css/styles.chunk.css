@@ -90,4 +90,15 @@ a {
     color: #c44552;
 }
 
+.mcgill-logo {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    background: url(/static/mcgill-logo.png) center center no-repeat #fff;
+    background-size: 85% auto;
+    padding: 0px 0px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
 /*# sourceMappingURL=styles.chunk.css.map*/
