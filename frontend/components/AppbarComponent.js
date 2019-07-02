@@ -89,7 +89,7 @@ class ButtonAppBar extends React.Component {
               <React.Fragment>
                 <Typography color="inherit">McGill Artificial Pancreas Lab</Typography>
                 <br></br>
-                {'Interface développée par Alexis Giguère-Joannette, Ege Ozer et Rami Djema.'}
+                {'Interface développée par Alexis Giguère-Joannette, Ege Ozer et Rami Djema sous la supervision de Dr. Ahmad Haidar'}
               </React.Fragment>
             }>
               <IconButton className={classes.infoTooltip} color="inherit" aria-label="Info">
