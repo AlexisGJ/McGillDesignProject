@@ -288,7 +288,7 @@ class Index extends React.Component {
                         <AppbarComponent loading={this.state.loadingData}/>
                         
                         <Grid container spacing={8} className={classes.root}>
-                            <Grid item xs={6}>
+                            <Grid item xs={12} sm={6}>
                                 <div>
                                     <TableComponent 
                                         rows={this.state.dataFirstHalf} 
@@ -298,7 +298,7 @@ class Index extends React.Component {
                                     />
                                 </div>
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={12} sm={6}>
                                 <div>
                                     <TableComponent 
                                         rows={this.state.dataSecondHalf}

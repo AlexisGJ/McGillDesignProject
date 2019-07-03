@@ -50,24 +50,29 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props
 
     return (
-      <Container>
-        {this.state.isLoggedIn ? (
-          <Component {...pageProps} />
-        ) : (
-          <div className="loginPage">
-            <h1>CAMP CAROWANIS</h1>
-            <div className="googleButton">
-              <GoogleLogin
-                clientId="379738068740-tgguug359j7mqrm0vqledsf9si5u7ssp.apps.googleusercontent.com"
-                buttonText="Connexion avec Google"
-                onSuccess={this.responseGoogle}
-                onFailure={this.responseGoogle}
-                />
+      <>
+        <Head>
+          <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
+        </Head>
+        <Container>
+          {this.state.isLoggedIn ? (
+            <Component {...pageProps} />
+          ) : (
+            <div className="loginPage">
+              <h1>CAMP CAROWANIS</h1>
+              <div className="googleButton">
+                <GoogleLogin
+                  clientId="379738068740-tgguug359j7mqrm0vqledsf9si5u7ssp.apps.googleusercontent.com"
+                  buttonText="Connexion avec Google"
+                  onSuccess={this.responseGoogle}
+                  onFailure={this.responseGoogle}
+                  />
+              </div>
+              <div className="status">{this.state.status}</div>
             </div>
-            <div className="status">{this.state.status}</div>
-          </div>
-        )}
-      </Container>
+          )}
+        </Container>
+      </>
     )
   }
 }

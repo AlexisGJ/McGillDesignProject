@@ -75,16 +75,19 @@ class ButtonAppBar extends React.Component {
     return (
       <div className={classes.root}>
         <AppBar position="static">
-          <Toolbar>
+          <Toolbar className="navbar">
             <Link as={`/`} href={`/`}>
               <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                 <HomeIcon />
               </IconButton>
             </Link>
-            <div className="mcgill-logo"></div>
-            <Typography variant="h6" color="inherit">
+            <div className="mcgill-logo-container">
+              <div className="mcgill-logo"></div>
+              <Typography color="inherit">McGill Artificial Pancreas Lab</Typography>
+            </div>
+            {/* <Typography variant="h6" color="inherit">
               <span style={{fontWeight: 'lighter', color: 'rgba(255,255,255,0.8)', fontSize: '0.8em'}}>Station de Supervision</span>
-            </Typography>
+            </Typography> */}
             <Tooltip title={
               <React.Fragment>
                 <Typography color="inherit">McGill Artificial Pancreas Lab</Typography>

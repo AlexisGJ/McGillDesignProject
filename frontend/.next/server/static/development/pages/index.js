@@ -248,6 +248,7 @@ function (_React$Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        className: "navbar",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 78
@@ -277,55 +278,50 @@ function (_React$Component) {
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "mcgill-logo",
+        className: "mcgill-logo-container",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 84
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
-        variant: "h6",
-        color: "inherit",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mcgill-logo",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 85
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        style: {
-          fontWeight: 'lighter',
-          color: 'rgba(255,255,255,0.8)',
-          fontSize: '0.8em'
-        },
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        color: "inherit",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 86
         },
         __self: this
-      }, "Station de Supervision")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_14___default.a, {
+      }, "McGill Artificial Pancreas Lab")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_14___default.a, {
         title: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 89
+            lineNumber: 92
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
           color: "inherit",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 90
+            lineNumber: 93
           },
           __self: this
         }, "McGill Artificial Pancreas Lab"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 91
+            lineNumber: 94
           },
           __self: this
-        }), 'Interface développée par Alexis Giguère-Joannette, Ege Ozer et Rami Djema.'),
+        }), 'Interface développée par Alexis Giguère-Joannette, Ege Ozer et Rami Djema sous la supervision de Dr. Ahmad Haidar'),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 91
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -334,13 +330,13 @@ function (_React$Component) {
         "aria-label": "Info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 98
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Info__WEBPACK_IMPORTED_MODULE_10___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 99
         },
         __self: this
       }))), this.state.loading && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_13___default.a, {
@@ -349,14 +345,14 @@ function (_React$Component) {
         size: 20,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 99
+          lineNumber: 102
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
         className: classes.grow,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 103
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -367,7 +363,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 105
         },
         __self: this
       }, this.state.time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -375,20 +371,20 @@ function (_React$Component) {
         href: "/settings",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 106
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_8___default.a, {
         color: "inherit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 104
+          lineNumber: 107
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Settings__WEBPACK_IMPORTED_MODULE_12___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 105
+          lineNumber: 108
         },
         __self: this
       }))))));
@@ -2236,7 +2232,8 @@ function (_React$Component) {
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
           item: true,
-          xs: 6,
+          xs: 12,
+          sm: 6,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 291
@@ -2260,7 +2257,8 @@ function (_React$Component) {
           __self: this
         }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5___default.a, {
           item: true,
-          xs: 6,
+          xs: 12,
+          sm: 6,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 301

@@ -280,8 +280,8 @@ class Settings extends React.Component {
                         <AppbarComponent loading={false}/>
 
                         <Grid container spacing={24} className={classes.root}>
-                            <Grid item xs={2}></Grid>
-                            <Grid item xs={8}>
+                            <Grid item sm={2} xs={0}></Grid>
+                            <Grid item sm={8} xs={12}>
                                 <Paper className={classes.paper} elevation={1}>
 
                                 <ExpansionPanel key={'create_child'} expanded={expanded === 'create_child'} onChange={this.handleClose('create_child')}>
@@ -292,7 +292,7 @@ class Settings extends React.Component {
                                     </ExpansionPanelSummary>
                                     <ExpansionPanelDetails className={classes.details}>
                                         <Grid container>
-                                            <Grid item xs={4}>
+                                            <Grid item sm={4} xs={12}>
                                                 <TextField
                                                     id="outlined-name-input"
                                                     label="Nom"
@@ -305,7 +305,7 @@ class Settings extends React.Component {
                                                     value={newChild.name}
                                                 />
                                             </Grid>
-                                            <Grid item xs={4}>
+                                            <Grid item sm={4} xs={12}>
                                                 <TextField
                                                     id="outlined-sensorId-input"
                                                     label="ID du capteur"
@@ -318,7 +318,7 @@ class Settings extends React.Component {
                                                     value={newChild.collection_id}
                                                 />
                                             </Grid>
-                                            <Grid item xs={4}>
+                                            <Grid item sm={4} xs={12}>
                                                 <TextField
                                                     id="outlined-location-input"
                                                     label="Location"
@@ -331,8 +331,8 @@ class Settings extends React.Component {
                                                     value={newChild.location}
                                                 />
                                             </Grid>
-                                            <Grid item xs={4}></Grid>
-                                            <Grid item xs={4}>
+                                            <Grid item sm={4} xs={0}></Grid>
+                                            <Grid item sm={4} xs={12}>
                                                 <TextField
                                                     id="outlined-rangemin-input"
                                                     label="Range minimum"
@@ -345,7 +345,7 @@ class Settings extends React.Component {
                                                     value={newChild.range_min}
                                                 />
                                             </Grid>
-                                            <Grid item xs={4}>
+                                            <Grid item sm={4} xs={12}>
                                                 <TextField
                                                     id="outlined-rangemax-input"
                                                     label="Range maximal"
@@ -359,9 +359,9 @@ class Settings extends React.Component {
                                                 />
                                             </Grid>
 
-                                            <Grid item xs={4}></Grid>
-                                            <Grid item xs={4}></Grid>
-                                            <Grid item xs={4}>
+                                            <Grid item sm={4} xs={0}></Grid>
+                                            <Grid item sm={4} xs={0}></Grid>
+                                            <Grid item sm={4} xs={12}>
                                                 <FormControlLabel
                                                     control={
                                                     <Switch
@@ -379,8 +379,8 @@ class Settings extends React.Component {
                                     </ExpansionPanelDetails>
                                     <Divider />
                                     <ExpansionPanelActions>
-                                        {/* <Button size="small" onClick={this.handleClose(row._id)}>Cancel</Button> */}
-                                        <Button size="small" color="primary" onClick={(e) => (this.createChild(), this.handleClose('create_child'))}>Save</Button>
+                                        {/* <Button size="xsall" onClick={this.handleClose(row._id)}>Cancel</Button> */}
+                                        <Button size="xsall" color="primary" onClick={(e) => (this.createChild(), this.handleClose('create_child'))}>Save</Button>
                                     </ExpansionPanelActions>
                                 </ExpansionPanel>
 
@@ -400,7 +400,7 @@ class Settings extends React.Component {
                                         </ExpansionPanelSummary>
                                         <ExpansionPanelDetails className={classes.details}>
                                             <Grid container>
-                                                <Grid item xs={4}>
+                                                <Grid item sm={4} xs={12}>
                                                     <TextField
                                                         id="outlined-name-input"
                                                         label="Nom"
@@ -413,7 +413,7 @@ class Settings extends React.Component {
                                                         value={row.name}
                                                     />
                                                 </Grid>
-                                                <Grid item xs={4}>
+                                                <Grid item sm={4} xs={12}>
                                                     <TextField
                                                         id="outlined-sensorId-input"
                                                         label="ID du capteur"
@@ -426,7 +426,7 @@ class Settings extends React.Component {
                                                         value={row.collection_id}
                                                     />
                                                 </Grid>
-                                                <Grid item xs={4}>
+                                                <Grid item sm={4} xs={12}>
                                                     <TextField
                                                         id="outlined-location-input"
                                                         label="Location"
@@ -439,8 +439,8 @@ class Settings extends React.Component {
                                                         value={row.location}
                                                     />
                                                 </Grid>
-                                                <Grid item xs={4}></Grid>
-                                                <Grid item xs={4}>
+                                                <Grid item sm={4} xs={0}></Grid>
+                                                <Grid item sm={4} xs={12}>
                                                     <TextField
                                                         id="outlined-rangemin-input"
                                                         label="Range minimum"
@@ -453,7 +453,7 @@ class Settings extends React.Component {
                                                         value={row.range_min}
                                                     />
                                                 </Grid>
-                                                <Grid item xs={4}>
+                                                <Grid item sm={4} xs={12}>
                                                     <TextField
                                                         id="outlined-rangemax-input"
                                                         label="Range maximal"
@@ -467,9 +467,9 @@ class Settings extends React.Component {
                                                     />
                                                 </Grid>
 
-                                                <Grid item xs={4}></Grid>
-                                                <Grid item xs={4}></Grid>
-                                                <Grid item xs={4}>
+                                                <Grid item sm={4} xs={0}></Grid>
+                                                <Grid item sm={4} xs={0}></Grid>
+                                                <Grid item sm={4} xs={12}>
                                                     <FormControlLabel
                                                         control={
                                                         <Switch
@@ -487,15 +487,15 @@ class Settings extends React.Component {
                                         </ExpansionPanelDetails>
                                         <Divider />
                                         <ExpansionPanelActions>
-                                            <Button size="small" onClick={(e) => (this.deleteChild(row), this.handleClose(row._id))}>Supprimer</Button>
-                                            <Button size="small" color="primary" onClick={(e) => (this.updateChild(row), this.handleClose(row._id))}>Enregister</Button>
+                                            <Button size="xsall" onClick={(e) => (this.deleteChild(row), this.handleClose(row._id))}>Supprimer</Button>
+                                            <Button size="xsall" color="primary" onClick={(e) => (this.updateChild(row), this.handleClose(row._id))}>Enregister</Button>
                                         </ExpansionPanelActions>
                                     </ExpansionPanel>
                                 )}
 
                                 </Paper>
                             </Grid>
-                            <Grid item xs={2}></Grid>
+                            <Grid item sm={2} xs={0}></Grid>
                         </Grid>
 
 
