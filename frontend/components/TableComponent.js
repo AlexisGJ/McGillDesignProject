@@ -208,7 +208,7 @@ class SimpleTable extends React.Component {
             <TableBody>
               {rows.map(row => (
                 row.latestReading == "err_no_data" ? (
-                  <TableRow key={row._id} className={classes.tableRow}>
+                  <TableRow key={row._id} className={classes.tableRow} onClick={() => this.handleClick(row)}>
                     <TableCell component="th" scope="row" padding="dense">
                       {row.name}
                     </TableCell>

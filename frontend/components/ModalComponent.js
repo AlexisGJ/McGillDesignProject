@@ -8,7 +8,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Fab from '@material-ui/core/Fab';
+import IconButton from '@material-ui/core/IconButton';
 import RefreshIcon from '@material-ui/icons/Refresh';
+import CloseIcon from '@material-ui/icons/Close';
 import moment from 'moment';
 
 import { scale, scalePow, scaleLog } from 'd3-scale';
@@ -41,6 +43,10 @@ const styles = theme => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
     outline: 'none',
+    [theme.breakpoints.down('sm')]: {
+      width: '90%',
+      padding: '15px'
+    },
   },
   menu: {
     width: 200,
@@ -188,12 +194,21 @@ class SimpleModal extends React.Component {
             onClose={this.props.handleClose}
           >
             <div style={getModalStyle()} className={classes.paper}>
-              <Typography variant="h4" id="modal-title">
-                {allData.name}
-              </Typography>
+              <Grid container>
+                <Grid item xs={10}>
+                  <Typography variant="h4" id="modal-title">
+                    {allData.name}
+                  </Typography>
+                </Grid>
+                <Grid item xs={2}>
+                  <IconButton size="small" aria-label="Close" onClick={this.props.handleClose}>
+                    <CloseIcon fontSize="inherit" />
+                  </IconButton>
+                </Grid>
+              </Grid>
 
               <Grid container>
-                <Grid item xs={4}>
+                <Grid item md={4} xs={12}>
                     <TextField
                         id="outlined-name-input"
                         label="Appareil"
@@ -208,7 +223,7 @@ class SimpleModal extends React.Component {
                         value={allData.latestReading.device}
                     />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item md={4} xs={12}>
                     <TextField
                         id="outlined-sensorId-input"
                         label="Emplacement"
@@ -223,7 +238,7 @@ class SimpleModal extends React.Component {
                         value={allData.location}
                     />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item md={4} xs={12}>
                   <TextField
                     id="outlined-select-timeScale"
                     select
@@ -243,32 +258,34 @@ class SimpleModal extends React.Component {
                 </Grid>
               </Grid>
 
-              
-              <LineChart
-                width={600}
-                height={500}
-                data={data.filter(function(row) {
-                  return row.dateFromNowMinutes > -(timeScale * 60);
-                })}
-                margin={{ top: 5, right: 20, left: 0, bottom: 5 }}
-                className="line-chart"
-                >
-                <XAxis allowDataOverflow domain={[-(timeScale * 60), 'auto']} type="number" dataKey="dateFromNowMinutes" height={100} tickCount={10} tick={<CustomizedAxisTick />} label="temps"/>
-                <YAxis allowDataOverflow width={80}>
-                  <Label value="mmol/L" offset={5} position="insideTopLeft" />
-                </YAxis>
-                <Tooltip content={<CustomTooltip />} />
-                <CartesianGrid stroke="#f5f5f5" />
+              <div style={{ width: '100%', height: 300 }}>
+                <ResponsiveContainer>
+                  <LineChart
+                    height={500}
+                    data={data.filter(function(row) {
+                      return row.dateFromNowMinutes > -(timeScale * 60);
+                    })}
+                    margin={{ top: 5, right: 20, left: 0, bottom: 5 }}
+                    className="line-chart"
+                    >
+                    <XAxis allowDataOverflow domain={[-(timeScale * 60), 'auto']} type="number" dataKey="dateFromNowMinutes" height={100} tickCount={10} tick={<CustomizedAxisTick />} label="temps"/>
+                    <YAxis allowDataOverflow width={80}>
+                      <Label value="mmol/L" offset={5} position="insideTopLeft" />
+                    </YAxis>
+                    <Tooltip content={<CustomTooltip />} />
+                    <CartesianGrid stroke="#f5f5f5" />
 
-                <Line yAxisId={0} type="monotone" dataKey="mmol" stroke="#54a4ef" strokeWidth={2} dot={{ r: 1 }} />
-                <ReferenceLine y={allData.range_min} stroke="#97191b" strokeWidth={2} className="graph-referenece-line" >
-                  <Label value={"MIN " + allData.range_min} offset={5} position="insideTopRight" />
-                </ReferenceLine>
-                <ReferenceLine y={allData.range_max} stroke="#97191b" strokeWidth={2} className="graph-referenece-line" >
-                  <Label value={"MAX " + allData.range_max} offset={5} position="insideBottomRight" />
-                </ReferenceLine>
+                    <Line yAxisId={0} type="monotone" dataKey="mmol" stroke="#54a4ef" strokeWidth={2} dot={{ r: 1 }} />
+                    <ReferenceLine y={allData.range_min} stroke="#97191b" strokeWidth={2} className="graph-referenece-line" >
+                      <Label value={"MIN " + allData.range_min} offset={5} position="insideTopRight" />
+                    </ReferenceLine>
+                    <ReferenceLine y={allData.range_max} stroke="#97191b" strokeWidth={2} className="graph-referenece-line" >
+                      <Label value={"MAX " + allData.range_max} offset={5} position="insideBottomRight" />
+                    </ReferenceLine>
 
-              </LineChart>
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
 
             </div>
           </Modal>
